@@ -1,0 +1,673 @@
+<?php
+/*
+Template Name: חיפוש מאגר
+Author: pablo rotem
+*/
+
+get_header();
+
+$lang = 'HEB';
+global $wpdb;
+global $idUniq;
+
+$idUniq = 0;
+$disabledCats = [3, 4, 5, 6, 191, 253, 288, 814, 815];
+
+/**
+ * בניית עץ קטגוריות רקורסיבי
+ * Author: pablo rotem
+ */
+function build_wp_category_tree($parentCatId, $isOpen = false): string
+{
+    global $wpdb, $idUniq, $disabledCats, $lang;
+
+    $parentCatId = (int) $parentCatId;
+
+    $sql = "
+        SELECT t1.id, t2.name
+        FROM categories t1
+        LEFT JOIN categories_byLang t2
+            ON t1.id = t2.categoryId
+        WHERE t2.language = %s
+          AND t1.type = 'specific'
+          AND t1.parentId = %d
+        ORDER BY t1.pos ASC
+    ";
+
+    $results = $wpdb->get_results(
+        $wpdb->prepare($sql, (string) $lang, $parentCatId),
+        ARRAY_A
+    );
+
+    if (!$results) {
+        return '';
+    }
+
+    $html = '';
+    if ($isOpen) {
+        $html .= '<ul class="DefineTree treeplant line-tree">';
+    } else {
+        $currId = ++$idUniq;
+        $html .= '<ul id="collapse' . $currId . '" class="panel-collapse collapse line-tree">';
+    }
+
+    foreach ($results as $row) {
+        $catId = (int) $row['id'];
+        $catName = (string) $row['name'];
+
+        $currId = ++$idUniq;
+        $sons = build_wp_category_tree($catId, false);
+        $hasSons = ($sons !== '');
+
+        $toggleHtml = $hasSons
+            ? '<a data-toggle="collapse" href="#collapse' . ($currId + 1) . '" class="insExtra collapsed"></a>'
+            : '<span class="insExtraSpacer"></span>';
+
+        if (in_array($catId, $disabledCats, true)) {
+            $link = 'javascript:void(0);';
+            $clickAttr = '';
+            $itemClass = 'root-category';
+        } else {
+            $link = 'javascript:void(0);';
+            $clickAttr = 'onclick="mygetvaluetodicv(\'' . esc_js($catName) . '\', ' . $catId . ')"';
+            $itemClass = 'clickable-category paratext';
+        }
+
+        $html .= '<li>';
+        $html .= $toggleHtml;
+        $html .= '<a href="' . $link . '" ' . $clickAttr . ' class="' . esc_attr($itemClass) . '">' . esc_html($catName) . '</a>';
+        $html .= $sons;
+        $html .= '</li>';
+    }
+
+    $html .= '</ul>';
+
+    return $html;
+}
+
+// 3. SEARCH PROCESSING - לוגיקה קרובה לפלאגין הניהול
+// Author: pablo rotem
+
+$results = [];
+$has_searched = false;
+$cnt = 0;
+
+$nameText = isset($_REQUEST['nameText']) ? trim((string) wp_unslash($_REQUEST['nameText'])) : '';
+$profText = isset($_REQUEST['profText']) ? trim((string) wp_unslash($_REQUEST['profText'])) : '';
+$freeText = isset($_REQUEST['freeText']) ? trim((string) wp_unslash($_REQUEST['freeText'])) : '';
+$dialZone = isset($_REQUEST['dialZone']) ? trim((string) wp_unslash($_REQUEST['dialZone'])) : '';
+$catIdRaw = isset($_REQUEST['catId']) ? trim((string) wp_unslash($_REQUEST['catId'])) : '';
+
+$catId = (ctype_digit($catIdRaw) && (int) $catIdRaw > 0) ? (int) $catIdRaw : 0;
+
+if (
+    $_SERVER['REQUEST_METHOD'] === 'POST'
+    || $catId > 0
+    || $nameText !== ''
+    || $profText !== ''
+    || $freeText !== ''
+    || $dialZone !== ''
+) {
+    $has_searched = true;
+
+    $where = [];
+    $params = [];
+
+    $baseSql = "
+        FROM clubMembers m
+        LEFT JOIN israeli_experts e
+            ON e.memberId = m.id
+        WHERE m.status = %s
+          AND m.extraData4 = %s
+          AND e.memberLanguage = %s
+    ";
+
+    $baseParams = ['active', 'expert', $lang];
+
+    /**
+     * לפי שם
+     * Author: pablo rotem
+     */
+    if ($nameText !== '') {
+        $like = '%' . $wpdb->esc_like($nameText) . '%';
+        $where[] = "
+            (
+                CONCAT(COALESCE(m.lastname,''), ' ', COALESCE(m.firstname,'')) LIKE %s
+                OR CONCAT(COALESCE(m.firstname,''), ' ', COALESCE(m.lastname,'')) LIKE %s
+            )
+        ";
+        $params[] = $like;
+        $params[] = $like;
+    }
+
+    /**
+     * לפי מקצוע
+     * Author: pablo rotem
+     */
+    if ($profText !== '') {
+        $like = '%' . $wpdb->esc_like($profText) . '%';
+        $where[] = "
+            (
+                e.fldProfession LIKE %s
+                OR e.fldSpecialization LIKE %s
+                OR e.moreDetails LIKE %s
+            )
+        ";
+        $params[] = $like;
+        $params[] = $like;
+        $params[] = $like;
+    }
+
+    /**
+     * לפי ביטוי
+     * Author: pablo rotem
+     */
+    if ($freeText !== '') {
+        $like = '%' . $wpdb->esc_like($freeText) . '%';
+        $where[] = "
+            (
+                m.firstname LIKE %s
+                OR m.lastname LIKE %s
+                OR m.email LIKE %s
+                OR m.phone LIKE %s
+                OR m.cellphone LIKE %s
+                OR e.fldProfession LIKE %s
+                OR e.fldSpecialization LIKE %s
+                OR e.moreDetails LIKE %s
+            )
+        ";
+        $params[] = $like;
+        $params[] = $like;
+        $params[] = $like;
+        $params[] = $like;
+        $params[] = $like;
+        $params[] = $like;
+        $params[] = $like;
+        $params[] = $like;
+    }
+
+    /**
+     * לפי אזור חיוג - זהה לפלאגין
+     * Author: pablo rotem
+     */
+    if ($dialZone !== '' && preg_match('/^(02|03|04|08|09)$/', $dialZone)) {
+        $where[] = " e.fldDialZone = %s ";
+        $params[] = $dialZone;
+    }
+
+    $extraWhere = '';
+    if (!empty($where)) {
+        $extraWhere = ' AND ' . implode(' AND ', $where);
+    }
+
+    /**
+     * אם נבחרה קטגוריה - כולל עץ תתי קטגוריות
+     * Author: pablo rotem
+     */
+    if ($catId > 0) {
+        $sql = "
+            WITH RECURSIVE cat_tree AS (
+                SELECT id
+                FROM categories
+                WHERE id = %d
+
+                UNION ALL
+
+                SELECT c.id
+                FROM categories c
+                INNER JOIN cat_tree t
+                    ON c.parentId = t.id
+                WHERE c.type = 'specific'
+            )
+            SELECT DISTINCT m.*, e.*
+            $baseSql
+            AND EXISTS (
+                SELECT 1
+                FROM categoriesItems ci
+                INNER JOIN cat_tree ct
+                    ON ct.id = ci.categoryId
+                WHERE ci.itemId = m.id
+            )
+            $extraWhere
+            ORDER BY CAST(COALESCE(m.extraData6, 0) AS UNSIGNED) DESC, BINARY m.lastname
+        ";
+
+        $allParams = array_merge([$catId], $baseParams, $params);
+        $prepared = $wpdb->prepare($sql, ...$allParams);
+    } else {
+        $sql = "
+            SELECT DISTINCT m.*, e.*
+            $baseSql
+            $extraWhere
+            ORDER BY CAST(COALESCE(m.extraData6, 0) AS UNSIGNED) DESC, BINARY m.lastname
+        ";
+
+        $allParams = array_merge($baseParams, $params);
+        $prepared = $wpdb->prepare($sql, ...$allParams);
+    }
+
+    $results = $wpdb->get_results($prepared, ARRAY_A);
+    $cnt = is_array($results) ? count($results) : 0;
+}
+?>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+    .expert-search-wrapper { direction: rtl; text-align: right; font-family: Arial, sans-serif; background: #fff; padding: 20px 0; }
+
+    .search-row { display: flex; flex-direction: row; gap: 10px; margin-bottom: 20px; }
+    .search-input-group { flex: 1; position: relative; }
+    .search-input-group input,
+    .search-input-group select,
+    .search-input-group .fake-select {
+        width: 100%;
+        height: 45px;
+        border: 2px solid #0a1b42;
+        padding: 0 10px;
+        font-size: 16px;
+        color: #0a1b42;
+        background: #fff;
+        border-radius: 0;
+        box-sizing: border-box;
+        text-align: right;
+        line-height: 45px;
+        cursor: pointer;
+    }
+    .search-input-group .fake-select::after {
+        content: "▼";
+        font-size: 10px;
+        position: absolute;
+        left: 10px;
+        top: 0;
+        line-height: 45px;
+    }
+
+    .search-button-group { width: 50px; flex: 0 0 50px; }
+    .search-button-group button {
+        width: 100%;
+        height: 45px;
+        background-color: #ffa500;
+        border: none;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    #chooseExperties {
+        border: 1px solid #ffa500;
+        margin-top: 15px;
+        padding: 15px;
+        background: #fff;
+    }
+
+    .tree-columns { display: flex; flex-wrap: wrap; }
+    .tree-col { width: 33.33%; padding: 0 10px; box-sizing: border-box; }
+
+    ul.DefineTree { list-style: none; padding-right: 0; margin: 0; }
+    ul.DefineTree ul { list-style: none; padding-right: 20px; margin: 0; border-right: 1px solid #eee; }
+
+    .insExtra {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        line-height: 12px;
+        text-align: center;
+        color: #ffa500;
+        margin-left: 5px;
+        background: #fff;
+        z-index: 2;
+        position: relative;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .insExtra::after { content: "-"; font-weight: bold; font-size: 16px; }
+    .insExtra.collapsed::after { content: "+"; }
+
+    .paratext { color: #333; text-decoration: none; font-size: 14px; }
+    .paratext:hover { color: #ffa500; text-decoration: underline; }
+
+    .root-span { font-size: 15px; color: #333; }
+    .root-category { color: #333; font-size: 15px; }
+
+    .paddingZ { padding: 0; }
+    .m-t-30 { margin-top: 30px; }
+
+    .azrhit {
+        background-color: #03042e;
+        color: #fff;
+        padding: 10px 0;
+        font-weight: bold;
+        font-size: 16px;
+        margin-bottom: 5px;
+        width: 100%;
+    }
+
+    .azrit-set {
+        border-bottom: 2px solid #ffa500;
+        border-left: 1px solid #eee;
+        border-right: 1px solid #eee;
+        border-top: 1px solid #eee;
+        padding: 15px 15px 25px 15px;
+        display: block;
+        color: #333;
+        text-decoration: none !important;
+        margin-bottom: 10px;
+        background: #fff;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .azrit-set:hover { background-color: #f9f9f9; }
+
+    .list-inline {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: flex-start;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .addreswidth { width: 40%; padding-right: 15px; box-sizing: border-box; text-align: right; }
+    .anamewidth  { width: 25%; text-align: right; }
+    .phonewidth  { width: 20%; text-align: right; }
+    .sono        { width: 15%; text-align: center; }
+
+    .defultname { font-size: 24px; font-weight: bold; color: #03042e; }
+    .phonewidth, .sono { color: #337ab7; font-size: 14px; }
+
+    .fromline-1 { color: #ffa500; margin-left: 5px; font-size: 14px; }
+
+    a.result-link,
+    a.result-link:hover {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        width: 100%;
+    }
+
+    @media (max-width: 768px) {
+        .search-row { flex-direction: column; }
+        .search-button-group { width: 100%; }
+        .azrhit { display: none; }
+        .list-inline { display: block; width: 100%; }
+        .list-inline li {
+            width: 100% !important;
+            display: block;
+            text-align: right !important;
+            margin-bottom: 10px;
+            padding: 0;
+        }
+
+        .azrit-set {
+            padding: 15px;
+            padding-bottom: 30px;
+        }
+
+        .addreswidth {
+            margin-bottom: 15px;
+            font-size: 16px;
+            line-height: 1.6;
+            order: 1;
+        }
+
+        .defultname {
+            font-size: 26px;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            display: block;
+            order: -1;
+        }
+
+        .phonewidth {
+            font-size: 16px;
+            color: #337ab7;
+            margin-bottom: 5px;
+            order: 0;
+        }
+
+        .sono {
+            text-align: right !important;
+            color: #337ab7;
+            font-weight: bold;
+            font-size: 16px;
+            float: left;
+            order: 2;
+        }
+
+        .tree-col { width: 100%; margin-bottom: 20px; }
+    }
+</style>
+
+<script>
+/* Author: pablo rotem */
+function mygetvaluetodicv(name, id) {
+    var catInput = document.getElementById('catIdInput');
+    var display  = document.getElementById('searchExpertyDisplay');
+    var form     = document.getElementById('searchExp');
+
+    if (catInput) {
+        catInput.value = id;
+    }
+
+    if (display) {
+        display.innerHTML = name;
+    }
+
+    if (form) {
+        form.submit();
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    var form = document.getElementById('searchExp');
+    var button = document.getElementById('repositorySearchButton');
+    var catInput = document.getElementById('catIdInput');
+    var display = document.getElementById('searchExpertyDisplay');
+
+    if (!form || !button || !catInput) {
+        return;
+    }
+
+    button.addEventListener('click', function () {
+        catInput.value = '';
+
+        if (display) {
+            display.innerHTML = 'לפי התמחות';
+        }
+    });
+});
+</script>
+
+<div class="container expert-search-wrapper">
+
+    <form method="post" id="searchExp" action="">
+        <input type="hidden" name="catId" id="catIdInput" value="<?php echo $catId > 0 ? esc_attr((string) $catId) : ''; ?>">
+
+        <div class="search-row">
+            <div class="search-input-group">
+                <input name="nameText" type="text" placeholder="לפי שם" value="<?php echo esc_attr($nameText); ?>">
+            </div>
+
+            <div class="search-input-group">
+                <input name="profText" type="text" placeholder="לפי מקצוע" value="<?php echo esc_attr($profText); ?>">
+            </div>
+
+            <div class="search-input-group">
+                <input name="freeText" type="text" placeholder="לפי ביטוי" value="<?php echo esc_attr($freeText); ?>">
+            </div>
+
+            <div class="search-input-group">
+                <div class="fake-select" data-toggle="collapse" data-target="#chooseExperties" id="searchExpertyDisplay">לפי התמחות</div>
+            </div>
+
+            <div class="search-input-group">
+                <select name="dialZone">
+                    <option value="" <?php echo empty($dialZone) ? 'selected' : ''; ?>>לפי אזור חיוג</option>
+                    <option value="02" <?php echo ($dialZone === '02') ? 'selected' : ''; ?>>02</option>
+                    <option value="03" <?php echo ($dialZone === '03') ? 'selected' : ''; ?>>03</option>
+                    <option value="04" <?php echo ($dialZone === '04') ? 'selected' : ''; ?>>04</option>
+                    <option value="08" <?php echo ($dialZone === '08') ? 'selected' : ''; ?>>08</option>
+                    <option value="09" <?php echo ($dialZone === '09') ? 'selected' : ''; ?>>09</option>
+                </select>
+            </div>
+
+            <div class="search-button-group">
+                <button type="submit" name="submitsearch" id="repositorySearchButton">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="collapse" id="chooseExperties">
+            <div class="tree-columns">
+                <div class="tree-col">
+                    <ul class="DefineTree">
+                        <li>
+                            <a data-toggle="collapse" href="#root3" class="insExtra"></a>
+                            <span class="root-category">עדים מומחים</span>
+                            <div id="root3" class="collapse in"><?php echo build_wp_category_tree(3, true); ?></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tree-col">
+                    <ul class="DefineTree">
+                        <li>
+                            <a data-toggle="collapse" href="#root4" class="insExtra"></a>
+                            <span class="root-category">בוררים</span>
+                            <div id="root4" class="collapse in"><?php echo build_wp_category_tree(4, true); ?></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tree-col">
+                    <ul class="DefineTree">
+                        <li>
+                            <a data-toggle="collapse" href="#root5" class="insExtra"></a>
+                            <a href="javascript:void(0)" onclick="mygetvaluetodicv('מגשרים', 5)" class="root-category">מגשרים</a>
+                            <div id="root5" class="collapse in"><?php echo build_wp_category_tree(5, true); ?></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="imgytrt3">
+            <div class="col-md-12 col-sm-12 col-xs-12 tree-top tree-star pding0p">
+                <div class="col-md-4 col-sm-4 col-xs-12 ywidt">
+                    <ul class="DefineTree treeplant">
+                        <li>
+                            <a data-toggle="collapse" href="#bottomCollapse3" class="fromtree insExtra collapsed"></a>
+                            <span class="root-span">עדים מומחים</span>
+                            <div id="bottomCollapse3" class="panel-collapse collapse"><?php echo build_wp_category_tree(3, true); ?></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12 ywidt">
+                    <ul class="DefineTree treeplant">
+                        <li>
+                            <a data-toggle="collapse" href="#bottomCollapse4" class="fromtree insExtra collapsed"></a>
+                            <span class="root-span">בוררים</span>
+                            <div id="bottomCollapse4" class="panel-collapse collapse"><?php echo build_wp_category_tree(4, true); ?></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12 ywidt">
+                    <ul class="DefineTree treeplant">
+                        <li>
+                            <a data-toggle="collapse" href="#bottomCollapse5" class="fromtree insExtra collapsed"></a>
+                            <span class="root-span">מגשרים</span>
+                            <div id="bottomCollapse5" class="panel-collapse collapse"><?php echo build_wp_category_tree(5, true); ?></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <?php if ($has_searched): ?>
+
+        <div style="text-align: right; margin: 20px 0; color: #aaa;">
+            <?php echo ($cnt === 1 ? 'נמצאה תוצאה 1' : "נמצאו {$cnt} תוצאות"); ?>
+        </div>
+
+        <div class="col-md-12 col-sm-12 col-xs-12 paddingZ">
+            <div class="col-md-12 col-sm-12 col-xs-12 m-t-30 paddingZ">
+
+                <div class="azrhit">
+                    <ul class="list-inline">
+                        <li class="addreswidth">מידע ראשוני</li>
+                        <li class="anamewidth">שם</li>
+                        <li class="phonewidth">מקצוע</li>
+                        <li class="sono araseta">אזור חיוג</li>
+                    </ul>
+                </div>
+
+                <?php if ($results): ?>
+                    <?php foreach ($results as $exRow): ?>
+                        <?php
+                        $link = 'https://2.hashuk.net/expert-profile/?id=' . (int) $exRow['id'];
+
+                        $cat_sql = "
+                            SELECT cbl.name
+                            FROM categoriesItems ci
+                            LEFT JOIN categories_byLang cbl
+                                ON ci.categoryId = cbl.categoryId
+                            WHERE ci.itemId = %d
+                              AND cbl.language = %s
+                            ORDER BY ci.pos ASC
+                        ";
+
+                        $expert_cats = $wpdb->get_results(
+                            $wpdb->prepare($cat_sql, (int) $exRow['id'], (string) $lang),
+                            ARRAY_A
+                        );
+
+                        $cat_html = '';
+                        if ($expert_cats) {
+                            foreach ($expert_cats as $ec) {
+                                $cat_html .= '<i class="fa fa-check fromline-1"></i> ' . esc_html((string) $ec['name']) . '<br>';
+                            }
+                        }
+
+                        $title = isset($exRow['fldExtentName']) ? (string) $exRow['fldExtentName'] : '';
+                        $expertName = (string) $exRow['lastname'] . ' ' . (string) $exRow['firstname'];
+                        if (!empty($title)) {
+                            $expertName .= ', ' . $title;
+                        }
+                        ?>
+                        <a href="<?php echo esc_url($link); ?>" class="result-link">
+                            <div class="azrit-set">
+                                <ul class="list-inline artiset">
+                                    <li class="fromtop addreswidth">
+                                        <?php echo $cat_html; ?>
+                                    </li>
+                                    <li class="defultname fromtop anamewidth">
+                                        <?php echo esc_html($expertName); ?>
+                                    </li>
+                                    <li class="fromtop phonewidth">
+                                        <?php echo esc_html((string) ($exRow['fldProfession'] ?? '')); ?><br>
+                                    </li>
+                                    <li class="fromtop sono sono-para">
+                                        <?php echo esc_html((string) ($exRow['fldDialZone'] ?? '')); ?>
+                                    </li>
+                                </ul>
+                            </div>
+                        </a>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <div class="azrit-set">
+                        <p style="padding: 10px;">לא נמצאו תוצאות.</p>
+                    </div>
+                <?php endif; ?>
+
+            </div>
+        </div>
+
+    <?php endif; ?>
+
+</div>
+
+<?php get_footer(); ?>

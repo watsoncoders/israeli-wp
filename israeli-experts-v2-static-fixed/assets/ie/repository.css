@@ -1,0 +1,28 @@
+/* Israeli Expert - Repository (approx) */
+.ie-rtl { direction: rtl; text-align: right; }
+.ie-wrapper { margin: 24px 0; font-family: Heebo, Arial, sans-serif; color: #111; }
+.ie-title { font-size: 1.8rem; margin-bottom: 1rem; }
+.ie-card { background: #fff; border: 1px solid #ddd; border-radius: 12px; padding: 16px; }
+.ie-form { margin-bottom: 16px; }
+.ie-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px,1fr)); gap: 12px; align-items: end; }
+.ie-col-1-1 { grid-column: 1 / -1; }
+.ie-label { display:block; font-weight: 600; margin-bottom: 6px; }
+.ie-input { width: 100%; border: 1px solid #ccc; border-radius: 10px; padding: 10px; background: #fff; }
+.ie-actions { display:flex; gap:10px; margin-top:10px; }
+.ie-btn { padding:10px 14px; border:0; border-radius:10px; cursor:pointer; text-decoration:none; }
+.ie-btn-primary { background:#2d6cdf; color:#fff; }
+.ie-btn-secondary { background:#eee; color:#333; }
+.ie-meta { margin-top:8px; font-size: 0.95rem; color:#444; }
+.ie-table-wrap { overflow:auto; }
+.ie-table { width:100%; border-collapse:collapse; }
+.ie-table th, .ie-table td { padding:10px; border-bottom:1px solid #eee; }
+.ie-table th { background:#f5f7fb; font-weight:700; }
+.ie-table tr:hover td { background:#fafcff; }
+.ie-pagination { margin-top:12px; display:flex; gap:6px; flex-wrap:wrap; }
+.ie-page-link { padding:6px 10px; border:1px solid #ddd; border-radius:8px; text-decoration:none; color:#333; background:#fff; }
+.ie-page-link.active { background:#2d6cdf; color:#fff; border-color:#2d6cdf; }
+.ie-alert { margin: 10px 0; padding: 12px; border-radius: 10px; }
+.ie-alert-error { background: #fff3f3; border: 1px solid #f5c2c2; color: #9a1a1a; }
+.ie-empty { color:#555; }
+.ie-link { color: #2d6cdf; text-decoration: none; border:1px solid #2d6cdf; padding:6px 10px; border-radius:8px; }
+.ie-link:hover { background:#2d6cdf; color:#fff; }

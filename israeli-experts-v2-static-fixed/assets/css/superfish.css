@@ -1,0 +1,101 @@
+/*** ESSENTIAL STYLES ***/
+
+#menu-fontsize
+{
+	font-family: 'Meoded-Serif_OEBold', arial;
+	font-size: 16px;
+}
+
+.sf-menu 
+{
+	float: right;
+}
+
+.sf-menu, .sf-menu * 
+{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-family: 'Meoded-Serif_OEBold', arial;
+}
+
+.sf-menu li 
+{
+	position: relative;
+}
+
+.sf-menu ul 
+{
+	position: absolute;
+	display: none;
+	top: 100%;
+	right: 0;
+	z-index: 99;
+}
+
+.sf-menu > li 	/* first ul ils */
+{
+	float: right;
+	height: 60px;
+}
+
+.sf-menu > li:hover,
+.sf-menu > li.sfHover,
+.sf-menu > li.current
+{
+	background: url(../designFiles/topMenu_selected.png) repeat-x;
+}
+
+.sf-menu li:hover a,
+.sf-menu li.sfHover a,
+.sf-menu li.current a
+{
+	color: white;
+}
+
+.sf-menu li ul
+{
+	background-color: #A5A5A5;
+	border-left: 1px solid #8F8F8F;
+	border-right: 1px solid #8F8F8F;
+}
+
+.sf-menu li ul li
+{
+	border-bottom: 1px solid #8F8F8F;
+	position: relative;
+}
+
+.sf-menu li ul a
+{
+	display: block;
+	font-size: 16px;
+	margin-top: 5px;
+	padding: 5px 22px;
+	color: white;
+	text-decoration: none;
+}
+
+.sf-menu li ul li a:hover,
+.sf-menu li ul li.current a
+{
+	color: #6C6C6C;
+}
+
+.sf-menu a 
+{
+	display: block;
+	font-size: 20px;
+	padding-top: 24px;
+	padding-left: 20px;
+	padding-right: 22px;
+	padding-bottom: 14px;
+	text-decoration: none;
+	position: relative;
+}
+
+.sf-menu ul ul
+{
+	top: -5px;
+	right: 100%;
+}

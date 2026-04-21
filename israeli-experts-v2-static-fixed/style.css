@@ -1,0 +1,198 @@
+/*
+Theme Name: Israeli Experts V2 Static (Fixed Header/Footer)
+Theme URI: https://www.israeli-expert.com
+Author: Pablo Rotem
+Author URI: https://www.israeli-expert.com
+Description: תבנית סטטית עם כותרת ופוטר מקודדים קבוע, ועמודי HTML סטטיים. מיועדת ל-PHP 8.3.
+Version: 2.1.0
+Text Domain: israeli-experts
+*/
+
+:root {
+  --ix-blue: #03042e;
+  --ix-orange: #FFA801;
+}
+
+html[dir="rtl"] body { direction: rtl; }
+body { font-family: Arial, Helvetica, 'Segoe UI', Tahoma, Verdana, sans-serif; }
+
+/* ------------------------------------------------------------------
+   General Bootstrap Overrides
+------------------------------------------------------------------ */
+.img-responsive,
+.thumbnail > img,
+.thumbnail a > img,
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    display: inline;  
+    max-width: none;
+}
+
+/* ------------------------------------------------------------------
+   HEADER & NAVBAR STYLES
+------------------------------------------------------------------ */
+
+/* Main Navigation Bar Background */
+.bg-color {
+    background-color: var(--ix-blue) !important;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 0;
+    min-height: 80px;
+    direction: rtl;
+}
+
+/* Navbar Toggle Button (Hamburger) */
+.navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+.navbar-header .navbar-toggle { 
+    position: relative; 
+    z-index: 1001; 
+    float: left; /* Button on left for RTL */
+    margin-right: 0;
+    margin-left: 15px;
+}
+
+/* Navbar Header Area (Logo & Icons) */
+.navbar-header {
+    float: left; 
+}
+
+.navbar-header .navbar-brand {
+    float: right; 
+    padding: 10px 10px;
+    height: auto; 
+    display: flex;
+    align-items: center;
+}
+
+/* Icons in Header */
+.key-icon, .home-icon img {
+    height: 25px;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+/* Main Logo SVG */
+.head-logo {
+    float: right;
+    padding: 5px 15px;
+}
+
+.head-logo svg {
+    height: 60px;
+    margin-top: 10px;
+    float: right;
+}
+
+/* ------------------------------------------------------------------
+   NAVIGATION LINKS & DROPDOWNS
+------------------------------------------------------------------ */
+
+/* Top Level Links */
+.navbar-default .navbar-nav > li > a {
+    color: #ffffff !important;
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Top Level Links Hover & Selected State */
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li.selected > a {
+    color: var(--ix-orange) !important;
+    background-color: transparent !important;
+}
+
+/* Show Dropdown on Hover (Desktop) */
+.navbar-nav li.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Dropdown Container */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1000;
+    text-align: right;
+    padding: 0;
+    border-top: 3px solid var(--ix-orange);
+}
+
+/* Dropdown Links */
+.dropdown-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-content a {
+    color: #333 !important;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    line-height: 1.4;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1 !important;
+    color: #000 !important;
+}
+
+/* Utility Classes */
+.m-t-5 { margin-top: 5px; }
+
+/* ------------------------------------------------------------------
+   RESPONSIVE (MOBILE) STYLES
+------------------------------------------------------------------ */
+@media (max-width: 768px) {
+    /* Adjust Logo for Mobile */
+    .head-logo svg {
+        height: 40px;
+        margin-right: 10px;
+        margin-top: 15px;
+    }
+    
+    /* Center Logo Block if needed, or keep right */
+    .head-logo {
+        float: none;
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+
+    /* Navbar Collapse Area */
+    .navbar-collapse {
+        clear: both;
+        text-align: right;
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .navbar-nav {
+        margin: 0;
+    }
+    
+    .navbar-nav > li {
+        float: none;
+        display: block;
+    }
+
+    /* Mobile Dropdowns */
+    .dropdown-content {
+        position: relative; /* Stack inside menu */
+        width: 100%;
+        box-shadow: none;
+        border-top: none;
+        background-color: #f9f9f9;
+    }
+    
+    .navbar-nav .dropdown-content li a {
+        color: #777 !important;
+        padding-right: 30px; /* Indent sub-items */
+    }
+}

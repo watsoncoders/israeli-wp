@@ -1,0 +1,30 @@
+/* === FORCE the navbar collapse to behave like Bootstrap 3 === */
+
+/* Desktop/Tablet ≥768px: always visible */
+@media (min-width: 768px) {
+  #primary-nav.navbar-collapse { display:block !important; height:auto !important; overflow:visible !important; }
+  #primary-nav.navbar-collapse.collapse { display:block !important; height:auto !important; }
+  .navbar-toggle { display:none !important; }
+}
+
+/* Mobile <768px: hidden by default, visible when .in is present */
+@media (max-width: 767px) {
+  #primary-nav.navbar-collapse.collapse { display:none !important; height:0 !important; overflow:hidden !important; }
+  #primary-nav.navbar-collapse.collapse.in { display:block !important; height:auto !important; overflow:visible !important; }
+  .collapsing { position:relative; height:0; overflow:hidden; transition:height .35s ease; }
+
+  /* prevent floats from pushing off-canvas on small screens */
+  .navbar-header { float:none !important; }
+  .navbar-nav { float:none !important; margin:7.5px -15px !important; }
+  .navbar-nav > li { float:none !important; }
+  .navbar-nav .open .dropdown-menu { display:block !important; float:none !important; position:static !important; }
+}
+
+/* If some stylesheet hid ALL .collapse globally, out-rank it here, too */
+.navbar .navbar-collapse.collapse.in { display:block !important; height:auto !important; overflow:visible !important; }
+
+/* RTL helper */
+html[dir="rtl"] .navbar-nav { margin-right:0; margin-left:0; }
+
+/* Remove layout clamp that can fight the collapse */
+.header { min-width:0 !important; }

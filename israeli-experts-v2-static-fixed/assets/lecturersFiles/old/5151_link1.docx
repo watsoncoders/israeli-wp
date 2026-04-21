@@ -1,0 +1,434 @@
+<html  lang="he" dir="rtl">
+	<head>
+		<title>צפייה בקורות חיים - המכון הישראלי לחוות דעת מומחים ובוררים</title>
+<meta name="description" content="צפייה בקורות חיים - המכון הישראלי לחוות דעת מומחים ובוררים" />
+
+<meta name="keywords" content="מאגר מומחים משפטי, עזר משפטי יחודי למטרות יעוץ ומתן חוות דעת מומחה לבתי משפט ובכלל" />
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+		
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/cast.css?v=19">
+<link rel="stylesheet" type="text/css" href="css/responsive.css?v=7">
+<link rel="stylesheet" type="text/css" href="font-awesome-4.6.1/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/layouts.css" />
+<link rel="stylesheet" type="text/css" href="common.css" />
+<link type="text/css" rel="stylesheet" href="alertify/alertify.core.css" />
+<link type="text/css" rel="stylesheet" href="alertify/alertify.default.css" />
+<link type="text/css" rel="stylesheet" href="fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+		
+<script src="javascripts/jquery.min.js"></script>
+<script src="javascripts/bootstrap.min.js"></script>
+<script src="javascripts/common.js"></script>
+<script src="javascripts/xmlObj.js"></script>
+<script src="alertify/alertify.min.js"></script>
+<script scr="javascripts/questionnaire.js"></script>
+<script src="fancybox/jquery.fancybox-1.3.4_patch.js"></script>
+<script src="javascripts/jquery.matchHeight-min.js?v=0.7.2"></script>
+<script src="javascripts/exif-js.js"></script>
+<script src="javascripts/israeli.js?v=8"></script>
+		
+<script>
+	$(document).ready(function()
+	{
+		$(".navbar-toggle").click(function(e){
+			$("#bs-example-navbar-collapse-1").toggleClass('collapseTAp');
+		});
+
+		// Javascript to enable link to tab
+		var url = document.location.toString();
+		if (url.match('#')) {
+		    $('.nav-tabs a[href="#' + url.split('#')[1] + '"]').tab('show');
+		}
+		// Change hash for page-reload
+		$('.nav-tabs a, a[href=#home]').on('shown.bs.tab', function (e) {
+			if( $(e.target).hasClass('detils-relate')){
+				$('.nav-tabs a[href="#home"]').tab('show')
+			}
+			
+			$('html, body').animate({
+				scrollTop: ($($(this).attr('href')).offset().top)-80
+			}, 500, 'linear');
+			
+		    //window.location.hash = e.target.hash;
+			//$sTop = $($(this).attr('href')).offset().top
+		    //window.scrollTo(0,$sTop);
+		})
+		
+	});
+</script>
+
+<script src='https://www.google.com/recaptcha/api.js?render=6LcLgo8UAAAAAByozjMx1guuOU15JdqAqfCQrxbT'></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120897595-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-120897595-1');
+</script>
+
+
+	</head>
+	</head>
+	<body>
+		<div class="fluid-container header">
+	<nav class="navbar navbar-default bg-color ">
+		
+		<a href="https://www.israeli-expert.co.il" title="המכון הישראלי לחוות דעת מומחים ובוררים" class="head-logo">
+			<script> $(function(){$(".head-logo").load("designFiles/svg/logo-iii.svg");});</script>
+			<img src="designFiles/svg/logo-iii.svg" class="img-responsive logo-image" id="logo-image" alt="המכון הישראלי לחוות דעת מומחים ובוררים">
+		</a>
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" >
+				<span class="sr-only"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand navbfirschild" data-toggle="modal" data-target="#modal-login" href="#"><img src="designFiles/svg/key.svg" class="img-responsive key-icon" alt="login" title="כניסה למומחים חברי המאגר"></a>
+			<a class="navbar-brand home-icon" href="https://www.israeli-expert.co.il"><img src="designFiles/svg/home-icon.svg" class="img-responsive" alt="לדף הבית"></a>
+		</div>
+		<div class="collapse navbar-collapse col-md-7 col-sm-7 col-xs-12 pull-left" id="bs-example-navbar-collapse-1" >
+			<ul class="nav navbar-nav navbar-left"  >
+				
+				<li class="dropdown dropdown-toggle navv"> 
+					<a href="#">English</a>
+					
+					<div class="dropdown-content">
+						<ul class=" m-t-5 dropdowncon">
+							
+							<li><a href="//www.israeli-expert.co.il/about-en">About us</a></li>
+							
+							<li><a href="//www.israeli-expert.co.il/index2.php?id=5149&amp;lang=HEB">Contact us</a></li>
+							
+						</ul>
+					</div>
+				</li>
+				
+				
+				<li class="dropdown dropdown-toggle navv"> 
+					<a href="//www.israeli-expert.co.il/about">אודות המכון</a>
+					
+					<div class="dropdown-content">
+						<ul class=" m-t-5 dropdowncon">
+							
+							<li><a href="//www.israeli-expert.co.il/index2.php?id=5158&amp;lang=HEB">תקנון המכון </a></li>
+							
+							<li><a href="//www.israeli-expert.co.il/index2.php?id=5157&amp;lang=HEB">כללי האתיקה</a></li>
+							
+							<li><a href="//www.israeli-expert.co.il/tos">תנאי השימוש באתר</a></li>
+							
+							<li><a href="//www.israeli-expert.co.il/index2.php?id=5156&amp;lang=HEB">כיצד בוחרים מומחה</a></li>
+							
+						</ul>
+					</div>
+				</li>
+				
+				
+				
+				<li class=""><a href="//www.israeli-expert.co.il/repository">חיפוש במאגר</a></li>
+				
+				<li class="dropdown dropdown-toggle navv"> 
+					<a href="#">קורסים</a>
+					
+					<div class="dropdown-content">
+						<ul class=" m-t-5 dropdowncon">
+							
+							<li><a href="index2.php?id=101&lang=HEB">קורס עדים מומחים</a></li>
+							
+							<li><a href="index2.php?id=102&lang=HEB">קורס בוררים</a></li>
+							
+							<li><a href="index2.php?id=103&lang=HEB">קורס משולב</a></li>
+							
+							<li><a href="index2.php?id=104&lang=HEB">קורס תמ"א 38 בסיסי</a></li>
+							
+							<li><a href="index2.php?id=105&lang=HEB">קורס תמ"א 38 מורחב</a></li>
+							
+						</ul>
+					</div>
+				</li>
+				
+				
+				<li class="dropdown dropdown-toggle navv"> 
+					<a href="#">טפסים והרשמה</a>
+					
+					<div class="dropdown-content">
+						<ul class=" m-t-5 dropdowncon">
+							
+							<li><a href="//www.israeli-expert.co.il/index2.php?id=5175&amp;lang=HEB">טפסי הרשמה לקורסים</a></li>
+							
+							<li><a href="//www.israeli-expert.co.il/index2.php?id=5147&amp;lang=HEB">טפסי עבודה</a></li>
+							
+						</ul>
+					</div>
+				</li>
+				
+				
+				
+				<li class=""><a href="//www.israeli-expert.co.il/index2.php?id=3&amp;lang=HEB">צור קשר</a></li>
+				
+				<li class="dropdown dropdown-toggle navv"> 
+					<a href="#">“יהללך זר”</a>
+					
+					<div class="dropdown-content">
+						<ul class=" m-t-5 dropdowncon">
+							
+							<li><a href="//www.israeli-expert.co.il/lastcourse">דעת בוגרי הקורס האחרון (2018)</a></li>
+							
+							<li><a href="//www.israeli-expert.co.il/bogrim">דעת בוגרי קורסים קודמים</a></li>
+							
+							<li><a href="//www.israeli-expert.co.il/users">דעת משתמשי המאגר</a></li>
+							
+						</ul>
+					</div>
+				</li>
+				
+				
+				
+				<li class=""><a name="nowhere" style='cursor:default'></a></li>
+				
+				<li><a href="index2.php?id=5127&amp;lang=HEB">הרשמה למאגר</a></li>
+			</ul>
+		</div>
+		
+	</nav>
+</div>
+       		  <div class='modal modal-with-title fade' id='modal-login' tabindex='-1' role='dialog'>
+            			<div class='modal-dialog' role='document'>
+                			<div class='modal-content'>
+								<div class='modal-header'>
+									<button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+										<span class='glyphicon glyphicon-remove-sign'></span>
+									</button>
+            			            <h4 class='modal-title'>כניסת משתמשים רשומים</h4>
+								</div>
+								<div class='modal-body'>
+									<div class='modal-in login-form'>
+										<form id='loginForm' method='post' action='clubLogin.php'>
+										<input type='hidden' id='returnTo' name='returnTo' value='' />
+										<div class='form-group'>
+											<div class='row'>
+												<div class='col-sm-3'></div>
+												<div class='col-sm-6'>
+													<label class='' for='username'>שם משתמש</label>
+													<input type='text' id='username' name='username' class='form-control' placeholder='שם משתמש' />
+												</div>
+											</div>
+										</div>
+										<div class='form-group'>
+											<div class='row'>
+												<div class='col-sm-3'></div>
+												<div class='col-sm-6'>
+													<label class='' for='password'>סיסמה</label>
+													<input type='password' id='password' name='password' class='form-control' placeholder='סיסמה' />
+<br>
+<a href="javascript:void(0)" data-toggle="modal" data-target="#modal-reset-password">שכחתי את הסיסמה</a>
+												</div>
+											</div>
+										</div>
+										<div class='fbuttons'>
+											<button class='btn btn-orange'>כניסה</button>
+										</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+				  </div>
+
+
+       		  <div class='modal modal-with-title fade' id='modal-reset-password' tabindex='-1' role='dialog'>
+            			<div class='modal-dialog' role='document'>
+                			<div class='modal-content'>
+								<div class='modal-header'>
+									<button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+										<span class='glyphicon glyphicon-remove-sign'></span>
+									</button>
+            			            <h4 class='modal-title'>איפוס סיסמה</h4>
+								</div>
+								<div class='modal-body'>
+									<div class='modal-in login-form'>
+        <form  method="post" action="resetPasswordWeb2.php">
+          <div class="form-group">
+            <label for="loginUsername" class="">שם משתמש</label>
+            <input type="text" id="loginUsername" name="username" placeholder="שם משתמש" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="newPassword" class="">סיסמה חדשה</label>
+            <input type="password" id="newPassword" name="newPassword" placeholder="סיסמה חדשה" class="form-control">
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-default">שליחה</button>
+          </div>
+        </form>
+									</div>
+								</div>
+							</div>
+						</div>
+				  </div>
+
+					
+		<div class="container-fluid"  ><iframe width='80%' height='600' frameborder='0'
+						src='https://view.officeapps.live.com/op/embed.aspx?src=https://www.israeli-expert.co.il/lecturersFiles/5151_link1.docx'></iframe></div>
+
+		<footer id="footer" class="m-t-20">
+	<div class="container">
+		<div class="row">                 
+			<!--<div class="col-sm-12 col-md-12 col-xs-12 paddXsZ paddSmZ paddSmZL">-->
+				<div class="col-sm-3 col-md-3 col-xs-6 footer_div ">
+					<div class="footer_link ">
+						<h3 class="footerlast">
+							<img src="designFiles/icon-(three-man).png" alt="המכון הישראלי לחוות דעת מומחים ובוררים" class="img-responsive footer-img-1">
+							&nbsp;המכון הישראלי<br/>&nbsp;לחוות דעת מומחים ובוררים
+						</h3>                        
+						<ul class="m-t-15"  >  
+							
+							<li><a href="//www.israeli-expert.co.il/about">אודות המכון</a></li>
+							
+							<li><a href="//www.israeli-expert.co.il/tos">תנאי שימוש</a></li>
+							
+							<li><a href="//www.israeli-expert.co.il/index2.php?id=3&amp;lang=HEB">צור קשר</a></li>
+							<script language="JavaScript">
+							 $( document ).ready(function() {
+								$("div[id^='menu']").css("position", "relative");
+								$("div[id^='menu']").css("z-index", "11");
+								$("div[id^='menu']").mouseover(function() {
+									var sep = this.id.indexOf("_");
+									var first = Number(this.id.substring(4,sep));
+									var second = Number(this.id.substr(sep+1));
+									showPopup(first,second,"", "HEB");
+								});
+								$("div[id^='menu']").mouseout(function() {
+									var sep = this.id.indexOf("_");
+									var first = Number(this.id.substring(4,sep));
+									var second = Number(this.id.substr(sep+1));
+									hidePopup(first,second,"menu");
+								});
+								$("div.topSubMenu").mouseover(function() {
+									var sep = this.id.indexOf("_");
+									var first = Number(this.id.substring(7,sep));
+									var second = Number(this.id.substr(sep+1));
+									showPopup(first,second,"", "HEB");
+								});
+								$("div.topSubMenu").mouseout(function() {
+									var sep = this.id.indexOf("_");
+									var first = Number(this.id.substring(7,sep));
+									var second = Number(this.id.substr(sep+1));
+									hidePopup(first,second,"submenu");
+								});
+				 			  });
+							 </script>
+						</ul>
+					</div>
+				</div>
+
+				<!--    -->
+				
+				<div class="col-sm-3 col-md-2 col-xs-6 footer_div">
+					<div class="footer_link">
+						<h3>המאגר</h3>                        
+												
+				<ul> 
+												
+					<li><a href="//www.israeli-expert.co.il/repository">מאגר המומחים</a></li>  
+												
+					<li><a href="//www.israeli-expert.co.il/index2.php?id=5156&amp;lang=HEB">עצות לבחירת מומחה</a></li>  
+					
+				</ul>
+				
+					</div>
+				</div>
+				
+				<div class="col-sm-3 col-md-2 col-xs-6 footer_div">
+					<div class="footer_link">
+						<h3>השתלמויות</h3>                        
+												
+				<ul> 
+												
+					<li><a href="index2.php?id=102&lang=HEB">קורס בוררים</a></li>  
+												
+					<li><a href="index2.php?id=101&lang=HEB">קורס עדים מומחים</a></li>  
+												
+					<li><a href="index2.php?id=103&lang=HEB">קורס משולב (עדים מומחים + בוררים)</a></li>  
+					
+				</ul>
+				
+					</div>
+				</div>
+				
+				<div class="col-sm-3 col-md-2 col-xs-6 footer_div">
+					<div class="footer_link">
+						<h3>טפסים נוספים</h3>                        
+												
+				<ul> 
+												
+					<li><a href="//www.israeli-expert.co.il/index2.php?id=5146&amp;lang=HEB">בקשת הצעת מחיר לחו"ד</a></li>  
+												
+					<li><a href="//www.israeli-expert.co.il/index2.php?id=5145&amp;lang=HEB">טופס הזמנת חוות דעת</a></li>  
+												
+					<li><a href="loadedFiles/declaration.doc">תצהיר</a></li>  
+					
+				</ul>
+				
+					</div>
+				</div>
+				<script src='javascripts/privatePopup.js'></script>
+				   <script src='javascripts/popup.js'></script>
+
+				<div class="col-sm-12 col-md-3 col-xs-12 footer_div">
+					<div class="footer_link gtfooter">
+						<h3 class="ptfooter">
+							<img src="designFiles/icon-footer.png" alt="icon-footer" class="img-responsive footer-img">
+							<p class="opter-irt parapfootr">חזור למעלה</p>
+						</h3>                        
+		
+						<ul class="m-t-82 test">                            
+							<li>שד' מוריה 105, חיפה 34616</li>                            
+							<li>טל' <span class="ffoter-span">04-8244633 </span>,פקס <span class="ffoter-span">04-8113444</span></li>
+							<li><a class="ffoter-span" href="mailto:info@israeli-expert.co.il">info@israeli-expert.co.il</a></li>						</ul>
+					</div>
+				</div>
+			<!--</div>-->
+		</div>
+		<div class="copyright row">
+			<div class="row">
+				<div class="col-sm-12 col-xs-12 paddSmZ paddSmZL" style="border-top: 1px solid #514b4b; padding-top: 25px;">
+					<div class="col-sm-6  col-xs-12 ftr_btm2 paddSmZ paddSmZL">
+						<p>&copy; 2017 כל הזכויות שמורות למכון הישראלי לחוות דעת מומחים ובוררים</p>
+					</div>
+					<div class="col-sm-6  col-xs-12 text-left ftr_btm1 paddSmZ paddSmZL">
+						<p dir="ltr"><a href="http://www.interuse.co.il" target="_new"><img src="designFiles/InteruseAnimation.gif" alt="אינטריוז" /> בניית אתרים</a> &nbsp;&nbsp;&nbsp; <a href="http://yovdesign.com/" target="_new">yovdesign.com</a> :עיצוב</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<script>
+	$( document ).ready(function() {
+		$('.ptfooter').click(function(){
+		    $('html, body').animate({
+		        scrollTop: 0
+		    },500);
+		
+		    return false;
+		});
+		$('.treeplant li a.paraplus').click(function(){
+			$(this).toggleClass('paraplusClicked');
+		});
+	});
+</script>
+	
+
+	<script src="langFiles/HEB8.js"></script>
+
+</body>
+</html>

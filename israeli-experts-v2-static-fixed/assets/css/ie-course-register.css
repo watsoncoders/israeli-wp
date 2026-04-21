@@ -1,0 +1,47 @@
+/* Make sure the full form shows; avoid accidental overflow clipping */
+.container-fluid, .container, .row { overflow: visible; }
+
+/* Category tree/chips */
+.ie-chip-wrap {
+  margin: 10px 0 15px;
+}
+.ie-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  margin: 0 6px 6px 0;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  background: #f5f5f5;
+  font-size: 13px;
+  line-height: 1.4;
+}
+.ie-chip .ie-chip-x {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  font-size: 16px;
+  line-height: 1;
+  padding: 0 4px;
+  margin-left: 4px;
+  cursor: pointer;
+}
+#categories-tree .DefineTree {
+  margin: 0;
+  padding-right: 0;
+  list-style: none;
+}
+#categories-tree .DefineTree li { margin: 2px 0; }
+#categories-tree a.paraplus { cursor: pointer; }
+
+/* Legacy “collapse” sections should not hide the whole form by accident */
+.panel-collapse.line-tree.collapse {
+  display: none;
+}
+.panel-collapse.line-tree.collapse.in,
+.panel-collapse.line-tree.collapse.show {
+  display: block;
+}
+
+/* RTL niceties (the HTML is dir="rtl") */
+body[dir="rtl"] .ie-chip { direction: rtl; }

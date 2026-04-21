@@ -1,0 +1,1131 @@
+<form id="registerCourseForm" action="privateSaveNewExpert.php" method="post" enctype="multipart/form-data" onsubmit="return israeli_submitRegisterForm()">
+					<input type="hidden" name="courseName" value="קורס משולב">
+					<input type="hidden" name="courseId" value="103">
+					<input type="hidden" id="birthDate" name="birthDate">
+					<input type="hidden" id="catIds" name="catIds" value="">				
+					<input type="hidden" id="updating" name="updating" value="0">				
+					<input type="hidden" name="lang" value="HEB">
+				<input type="hidden" id="totalPay" name="totalPay" value="">				
+				<div class=" col-md-12  col-sm-12  col-xs-12 pagespecialpara br-botom">
+					<h2 class="para"><span class="para-num">א</span>פרטים אישיים</h2>
+					<div class="contcactfrom">
+							<div class="contact-right">
+								<div class="row ">
+									<div class="col-md-6 col-sm-6 col-xs-12 row-grid rowpadding">
+									<i class="fa fa-star font-icon"></i>
+									<input name="firstname" id="firstname" placeholder="שם פרטי" required="" type="text"> 
+									<label for="firstname" class="hidden-section">שם פרטי</label>
+									</div>
+								
+										<div class="col-md-6 col-sm-6 col-xs-12 row-grid rowpaading-1">
+										<i class="fa fa-star font-icon"></i>
+											<input name="lastname" placeholder="שם משפחה" id="lastname" required="" type="text">  
+											<label for="lastname" class="hidden-section">שם משפחה</label>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="row ">
+									<div class="col-md-3 col-sm-3 col-xs-12 row-grid rowpadding">
+									<input name="fldExtentName" placeholder="תואר לפני השם" id="fldExtentName" type="text"> 
+									<label for="fldExtentName" class="hidden-section">תואר לפני השם</label>
+									</div>
+									<div class="col-md-3 col-sm-3 col-xs-12 row-grid rowpadding">
+										<select name="gender" id="gender" class="option-form" type="text">
+										<option value="m">זכר</option>
+					   <option value="f">נקבה</option>
+    	                	            </select>
+									<label for="gender" class="hidden-section">מגדר</label>
+									</div>
+								
+										<div class="col-md-6 col-sm-6 col-xs-12 row-grid rowpaading-1">
+											<input name="identityNumber" placeholder="מס’ ת.ז." id="identityNumber" type="text">  
+											<label for="identityNumber" class="hidden-section">מס’ ת.ז.</label>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="row">
+								<div class="col-md-3 col-sm-3  col-xs-12 row-grid pdht15">
+								<h2 class="formpara">תאריך לידה</h2>
+								</div>
+									<div class="col-md-3 col-sm-3  col-xs-12 row-grid rowpadding pdht15">
+									<label for="birthYear" class="hidden-section">שנה</label>
+									<i style="z-index:100; margin-left: 10px;" class="fa fa-star font-icon"></i>
+									<select name="birthYear" id="birthYear" class="option-form" type="text">
+									 <option value="">שנה</option>
+									<option value="2007">2007</option><option value="2006">2006</option><option value="2005">2005</option><option value="2004">2004</option><option value="2003">2003</option><option value="2002">2002</option><option value="2001">2001</option><option value="2000">2000</option><option value="1999">1999</option><option value="1998">1998</option><option value="1997">1997</option><option value="1996">1996</option><option value="1995">1995</option><option value="1994">1994</option><option value="1993">1993</option><option value="1992">1992</option><option value="1991">1991</option><option value="1990">1990</option><option value="1989">1989</option><option value="1988">1988</option><option value="1987">1987</option><option value="1986">1986</option><option value="1985">1985</option><option value="1984">1984</option><option value="1983">1983</option><option value="1982">1982</option><option value="1981">1981</option><option value="1980">1980</option><option value="1979">1979</option><option value="1978">1978</option><option value="1977">1977</option><option value="1976">1976</option><option value="1975">1975</option><option value="1974">1974</option><option value="1973">1973</option><option value="1972">1972</option><option value="1971">1971</option><option value="1970">1970</option><option value="1969">1969</option><option value="1968">1968</option><option value="1967">1967</option><option value="1966">1966</option><option value="1965">1965</option><option value="1964">1964</option><option value="1963">1963</option><option value="1962">1962</option><option value="1961">1961</option><option value="1960">1960</option><option value="1959">1959</option><option value="1958">1958</option><option value="1957">1957</option><option value="1956">1956</option><option value="1955">1955</option><option value="1954">1954</option><option value="1953">1953</option><option value="1952">1952</option><option value="1951">1951</option><option value="1950">1950</option><option value="1949">1949</option><option value="1948">1948</option><option value="1947">1947</option><option value="1946">1946</option><option value="1945">1945</option><option value="1944">1944</option><option value="1943">1943</option><option value="1942">1942</option><option value="1941">1941</option><option value="1940">1940</option><option value="1939">1939</option><option value="1938">1938</option><option value="1937">1937</option><option value="1936">1936</option>									 
+									</select>
+									</div>
+										<div class="col-md-3 col-sm-3  col-xs-12 row-grid rowpaading-1 pdht15">
+									<label for="birthMonth" class="hidden-section">חודש</label>
+									<i style="z-index:100; margin-left: 10px;" class="fa fa-star font-icon"></i>
+									<select name="birthMonth" id="birthMonth" class="option-form" type="text">
+									 <option value="">חודש</option>
+									<option value="01">ינואר</option>
+				   <option value="02">פברואר</option>
+				   <option value="03">מרץ</option>
+				   <option value="04">אפריל</option>
+				   <option value="05">מאי</option>
+				   <option value="06">יוני</option>
+				   <option value="07">יולי</option>
+				   <option value="08">אוגוסט</option>
+				   <option value="09">ספטמבר</option>
+				   <option value="10">אוקטובר</option>
+				   <option value="11">נובמבר</option>
+				   <option value="12">דצמבר</option>
+									</select>
+									</div>
+									<div class="col-md-3 col-sm-3  col-xs-12 row-grid pdht15">
+									 <label for="birthDay" class="hidden-section">יום</label>
+									<i style="z-index:100; margin-left: 10px;" class="fa fa-star font-icon"></i>
+									<select name="birthDay" id="birthDay" class="option-form" type="text">
+									 <option value="">יום</option>
+									<option value="01">1</option><option value="02">2</option><option value="03">3</option><option value="04">4</option><option value="05">5</option><option value="06">6</option><option value="07">7</option><option value="08">8</option><option value="09">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option>
+									</select>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="row">
+									<div class="col-md-3 col-sm-3 col-xs-12 row-grid rowpadding">
+									<h2 class="formpara">אזור השירות</h2>
+									</div>
+									<div class="col-md-3 col-sm-3 col-xs-12 row-grid rowpadding">
+										<select name="fldDialZone" id="fldDialZone" class="option-form" type="text">
+                	                    <option value="">אזור חיוג</option>
+										<option value="02">02</option>
+								<option value="03">03</option>
+								<option value="04">04</option>
+								<option value="08">08</option>
+								<option value="09">09</option>
+    	                	            </select>
+										<label for="fldDialZone" class="hidden-section">אזור חיוג</label>
+									</div>
+								
+										<div class="col-md-6 col-sm-6 col-xs-12 row-grid rowpaading-1">
+											<input name="moreDetails" id="moreDetails" placeholder="פרטי מידע משלים אחר" type="text">  
+											<label for="moreDetails" class="hidden-section">פרטי מידע משלים אחר</label>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+					</div>
+					</div>
+					<div class=" col-md-12  col-sm-12  col-xs-12 pagespecialpara brtop">
+					<h2 class="para"><span class="para-num">ב</span>פרטי יצירת קשר</h2>
+					<p class="editing mty center resigter-margin"><i class="fa fa-star font-icon-1"></i>פרטי מידע יצירת קשר המפורטים להלן יופיעו באתר אלא אם כן תבחר לסמן שדה/ות כמוסתר/ים.</p>
+					
+					<div class="contcactfrom">
+							<div class="contact-right">
+								<div class="row">
+									<div class="col-md-6 col-sm-6 col-xs-12 row-grid rowpadding">
+										<h2 class="formpara">כתובת מגורים</h2>
+									</div>
+									<div class="col-md-6 col-sm-6 col-xs-12 row-grid rowpaading-1">
+										<h2 class="formpara">טלפונים, דוא"ל ואתר</h2>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-4 col-sm-4 col-xs-12 row-grid rowpadding">
+									<input name="address" placeholder="רחוב" id="address" type="text">
+									<label for="address" class="hidden-section">רחוב</label>
+									</div>
+									<div class="col-md-2 col-sm-2 col-xs-12 row-grid rowpadding">
+									<input name="streetNo" placeholder="מס' בית" id="streetNo" type="text">
+									<label for="streetNo" class="hidden-section">מס' בית</label>
+									</div>
+									<div class="col-md-4  col-sm-4  col-xs-12 row-grid rowpaading-1">
+										<i class="fa fa-star font-icon"></i>
+									<input name="cellphone" placeholder="מס' טלפון סלולרי" id="cellphone" required="" type="text">
+									<label for="cellphone" class="hidden-section">מס' טלפון סלולרי</label>
+									</div>
+									<div class="col-md-2  col-sm-2  col-xs-12  col-sm-2  col-xs-12 row-grid pdht15">
+										<div class="squaredTwo checkboxset">
+											<fieldset>
+												<legend class="hidden-section">checkbox </legend>
+												<input value="" id="hideCellphone" name="hideCellphone" type="checkbox">
+												<label for="hideCellphone" class="hidden-section">הסתר</label>
+											</fieldset>
+										</div>
+										<label>הסתר</label>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="row">
+									<div class="col-md-6 col-sm-6 col-xs-12 row-grid rowpadding">
+									<input name="city" placeholder="ישוב" id="city" type="text">
+									<label for="city" class="hidden-section">ישוב</label>
+									</div>
+									
+										<div class="col-md-4  col-sm-4  col-xs-12 row-grid rowpaading-1">
+									<input name="phone" placeholder="מס' טלפון בבית" id="phone" type="text">
+									<label for="phone" class="hidden-section">מס' טלפון בבית</label>
+									</div>
+									<div class="col-md-2  col-sm-2  col-xs-12 row-grid pdht15">
+										<div class="squaredTwo checkboxset">
+											<fieldset>
+												<legend class="hidden-section">checkbox </legend>
+												<input value="" id="hidePhone" name="hidePhone" type="checkbox">
+												<label for="hidePhone" class="hidden-section">הסתר</label>
+											</fieldset>
+										</div>
+										<label>הסתר</label>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							<div class="row">
+									<div class="col-md-6 col-sm-6 col-xs-12 row-grid rowpadding">
+									<input name="zipcode" placeholder="מיקוד" id="zipcode" type="text">
+									<label for="zipcode" class="hidden-section">מיקוד</label>
+									</div>
+									
+										<div class="col-md-4  col-sm-4  col-xs-12 row-grid rowpaading-1">
+									<input name="phone2" placeholder="מס' טלפון נוסף" id="phone2" type="text">
+									<label for="phone2" class="hidden-section">מס' טלפון נוסף</label>
+									</div>
+									<div class="col-md-2  col-sm-2  col-xs-12 row-grid pdht15">
+										<div class="squaredTwo checkboxset">
+											<fieldset>
+												<legend class="hidden-section">checkbox </legend>
+												<input value="" id="hidePhone2" name="hidePhone2" type="checkbox">
+												<label for="hidePhone2" class="hidden-section">הסתר</label>
+											</fieldset>
+										</div>
+										<label>הסתר</label>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							<div class="row">
+									<div class="col-md-6 col-sm-6 col-xs-12 row-grid rowpadding">
+										<input name="country" placeholder="מדינה" id="country" type="text">
+										<label for="country" class="hidden-section">מדינה</label>
+									</div>
+									
+										<div class="col-md-4  col-sm-4  col-xs-12 row-grid rowpaading-1">
+									<input name="fax" placeholder="פקס בבית" id="fax" type="text">
+									<label for="fax" class="hidden-section">פקס בבית</label>
+									</div>
+									<div class="col-md-2  col-sm-2  col-xs-12 row-grid pdht15">
+										<div class="squaredTwo checkboxset">
+											<fieldset>
+												<legend class="hidden-section">checkbox </legend>
+												<input value="" id="hideFax" name="hideFax" type="checkbox">
+												<label for="hideFax" class="hidden-section">הסתר</label>
+											</fieldset>
+										</div>
+										<label>הסתר</label>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="row">
+									<div class="col-md-6 col-sm-6 col-xs-12 row-grid rowpadding">
+									<input name="mailAddress" placeholder="כתובת למשלוח דואר (אם היא שונה מהכתובת הנ&quot;ל)" id="mailAddress" type="text">
+									<label for="mailAddress" class="hidden-section">כתובת למשלוח דואר (אם היא שונה מהכתובת הנ"ל)</label>
+									</div>
+
+									<div class="col-md-4 col-sm-4 col-xs-12 row-grid rowpaading-1">
+										<i class="fa fa-star font-icon"></i>
+										<input name="email" placeholder="דוא&quot;ל" required="" id="email" type="text"> 
+										<label class="hidden-section" for="email">דוא"ל</label>
+									</div>
+									<div class="col-md-2  col-sm-2  col-xs-12 row-grid pdht15">
+										<div class="squaredTwo checkboxset">
+											<fieldset>
+												<legend class="hidden-section">checkbox </legend>
+												<input value="" id="hideEmail" name="hideEmail" type="checkbox">
+												<label for="hideEmail" class="hidden-section">הסתר</label>
+											</fieldset>
+										</div>
+										<label>הסתר</label>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="row">
+									<div class="col-md-6 col-sm-6 col-xs-12 row-grid rowpadding">
+										<div class="squaredTwo checkboxset">
+											<fieldset>
+												<legend class="hidden-section">checkbox </legend>
+												<input value="" id="hideAddress" name="hideAddress" type="checkbox">
+												<label for="hideAddress" class="hidden-section">האם להסתיר את הכתובת?</label>
+											</fieldset>
+										</div>
+										<label>האם להסתיר את הכתובת?</label>
+									</div>
+									
+										<div class="col-md-4 col-sm-4 col-xs-12 row-grid rowpaading-1">
+                               <input name="mySite" placeholder="אתר אינטרנט" id="mySite" type="text">
+                                <label for="mySite" class="hidden-section">אתר אינטרנט</label>
+									</div>
+									
+									<div class="clearfix"></div>
+								</div>
+								</div>
+								</div>
+								</div>
+					<div class=" col-md-12  col-sm-12  col-xs-12 pagespecialpara brtop">
+					<h2 class="para"><span class="para-num">ג</span>פרטי רשתות חברתיות</h2>
+								<div class="contcactfrom">
+							<div class="contact-right">
+								<div class="row">
+									<div class="col-md-6 col-sm-6 col-xs-12 row-grid rowpadding">
+									<input name="linkedinPage" placeholder="כתובת דף לינקדין" id="linkedinPage" type="text">
+									<label for="linkedinPage" class="hidden-section">כתובת דף לינקדין</label>
+									</div>
+									
+										<div class="col-md-6 col-sm-6 col-xs-12 row-grid rowpaading-1">
+										
+									<input name="skype" placeholder="שם ב-skype" id="skype" type="text">
+									<label for="skype" class="hidden-section">שם ב-skype</label>
+									</div>
+									
+									<div class="clearfix"></div>
+								</div>
+								<div class="row">
+									<div class="col-md-6 col-sm-6 col-xs-12 row-grid rowpadding">
+									<input name="facebookPage" placeholder="כתובת דף פייסבוק" id="facebookPage" type="text">
+									<label for="facebookPage" class="hidden-section">כתובת דף פייסבוק</label>
+									</div>
+									
+										<div class="col-md-6 col-sm-6 col-xs-12 row-grid rowpaading-1">
+										
+									<input name="twitterPage" placeholder="כתובת ב-טוויטר" id="twitterPage" type="text">
+									<label for="twitterPage" class="hidden-section">כתובת ב-טוויטר</label>
+									</div>
+									
+									<div class="clearfix"></div>
+								</div>
+								</div>
+								</div>
+								</div>
+								<div class=" col-md-12  col-sm-12  col-xs-12 pagespecialpara brtop">
+					<h2 class="para"><span class="para-num">ד</span>פרטי השכלה</h2>
+								 <div class="contcactfrom">
+                <div class="contact-right">
+                         <div class="row">
+                            <div class="col-md-3 col-sm-3  col-xs-12 row-grid rowpadding">
+                                <label for="elementarySchool" class="hidden-section">שם בי"ס יסודי</label>
+                                <input name="elementarySchool" id="elementarySchool" type="text" placeholder="שם בי&quot;ס יסודי">
+                            </div>
+                            <div class="col-md-3 col-sm-3  col-xs-12 row-grid rowpadding">
+                                <label for="elementarySchoolCity" class="hidden-section">עיר/מדינה</label>
+                                <input name="elementarySchoolCity" id="elementarySchoolCity" type="text" placeholder="עיר/מדינה">
+                            </div>
+                            <div class="col-md-2 col-sm-2  col-xs-12 row-grid rowpadding" style="padding-top: 5px; line-height: 14px; ">
+                                פרטי בי"ס יסודי<br>לא יופיעו באתר
+                            </div>
+                            <div class="col-md-4 col-sm-4  col-xs-12 row-grid rowpaading-1">
+                                <label for="elementarySchoolYears" class="hidden-section">מס שנות לימוד</label>
+                                <input name="elementarySchoolYears" id="elementarySchoolYears" type="text" class="updateYears" placeholder="מס שנות לימוד">
+                            </div>
+
+                            <div class="clearfix"></div>
+                        </div>
+						
+                         <div class="row">
+                            <div class="col-md-3 col-sm-3  col-xs-12 row-grid rowpadding">
+                                <label for="highSchool" class="hidden-section">שם בי"ס תיכון/מקצועי</label>
+                                <input name="highSchool" id="highSchool" type="text" placeholder="שם בי&quot;ס תיכון/מקצועי">
+                            </div>
+                            <div class="col-md-3 col-sm-3  col-xs-12 row-grid rowpadding">
+                                <label for="highSchoolCity" class="hidden-section">עיר/מדינה</label>
+                                <input name="highSchoolCity" id="highSchoolCity" type="text" placeholder="עיר/מדינה">
+                            </div>
+                            <div class="col-md-2 col-sm-2  col-xs-12 row-grid rowpadding">
+                                <label for="highSchoolFaculty" class="hidden-section">מגמה</label>
+                                <input name="highSchoolFaculty" id="highSchoolFaculty" type="text" placeholder="מגמה">
+                            </div>
+                            <div class="col-md-4 col-sm-4  col-xs-12 row-grid rowpaading-1">
+                                <label for="schoolYears" class="hidden-section">מס שנות לימוד</label>
+                                <input name="schoolYears" id="schoolYears" type="text" class="updateYears" placeholder="מס שנות לימוד">
+                            </div>
+
+                            <div class="clearfix"></div>
+                        </div>
+						
+                        <div class="row">
+                            <div class="col-md-3 col-sm-3  col-xs-12 row-grid rowpadding">
+                                <label for="university1" class="hidden-section">מוסד להשכלה גבוהה</label>
+                                <input name="university1" id="university1" type="text" placeholder="מוסד להשכלה גבוהה">
+                            </div>
+                            <div class="col-md-3 col-sm-3  col-xs-12 row-grid rowpadding">
+                                <label for="university1City" class="hidden-section">עיר/מדינה</label>
+                                <input name="university1City" id="university1City" type="text" placeholder="עיר/מדינה">
+                            </div>
+                            <div class="col-md-2 col-sm-2  col-xs-12 row-grid rowpadding">
+                                <label for="university1Faculty" class="hidden-section">פקולטה</label>
+                                <input name="university1Faculty" id="university1Faculty" type="text" placeholder="פקולטה">
+                            </div>
+                            <div class="col-md-1  col-sm-1  col-xs-12 row-grid rowpaading-1 pdL0">
+                                <label for="university1Years" class="hidden-section">מס שנות לימוד</label>
+                                <input name="university1Years" id="university1Years" type="text" class="updateYears" placeholder="שנה">
+
+                            </div>
+                            <div class="col-md-2  col-sm-2  col-xs-12 row-grid pdL0">
+                                <label for="university1Degree" class="hidden-section">תואר</label>
+                                <input name="university1Degree" id="university1Degree" type="text" placeholder="תואר">
+                            </div>
+
+                            <div class="col-md-1  col-sm-1  col-xs-12 row-grid pdht15">
+                                <i class="fa fa-plus icoNPlsS" id="addsasa"></i>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="row" id="itemsaa"></div>
+
+						<script>
+							$(document).ready(function() {
+								var nextSchoolId = 2;
+								$("#addsasa").click(function (e) {
+										$("#itemsaa").append('<div class="col-md-12 col-sm-12" style="padding:0px;margin-top:10px;"><div class="col-md-3 col-sm-3  col-xs-12 row-grid rowpadding"><label for="university'+nextSchoolId+'" class="hidden-section">מוסד להשכלה גבוהה</label><input name="university'+nextSchoolId+'" id="university'+nextSchoolId+'" type="text" placeholder="מוסד להשכלה גבוהה"></div><div class="col-md-3 col-sm-3  col-xs-12 row-grid rowpadding"><label for="university'+nextSchoolId+'City" class="hidden-section">עיר/מדינה</label><input name="university'+nextSchoolId+'City" id="university'+nextSchoolId+'City" type="text" placeholder="עיר/מדינה"></div><div class="col-md-2 col-sm-2  col-xs-12 row-grid rowpadding"><label for="university'+nextSchoolId+'Faculty" class="hidden-section">פקולטה</label><input name="university'+nextSchoolId+'Faculty" id="university'+nextSchoolId+'Faculty" type="text" placeholder="פקולטה"></div><div class="col-md-1  col-sm-1  col-xs-12 row-grid rowpaading-1"><label for="university'+nextSchoolId+'Years" class="hidden-section">מס שנות לימוד</label><input name="university'+nextSchoolId+'Years" id="university'+nextSchoolId+'Years" type="text" placeholder="שנה"></div><div class="col-md-2  col-sm-2  col-xs-12 row-grid pdht15"><label for="university'+nextSchoolId+'Degree" class="hidden-section">תואר</label><input name="university'+nextSchoolId+'Degree" id="university'+nextSchoolId+'Degree" type="text" placeholder="תואר"></div><div class="col-md-1  col-sm-1  col-xs-12 row-grid pdht15 delete remove-text-field"><i class="fa fa-minus icoNPlsSec111" ></i></div></div>');
+										$("#university"+nextSchoolId+"Years").on("change", updateTotalYears);
+										nextSchoolId++;
+								});
+								$("body").on("click", ".delete", function (e) {
+										$(this).parent("div").remove();
+										updateTotalYears();
+								});
+								$(".updateYears").on("change", updateTotalYears);
+								});
+								function updateTotalYears()
+								{
+										var count = 0;
+										if (isNumeric($("#elementarySchoolYears").val()))
+												count += parseInt($("#elementarySchoolYears").val(), 10);
+										if (isNumeric($("#schoolYears").val()))
+												count += parseInt($("#schoolYears").val(), 10);
+										for (i=1; i<20; i++)
+												if (isNumeric($("#university"+i+"Years").val()))
+														count += parseInt($("#university"+i+"Years").val(), 10);
+										$("#totalYears").val(count);
+								}
+								function isNumeric(n) {
+									return !isNaN(parseFloat(n)) && isFinite(n);
+								}
+                        </script>
+                        
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6  col-xs-12 row-grid rowpadding">
+                                <label for="moreSchoolDetails" class="hidden-section">פרטי מידע משלים אחר</label>
+                                <input name="moreSchoolDetails" id="moreSchoolDetails" type="text" placeholder="פרטי מידע משלים אחר">
+                            </div>
+                            <div class="col-md-2 col-sm-2  col-xs-12 row-grid rowpadding">
+                                סה"כ שנות לימוד:
+                            </div>
+                            <div class="col-md-4 col-sm-4  col-xs-12 row-grid rowpaading-1">
+                                <label for="totalYears" class="hidden-section">סה"כ שנות לימוד</label>
+                                <input name="totalYears" id="totalYears" type="text" placeholder="סה&quot;כ שנות לימוד" disabled="">
+                            </div>
+
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="row">
+                            <p class="frm-pargrph col-md-12">פרט את ראשי התיבות של התואר והיכן נרכש יש לפרט את שם המוסד, העיר והמדינה. אם ציינת 
+                      			       תארים, עליך לפרט ולהסביר אותם באופן שכל אדם ממוצע ושאינו קשור לתחום יבין אותם. למשל
+			                           תואר DOCTOR of MEDICINE : MD ד"ר - דוקטורט ברפואה - למדתי בבולוניה, איטליה.</p>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class=" col-md-12  col-sm-12  col-xs-12 pagespecialpara brtop">
+            <h2 class="para"><span class="para-num">ה</span>ידיעת שפות</h2>
+            <div class="contcactfrom">
+                <div class="contact-right">
+                        
+							<div id="formsdivs">
+                        <div class="row" id="formfields1">
+                            <div class="col-md-3  col-sm-3  col-xs-12 row-grid pdht15">
+				<span class="spanparalastN formpara"> שפה</span>
+                                <label for="lang1" class="hidden-section">עברית</label>
+                                <input name="lang1" id="lang1" value="עברית" type="text">
+                            </div>
+                            <div class="col-md-3  col-sm-3  col-xs-12 row-grid pdht15">
+				<span class="spanparalastN formpara">דיבור                    </span>
+                                <label for="lang1speak" class="hidden-section">רמת הדיבור בעברית</label>
+                                <select name="lang1speak" id="lang1speak" class="option-form" type="text">
+								<option value="">כלל לא</option><option value="1">שפת אם</option><option value="2">טובה</option><option value="3">בסיסית</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3  col-sm-3  col-xs-12 row-grid pdht15">
+				<span class="spanparalastN formpara">קריאה      </span>
+                                <label for="lang1read" class="hidden-section">רמת הקריאה בעברית</label>
+                                <select name="lang1read" id="lang1read" class="option-form" type="text">
+								<option value="">כלל לא</option><option value="1">שפת אם</option><option value="2">טובה</option><option value="3">בסיסית</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3  col-sm-3  col-xs-12 row-grid pdht15">
+				<span class="spanparalastN formpara">כתיבה  </span>
+                                <label for="lang1write" class="hidden-section">רמת הכתיבה בעברית</label>
+                                <select name="lang1write" id="lang1write" class="option-form" type="text">
+								<option value="">כלל לא</option><option value="1">שפת אם</option><option value="2">טובה</option><option value="3">בסיסית</option>
+                                </select>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="row" id="formfields2">
+                            <div class="col-md-3  col-sm-3  col-xs-12 row-grid pdht15">
+                                <input name="lang2" id="lang2" value="אנגלית" type="text">
+                                <label for="lang2" class="hidden-section">אנגלית</label>
+                            </div>
+                            <div class="col-md-3  col-sm-3  col-xs-12 row-grid pdht15">
+                                <label for="lang2speak" class="hidden-section">רמת הדיבור באנגלית</label>
+                                <select id="lang2speak" name="lang2speak" class="option-form" type="text">
+								<option value="">כלל לא</option><option value="1">שפת אם</option><option value="2">טובה</option><option value="3">בסיסית</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3  col-sm-3  col-xs-12 row-grid pdht15">
+                                <label for="lang2read" class="hidden-section">רמת הקריאה באנגלית</label>
+                                <select name="lang2read" id="lang2read" class="option-form" type="text">
+								<option value="">כלל לא</option><option value="1">שפת אם</option><option value="2">טובה</option><option value="3">בסיסית</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3  col-sm-3  col-xs-12 row-grid pdht15">
+                                <label for="lang2write" class="hidden-section">רמת הקריאה באנגלית</label>
+                                <select name="lang2write" id="lang2write" class="option-form" type="text">
+								<option value="">כלל לא</option><option value="1">שפת אם</option><option value="2">טובה</option><option value="3">בסיסית</option>
+                                </select>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <div class="row" id="formfields3">
+                            <div class="col-md-3  col-sm-3  col-xs-12 row-grid pdht15">
+                                <input name="lang3" id="lang3" value="ערבית" type="text">
+                                <label for="lang3" class="hidden-section">ערבית</label>
+                            </div>
+                            <div class="col-md-3  col-sm-3  col-xs-12 row-grid pdht15">
+                                <label for="lang3speak" class="hidden-section">רמת הדיבור בערבית</label>
+                                <select name="lang3speak" id="lang3speak" class="option-form" type="text">
+ 								<option value="">כלל לא</option><option value="1">שפת אם</option><option value="2">טובה</option><option value="3">בסיסית</option>
+                               </select>
+                            </div>
+                            <div class="col-md-3  col-sm-3  col-xs-12 row-grid pdht15">
+                                <label for="lang3read" class="hidden-section">רמת הקריאה בערבית</label>
+                                <select name="lang3read" id="lang3read" class="option-form" type="text">
+								<option value="">כלל לא</option><option value="1">שפת אם</option><option value="2">טובה</option><option value="3">בסיסית</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3  col-sm-3  col-xs-12 row-grid pdht15">
+                                <label for="lang3write" class="hidden-section">רמת הקריאה בערבית</label>
+                                <select name="lang3write" id="lang3write" class="option-form" type="text">
+								<option value="">כלל לא</option><option value="1">שפת אם</option><option value="2">טובה</option><option value="3">בסיסית</option>
+                                </select>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        </div>
+                       <div class="row IconPlus">
+                            <div class="col-md-3  col-sm-3  col-xs-12 row-grid pdht15">
+                                <i id="addnewdivfield" onclick="adddd();" class="fa fa-plus"></i>
+                          <i id="delete12" class="fa fa-minus delete12" onclick="removefield();"></i>
+                            </div>
+                        </div>
+						<script>
+							var defaultvalue=3;
+								function adddd(){
+									defaultvalue++;
+									$("#formsdivs").append('<div class="row" id="formfields'+defaultvalue+'"><div class="col-md-3  col-sm-3  col-xs-12 row-grid pdht15"><input name="lang'+defaultvalue+'" id="lang'+defaultvalue+'" value="" required type="text"><label for="lang'+defaultvalue+'" class="hidden-section">שם השפה הנוספת</label></div><div class="col-md-3  col-sm-3  col-xs-12 row-grid pdht15"> <label for="lang'+defaultvalue+'speak" class="hidden-section">רמת הדיבור בשפה הנוספת</label><select name="lang'+defaultvalue+'speak" id="lang'+defaultvalue+'speak" class="option-form" type="text"><option value="">כלל לא</option><option value="1">שפת אם</option><option value="2">טובה</option><option value="3">בסיסית</option></select></div> <div class="col-md-3  col-sm-3  col-xs-12 row-grid pdht15"><label for="lang'+defaultvalue+'read" class="hidden-section">רמת הקריאה בשפה הנוספת</label><select name="lang'+defaultvalue+'read" id="lang'+defaultvalue+'read" class="option-form" type="text"><option value="">כלל לא</option><option value="1">שפת אם</option><option value="2">טובה</option><option value="3">בסיסית</option></select></div><div class="col-md-3  col-sm-3  col-xs-12 row-grid pdht15"><label for="lang'+defaultvalue+'write" class="hidden-section">רמת הכתיבה בשפה הנוספת</label><select name="lang'+defaultvalue+'write" id="lang'+defaultvalue+'write" class="option-form" type="text"><option value="">כלל לא</option><option value="1">שפת אם</option><option value="2">טובה</option><option value="3">בסיסית</option></select></div><div class="clearfix"></div></div>');
+									if(defaultvalue>3){
+										$("#delete12").show();
+									}
+								}
+								function removefield(){
+									if(defaultvalue==4){
+										$("#formfields"+defaultvalue).remove();
+										defaultvalue--;
+										$("#delete12").hide();
+									
+									}else{
+										$("#formfields"+defaultvalue).remove();
+										defaultvalue--;
+									}
+								}
+						</script>
+						
+                </div>
+            </div>
+								</div>
+					<div class=" col-md-12  col-sm-12  col-xs-12 pagespecialpara brtop">
+					<h2 class="para"><span class="para-num">ו</span>פרטי מקצוע ועיסוק</h2>
+								<div class="contcactfrom">
+							<div class="contact-right">
+								
+								<div class="row">
+									<div class="col-md-6 col-sm-6 col-xs-12 row-grid pdht15 extra_mb_field">
+									<p>
+									<input name="fldProfession" placeholder="מקצועך" id="fldProfession" type="text">
+									<label for="fldProfession" class="hidden-section">מקצועך</label>
+									</p><p>
+									<input name="fldGeneralLongevity" placeholder="מספר שנות עבודה במקצוע" id="fldGeneralLongevity" type="number">
+									<label for="fldGeneralLongevity" class="hidden-section">מספר שנות עבודה במקצוע</label>
+									</p>
+									<p>
+									<input name="currBiz" placeholder="עיסוקך הנוכחי והגדרת תפקידך" id="currBiz" type="text">
+									<label for="currBiz" class="hidden-section">עיסוקך הנוכחי והגדרת תפקידך</label>
+									
+									</p>
+									<p>
+									<input name="fldSpecialization" placeholder="תחום התמחות מקצועית" id="fldSpecialization" type="text">
+									<label for="fldSpecialization" class="hidden-section">תחום התמחות מקצועית</label>
+									</p>
+									<p>
+									<input name="licenseNo" placeholder="עו&quot;ד/רופא – מספר הרשיון" id="licenseNo" type="text">
+									<label for="licenseNo" class="hidden-section">עו"ד/רופא – מספר הרשיון</label>
+									</p>
+									</div>
+									<div class="col-md-6 col-sm-6 col-xs-12 row-grid pdht15">
+									 <div class="m-t-35">
+									
+									 <div class="squaredTwo checkboxset">
+									  <fieldset>
+										  <legend class="hidden-section">checkbox </legend>
+									<input value="None" id="experience1" name="experience1" type="checkbox">
+									<label for="experience1" class="hidden-section">האם הכנת חוות דעת מקצועית בחמש השנים האחרונות?</label>
+									</fieldset>
+									</div>
+									<label class="lablSec">האם הכנת חוות דעת מקצועית בחמש השנים האחרונות?</label>
+									<textarea id="experience2" name="experience2" class="contmil90" placeholder="ככל שהתשובה חיובית אנא פרט בשתיים שלוש שורות"></textarea>         
+									</div>
+									<div class="">
+									<div class="squaredTwo checkboxset">
+									 <fieldset>
+										  <legend class="hidden-section">checkbox </legend>
+									  <input value="None" id="experience3" name="experience3" type="checkbox">
+									  <label for="experience3" class="hidden-section">האם הופעת כעד/ה מומחה/ית בבית המשפט בחמש השנים האחרונות?</label>
+									</fieldset>
+									</div>
+									
+									
+									<label class="lablSec">האם הופעת כעד/ה מומחה/ית בבית המשפט בחמש השנים האחרונות?</label>
+									<textarea id="experience4" name="experience4" class="contmil909" placeholder="ככל שהתשובה חיובית אנא פרט בשתיים שלוש שורות"></textarea>
+								
+									</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							
+								</div>
+								</div>
+								</div>
+					<div class=" col-md-12  col-sm-12  col-xs-12 pagespecialpara brtop">
+					<h2 class="para"><span class="para-num">ז</span>פרטי מקום העבודה</h2>
+						<div class="contcactfrom">
+							<div class="contact-right">
+								<div class="row">
+									<div class="col-md-6 col-sm-6  col-xs-12 row-grid rowpadding">
+										<input name="workplace" placeholder="שם המקום בו הינך מועסק" id="workplace" type="text">
+										<label for="workplace" class="hidden-section">שם המקום בו הינך מועסק</label>
+									</div>
+									<div class="col-md-6  col-sm-6  col-xs-12 row-grid rowpaading-1">
+										<input name="workphone" placeholder="מס טלפון בעבודה" id="workphone" type="text">
+										<label for="workphone" class="hidden-section">מס טלפון בעבודה</label>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="row">
+									<div class="col-md-6 col-sm-6  col-xs-12 row-grid rowpadding">
+										<input name="fldLongevity" placeholder="מספר שנות העבודה בעיסוקך הנוכחי" id="fldLongevity" type="number">
+										<label for="fldLongevity" class="hidden-section">מספר שנות העבודה בעיסוקך הנוכחי</label>
+									</div>
+									<div class="col-md-6  col-sm-6  col-xs-12 row-grid rowpaading-1">
+										<input name="workfax" placeholder="פקס בעבודה" id="workfax" type="text">
+										<label for="workfax" class="hidden-section">פקס בעבודה</label>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="row">
+									<div class="col-md-6 col-sm-6  col-xs-12 row-grid rowpadding">
+										<input name="workweb" placeholder="לינק לאתר מקום העבודה" id="workweb" type="text">
+										<label for="workweb" class="hidden-section">לינק לאתר מקום העבודה</label>
+									</div>
+									<div class="col-md-6 col-sm-6  col-xs-12 row-grid rowpaading-1">
+										<input name="workaddress" placeholder="כתובת מקום העבודה" id="workaddress" type="text">
+										<label for="workaddress" class="hidden-section">כתובת מקום העבודה</label>
+									</div>
+								</div>		
+								<div class="row">
+									<div class="col-md-6 col-sm-6  col-xs-12 row-grid rowpadding">
+										<input name="workaddress1" placeholder="כתובת סניף נוסף" id="workaddress1" type="text">
+										<label for="workaddress1" class="hidden-section">כתובת סניף נוסף</label>
+									</div>
+									<div class="col-md-6 col-sm-6  col-xs-12 row-grid rowpaading-1">
+										<input name="workaddress2" placeholder="כתובת סניף נוסף" id="workaddress2" type="text">
+										<label for="workaddress2" class="hidden-section">כתובת סניף נוסף</label>
+									</div>
+								</div>		
+							</div>
+						</div>
+					</div>
+					<div class=" col-md-12  col-sm-12  col-xs-12 pagespecialpara brtop">
+					<h2 class="para"><span class="para-num">ח</span>נגישות מקום העבודה</h2>
+						<div class="contcactfrom">
+							<div class="contact-right">
+								<div class="row">
+									<div class="col-md-6 col-sm-6  col-xs-12 row-grid rowpadding icon-input-block">
+										<i class="fa fa-bus ii-icon"></i> <input name="accessBuses" placeholder="מספרי קווי אוטובוס" id="accessBuses" type="text">
+										<label for="accessBuses" class="hidden-section">מספרי קווי אוטובוס</label>
+									</div>
+									<div class="col-md-6 col-sm-6  col-xs-12 row-grid rowpaading-1 icon-input-block">
+										<i class="fa fa-train ii-icon"></i> <input name="accessTrain" placeholder="תחנת רכבת קרובה" id="accessTrain" type="text">
+										<label for="accessTrain" class="hidden-section">תחנת רכבת קרובה</label>
+									</div>
+								</div>		
+								<div class="row">
+									<div class="col-md-6 col-sm-6  col-xs-12 row-grid rowpadding icon-input-block">
+										<span class="fa-stack fa-3x ii-icon" style="font-size: 10px" "=""><i class="fa fa-square-o fa-stack-2x" style="font-size:22px"></i>
+										  <strong class="fa-stack-1x icon-text" style="font-size: 12px; margin-top:1px">P</strong>
+										</span>
+										<input name="accessPark" placeholder="חניון קרוב" id="accessPark" type="text">
+										<label for="accessPark" class="hidden-section">חניון קרוב</label>
+									</div>
+									<div class="col-md-6 col-sm-6  col-xs-12 row-grid rowpaading-1 icon-input-block">
+										<i class="fa fa-coffee ii-icon"></i> <input name="accessCoffee" placeholder="בית קפה קרוב" id="accessCoffee" type="text">
+										<label for="accessCoffee" class="hidden-section">בית קפה קרוב</label>
+									</div>
+								</div>		
+								<div class="row">
+									<div class="col-md-6 col-sm-6  col-xs-12 row-grid rowpadding">
+										<div class="squaredTwo checkboxset">
+											<fieldset>
+												<legend class="hidden-section">checkbox </legend>
+												<input value="" id="accessDisabled" name="accessDisabled" type="checkbox">
+												<label for="accessDisabled" class="hidden-section">האם הבניין מונגש לנכים?</label>
+											</fieldset>
+										</div>
+										<label class="lablSec">האם הבניין מונגש לנכים?</label>
+									</div>
+									<div class="col-md-6 col-sm-6  col-xs-12 row-grid rowpaading-1">
+										<div class="squaredTwo checkboxset">
+											<fieldset>
+												<legend class="hidden-section">checkbox </legend>
+												<input value="" id="accessElevator" name="accessElevator" type="checkbox">
+												<label for="accessElevator" class="hidden-section">האם יש מעלית בבניין?</label>
+											</fieldset>
+										</div>
+										<label class="lablSec">האם יש מעלית בבניין?</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class=" col-md-12  col-sm-12  col-xs-12 pagespecialpara brtop">
+					<h2 class="para"><span class="para-num">ט</span>חברות בארגונים מקצועיים</h2>
+					<div class="contcactfrom">
+					<div class="contact-right">
+					<div id="orgsdivs">
+					<div class="row">
+						<div class="col-md-6 col-sm-6  col-xs-12 row-grid rowpadding">
+							<input name="org1" placeholder="חבר בארגון" id="org1" type="text">
+							<label for="org1" class="hidden-section">חבר בארגון</label>
+						</div>
+						<div class="col-md-6 col-sm-6  col-xs-12 row-grid rowpaading-1">
+							<input name="org1link" id="org1link" placeholder="לינק לאתר הארגון" type="text">
+							<label for="org1link" class="hidden-section">לינק לאתר הארגון</label>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					</div>
+					</div>
+                       <div class="row IconPlus">
+                            <div class="col-md-3  col-sm-3  col-xs-12 row-grid pdht15">
+								<i id="addneworgfield" onclick="addOrg();" class="fa fa-plus"></i>
+                        		<i id="delete13" class="fa fa-minus delete12" onclick="removeOrg();"></i>
+                            </div>
+                        </div>
+						<script>
+							var orgvalue=1;
+								function addOrg(){
+									orgvalue++;
+									$("#orgsdivs").append('<div class="row" id="orgfields'+orgvalue+'"><div class="col-md-6 col-sm-6  col-xs-12 row-grid rowpadding"><input name="org'+orgvalue+'" placeholder="חבר בארגון" id="org'+orgvalue+'" type="text"><label for="org'+orgvalue+'" class="hidden-section">חבר בארגון</label></div><div class="col-md-6 col-sm-6  col-xs-12 row-grid rowpaading-1"><input name="org'+orgvalue+'link" id="org'+orgvalue+'link" placeholder="לינק לאתר הארגון" type="text"><label for="org'+orgvalue+'link" class="hidden-section">לינק לאתר הארגון</label></div><div class="clearfix"></div></div>');
+									if(orgvalue>1){
+										$("#delete13").show();
+									}
+								}
+								function removeOrg(){
+									$("#orgfields"+orgvalue).remove();
+									orgvalue--;
+									if(orgvalue==1)
+										$("#delete13").hide();
+								}
+						</script>
+					</div>
+					</div>
+								
+					<div class=" col-md-12  col-sm-12  col-xs-12 pagespecialpara brtop">
+					<h2 class="para"><span class="para-num">י</span>אבקש לצרף אותי לקטגוריות הבאות        </h2>
+								<div class="contcactfrom">
+							<div class="contact-right">
+								
+								<div class="row">
+									<div class="col-md-7 col-sm-7 col-xs-12 row-grid pdht15">
+		                                <div class="rltdivp">
+													<ul class="DefineTree treeplant">
+													<li><a data-toggle="collapse" href="#collapse1" class="fromtree insExtra"></a><span>עדים מומחים</span>
+													<ul id="collapse1" class="panel-collapse line-tree collapse in"><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse2"></a><a href="javascript:void(0)" class="paraplus">משפטי/עורכי דין</a><ul id="collapse2" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('אזרחי',254)" class="paraplus">אזרחי</a></li><li><a href="javascript:mygetvaluetodicv('אישות',255)" class="paraplus">אישות</a></li><li><a href="javascript:mygetvaluetodicv('אינטרנט',256)" class="paraplus">אינטרנט</a></li><li><a href="javascript:mygetvaluetodicv('אמנת האג להחזרת ילדים חטופים',257)" class="paraplus">אמנת האג להחזרת ילדים חטופים</a></li><li><a href="javascript:mygetvaluetodicv('אתיקה',258)" class="paraplus">אתיקה</a></li><li><a href="javascript:mygetvaluetodicv('ביטוח',259)" class="paraplus">ביטוח</a></li><li><a href="javascript:mygetvaluetodicv('ביטוח לאומי',260)" class="paraplus">ביטוח לאומי</a></li><li><a href="javascript:mygetvaluetodicv('בנקאות',261)" class="paraplus">בנקאות</a></li><li><a href="javascript:mygetvaluetodicv('בתים משותפים',262)" class="paraplus">בתים משותפים</a></li><li><a href="javascript:mygetvaluetodicv('הגירה ואזרחות -ארה&quot;ב',263)" class="paraplus">הגירה ואזרחות -ארה"ב</a></li><li><a href="javascript:mygetvaluetodicv('הייטק',264)" class="paraplus">הייטק</a></li><li><a href="javascript:mygetvaluetodicv('חברות',265)" class="paraplus">חברות</a></li><li><a href="javascript:mygetvaluetodicv('מחשבים',266)" class="paraplus">מחשבים</a></li><li><a href="javascript:mygetvaluetodicv('מנהל ציבורי',267)" class="paraplus">מנהל ציבורי</a></li><li><a href="javascript:mygetvaluetodicv('מסחרי',268)" class="paraplus">מסחרי</a></li><li><a href="javascript:mygetvaluetodicv('מעמד אישי',269)" class="paraplus">מעמד אישי</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse19"></a><a href="javascript:mygetvaluetodicv('מקרקעין',270)" class="paraplus">מקרקעין</a><ul id="collapse19" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('הפקעות מקרקעין',271)" class="paraplus">הפקעות מקרקעין</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('משפחה',272)" class="paraplus">משפחה</a></li><li><a href="javascript:mygetvaluetodicv('משפט בי&quot;ל פרטי ארה&quot;ב - ישראל',273)" class="paraplus">משפט בי"ל פרטי ארה"ב - ישראל</a></li><li><a href="javascript:mygetvaluetodicv('נדל&quot;ן',274)" class="paraplus">נדל"ן</a></li><li><a href="javascript:mygetvaluetodicv('נזיקין',275)" class="paraplus">נזיקין</a></li><li><a href="javascript:mygetvaluetodicv('עבודה',276)" class="paraplus">עבודה</a></li><li><a href="javascript:mygetvaluetodicv('עזבונות',277)" class="paraplus">עזבונות</a></li><li><a href="javascript:mygetvaluetodicv('עמותות',278)" class="paraplus">עמותות</a></li><li><a href="javascript:mygetvaluetodicv('פטנטים',279)" class="paraplus">פטנטים</a></li><li><a href="javascript:mygetvaluetodicv('פיננסים',280)" class="paraplus">פיננסים</a></li><li><a href="javascript:mygetvaluetodicv('פלילי',281)" class="paraplus">פלילי</a></li><li><a href="javascript:mygetvaluetodicv('קניין רוחני',282)" class="paraplus">קניין רוחני</a></li><li><a href="javascript:mygetvaluetodicv('רשויות מקומיות',283)" class="paraplus">רשויות מקומיות</a></li><li><a href="javascript:mygetvaluetodicv('רשלנות רפואית',284)" class="paraplus">רשלנות רפואית</a></li><li><a href="javascript:mygetvaluetodicv('שותפויות',285)" class="paraplus">שותפויות</a></li><li><a href="javascript:mygetvaluetodicv('תכנון ובניה',286)" class="paraplus">תכנון ובניה</a></li><li><a href="javascript:mygetvaluetodicv('תקשורת',287)" class="paraplus">תקשורת</a></li></ul></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse37"></a><a href="javascript:void(0)" class="paraplus">רפואי</a><ul id="collapse37" class="panel-collapse line-tree collapse"><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse38"></a><a href="javascript:mygetvaluetodicv('אונקולוגיה',7)" class="paraplus">אונקולוגיה</a><ul id="collapse38" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('ילדים',8)" class="paraplus">ילדים</a></li><li><a href="javascript:mygetvaluetodicv('סרטן השד',9)" class="paraplus">סרטן השד</a></li><li><a href="javascript:mygetvaluetodicv('סרטן תעסוקתי',10)" class="paraplus">סרטן תעסוקתי</a></li><li><a href="javascript:mygetvaluetodicv('מסרטנים סביבתיים',11)" class="paraplus">מסרטנים סביבתיים</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('אורולוגיה',12)" class="paraplus">אורולוגיה</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse44"></a><a href="javascript:mygetvaluetodicv('אורטופדיה',13)" class="paraplus">אורטופדיה</a><ul id="collapse44" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('אונקולוגיה',14)" class="paraplus">אונקולוגיה</a></li><li><a href="javascript:mygetvaluetodicv('הארכת עצמות',15)" class="paraplus">הארכת עצמות</a></li><li><a href="javascript:mygetvaluetodicv('טראומה אורטופדית',16)" class="paraplus">טראומה אורטופדית</a></li><li><a href="javascript:mygetvaluetodicv('ילדים',17)" class="paraplus">ילדים</a></li><li><a href="javascript:mygetvaluetodicv('כללי',18)" class="paraplus">כללי</a></li><li><a href="javascript:mygetvaluetodicv('מכשור אורטופדי',19)" class="paraplus">מכשור אורטופדי</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse51"></a><a href="javascript:mygetvaluetodicv('מנתחים',20)" class="paraplus">מנתחים</a><ul id="collapse51" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('ניתוחי גב',21)" class="paraplus">ניתוחי גב</a></li><li><a href="javascript:mygetvaluetodicv('גב תחתון',838)" class="paraplus">גב תחתון</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('עמוד שידרה',22)" class="paraplus">עמוד שידרה</a></li><li><a href="javascript:mygetvaluetodicv('שיקום אורטופדי',23)" class="paraplus">שיקום אורטופדי</a></li><li><a href="javascript:mygetvaluetodicv('תפקוד אורטופדי',24)" class="paraplus">תפקוד אורטופדי</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('אימונולוגיה',25)" class="paraplus">אימונולוגיה</a></li><li><a href="javascript:mygetvaluetodicv('אלקטרואנצפלוגרפיה',26)" class="paraplus">אלקטרואנצפלוגרפיה</a></li><li><a href="javascript:mygetvaluetodicv('אלקטרומיוגרפיה',27)" class="paraplus">אלקטרומיוגרפיה</a></li><li><a href="javascript:mygetvaluetodicv('אלרגיות',28)" class="paraplus">אלרגיות</a></li><li><a href="javascript:mygetvaluetodicv('אמונולוגיה',29)" class="paraplus">אמונולוגיה</a></li><li><a href="javascript:mygetvaluetodicv('אנדוקרינולוגיה',30)" class="paraplus">אנדוקרינולוגיה</a></li><li><a href="javascript:mygetvaluetodicv('אתיקה רפואית',31)" class="paraplus">אתיקה רפואית</a></li><li><a href="javascript:mygetvaluetodicv('גידולי מערכת העכול',32)" class="paraplus">גידולי מערכת העכול</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse65"></a><a href="javascript:mygetvaluetodicv('גינקולוגיה ומיילדות',33)" class="paraplus">גינקולוגיה ומיילדות</a><ul id="collapse65" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('הריון בסיכון',34)" class="paraplus">הריון בסיכון</a></li><li><a href="javascript:mygetvaluetodicv('ניתוחים גינקולוגיים',35)" class="paraplus">ניתוחים גינקולוגיים</a></li><li><a href="javascript:mygetvaluetodicv('צוואר הרחם',36)" class="paraplus">צוואר הרחם</a></li></ul></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse69"></a><a href="javascript:mygetvaluetodicv('גנטיקה',37)" class="paraplus">גנטיקה</a><ul id="collapse69" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('כללי',38)" class="paraplus">כללי</a></li><li><a href="javascript:mygetvaluetodicv('סיווג רקמות',39)" class="paraplus">סיווג רקמות</a></li><li><a href="javascript:mygetvaluetodicv('רפואית',40)" class="paraplus">רפואית</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('גסטרואנטרולוגיה',41)" class="paraplus">גסטרואנטרולוגיה</a></li><li><a href="javascript:mygetvaluetodicv('גריאטריה',42)" class="paraplus">גריאטריה</a></li><li><a href="javascript:mygetvaluetodicv('היפנוזה',43)" class="paraplus">היפנוזה</a></li><li><a href="javascript:mygetvaluetodicv('המטולוגיה',44)" class="paraplus">המטולוגיה</a></li><li><a href="javascript:mygetvaluetodicv('המטולוגית ילדים',45)" class="paraplus">המטולוגית ילדים</a></li><li><a href="javascript:mygetvaluetodicv('הריון בסיכון גבוה',46)" class="paraplus">הריון בסיכון גבוה</a></li><li><a href="javascript:mygetvaluetodicv('התאמת סביבה',47)" class="paraplus">התאמת סביבה</a></li><li><a href="javascript:mygetvaluetodicv('התפתחות הילד',48)" class="paraplus">התפתחות הילד</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse81"></a><a href="javascript:mygetvaluetodicv('וטרינריה',49)" class="paraplus">וטרינריה</a><ul id="collapse81" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('זואונוזות',50)" class="paraplus">זואונוזות</a></li><li><a href="javascript:mygetvaluetodicv('מחלות זיהומיות',51)" class="paraplus">מחלות זיהומיות</a></li><li><a href="javascript:mygetvaluetodicv('מחלות חוסר',52)" class="paraplus">מחלות חוסר</a></li><li><a href="javascript:mygetvaluetodicv('מחלות מדבקות',53)" class="paraplus">מחלות מדבקות</a></li><li><a href="javascript:mygetvaluetodicv('מחלות מטבוליות',54)" class="paraplus">מחלות מטבוליות</a></li><li><a href="javascript:mygetvaluetodicv('פוריות בקר',55)" class="paraplus">פוריות בקר</a></li><li><a href="javascript:mygetvaluetodicv('רפואת בקר',56)" class="paraplus">רפואת בקר</a></li><li><a href="javascript:mygetvaluetodicv('רפואת הרדמה',57)" class="paraplus">רפואת הרדמה</a></li><li><a href="javascript:mygetvaluetodicv('רפואת סוסים',58)" class="paraplus">רפואת סוסים</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse91"></a><a href="javascript:mygetvaluetodicv('רפואת עופות',59)" class="paraplus">רפואת עופות</a><ul id="collapse91" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('רפואת ציפורים',60)" class="paraplus">רפואת ציפורים</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('רפואת צאן',61)" class="paraplus">רפואת צאן</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('וטרינריה קלינית',62)" class="paraplus">וטרינריה קלינית</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse95"></a><a href="javascript:mygetvaluetodicv('טוקסיקולוגיה',63)" class="paraplus">טוקסיקולוגיה</a><ul id="collapse95" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('סביבתית',64)" class="paraplus">סביבתית</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('טיפול בכאב',65)" class="paraplus">טיפול בכאב</a></li><li><a href="javascript:mygetvaluetodicv('טיפול מיני',66)" class="paraplus">טיפול מיני</a></li><li><a href="javascript:mygetvaluetodicv('טראומטולוגיה',67)" class="paraplus">טראומטולוגיה</a></li><li><a href="javascript:mygetvaluetodicv('כירופרקטיקה',68)" class="paraplus">כירופרקטיקה</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse101"></a><a href="javascript:mygetvaluetodicv('כירורגיה',69)" class="paraplus">כירורגיה</a><ul id="collapse101" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('אונקולוגית',70)" class="paraplus">אונקולוגית</a></li><li><a href="javascript:mygetvaluetodicv('אורולוגית',71)" class="paraplus">אורולוגית</a></li><li><a href="javascript:mygetvaluetodicv('אורטופדית',72)" class="paraplus">אורטופדית</a></li><li><a href="javascript:mygetvaluetodicv('בית החזה',73)" class="paraplus">בית החזה</a></li><li><a href="javascript:mygetvaluetodicv('בעלי-חיים',74)" class="paraplus">בעלי-חיים</a></li><li><a href="javascript:mygetvaluetodicv('ילדים',75)" class="paraplus">ילדים</a></li><li><a href="javascript:mygetvaluetodicv('כלי הדם',76)" class="paraplus">כלי הדם</a></li><li><a href="javascript:mygetvaluetodicv('כללי',77)" class="paraplus">כללי</a></li><li><a href="javascript:mygetvaluetodicv('כף היד',78)" class="paraplus">כף היד</a></li><li><a href="javascript:mygetvaluetodicv('לב',79)" class="paraplus">לב</a></li><li><a href="javascript:mygetvaluetodicv('עיניים',80)" class="paraplus">עיניים</a></li><li><a href="javascript:mygetvaluetodicv('עמוד שדרה',81)" class="paraplus">עמוד שדרה</a></li><li><a href="javascript:mygetvaluetodicv('פה ולסת',82)" class="paraplus">פה ולסת</a></li><li><a href="javascript:mygetvaluetodicv('פלסטית',83)" class="paraplus">פלסטית</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('מוהלים',84)" class="paraplus">מוהלים</a></li><li><a href="javascript:mygetvaluetodicv('מחלות כתף',85)" class="paraplus">מחלות כתף</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse118"></a><a href="javascript:mygetvaluetodicv('נוירוכירורגיה',86)" class="paraplus">נוירוכירורגיה</a><ul id="collapse118" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('ילדים',87)" class="paraplus">ילדים</a></li><li><a href="javascript:mygetvaluetodicv('עמוד שדרה',88)" class="paraplus">עמוד שדרה</a></li><li><a href="javascript:mygetvaluetodicv('תפקודית',89)" class="paraplus">תפקודית</a></li></ul></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse122"></a><a href="javascript:mygetvaluetodicv('נוירולוגיה',90)" class="paraplus">נוירולוגיה</a><ul id="collapse122" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('אפילפסיה',91)" class="paraplus">אפילפסיה</a></li><li><a href="javascript:mygetvaluetodicv('גריאטרית',92)" class="paraplus">גריאטרית</a></li><li><a href="javascript:mygetvaluetodicv('הפרעות זיכרון',93)" class="paraplus">הפרעות זיכרון</a></li><li><a href="javascript:mygetvaluetodicv('התנהגותית',94)" class="paraplus">התנהגותית</a></li><li><a href="javascript:mygetvaluetodicv('ילדים',95)" class="paraplus">ילדים</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('נוירופסיכולוגיה',96)" class="paraplus">נוירופסיכולוגיה</a></li><li><a href="javascript:mygetvaluetodicv('נפרולוגיה',97)" class="paraplus">נפרולוגיה</a></li><li><a href="javascript:mygetvaluetodicv('נרקולוגיה',98)" class="paraplus">נרקולוגיה</a></li><li><a href="javascript:mygetvaluetodicv('סקסולוגיה',99)" class="paraplus">סקסולוגיה</a></li><li><a href="javascript:mygetvaluetodicv('פוריות הגבר',100)" class="paraplus">פוריות הגבר</a></li><li><a href="javascript:mygetvaluetodicv('פיזיוטרפיה',101)" class="paraplus">פיזיוטרפיה</a></li><li><a href="javascript:mygetvaluetodicv('פיזיוטרפיה-ילדים',102)" class="paraplus">פיזיוטרפיה-ילדים</a></li><li><a href="javascript:mygetvaluetodicv('פסיכוגריאטריה',103)" class="paraplus">פסיכוגריאטריה</a></li><li><a href="javascript:mygetvaluetodicv('פסיכותרפיה',104)" class="paraplus">פסיכותרפיה</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse137"></a><a href="javascript:mygetvaluetodicv('פסיכיאטריה',105)" class="paraplus">פסיכיאטריה</a><ul id="collapse137" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('אבהות',106)" class="paraplus">אבהות</a></li><li><a href="javascript:mygetvaluetodicv('ילדים בסיכון',107)" class="paraplus">ילדים בסיכון</a></li><li><a href="javascript:mygetvaluetodicv('ילדים ונוער',108)" class="paraplus">ילדים ונוער</a></li><li><a href="javascript:mygetvaluetodicv('מסוגלות הורית',109)" class="paraplus">מסוגלות הורית</a></li><li><a href="javascript:mygetvaluetodicv('משפטית',110)" class="paraplus">משפטית</a></li><li><a href="javascript:mygetvaluetodicv('סרבנות קשר',111)" class="paraplus">סרבנות קשר</a></li><li><a href="javascript:mygetvaluetodicv('פסיכיאטריה פרמקולוגית',112)" class="paraplus">פסיכיאטריה פרמקולוגית</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('פרוקטולוגיה',113)" class="paraplus">פרוקטולוגיה</a></li><li><a href="javascript:mygetvaluetodicv('פריודונטיה',114)" class="paraplus">פריודונטיה</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse147"></a><a href="javascript:mygetvaluetodicv('פרמקולוגיה',115)" class="paraplus">פרמקולוגיה</a><ul id="collapse147" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('מידע תרופתי',116)" class="paraplus">מידע תרופתי</a></li></ul></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse149"></a><a href="javascript:mygetvaluetodicv('קרדיולוגיה',117)" class="paraplus">קרדיולוגיה</a><ul id="collapse149" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('ילדים',118)" class="paraplus">ילדים</a></li><li><a href="javascript:mygetvaluetodicv('כללי',119)" class="paraplus">כללי</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('ראומטולוגיה',120)" class="paraplus">ראומטולוגיה</a></li><li><a href="javascript:mygetvaluetodicv('רדיולוגיה',121)" class="paraplus">רדיולוגיה</a></li><li><a href="javascript:mygetvaluetodicv('רדיולוגיה אורלית',122)" class="paraplus">רדיולוגיה אורלית</a></li><li><a href="javascript:mygetvaluetodicv('רוקחות-כללי',123)" class="paraplus">רוקחות-כללי</a></li><li><a href="javascript:mygetvaluetodicv('רוקחות קלינית',124)" class="paraplus">רוקחות קלינית</a></li><li><a href="javascript:mygetvaluetodicv('ריפוי באנרגיות',125)" class="paraplus">ריפוי באנרגיות</a></li><li><a href="javascript:mygetvaluetodicv('ריפוי בעיסוק',126)" class="paraplus">ריפוי בעיסוק</a></li><li><a href="javascript:mygetvaluetodicv('רפואה-כללי',127)" class="paraplus">רפואה-כללי</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse160"></a><a href="javascript:mygetvaluetodicv('רפואה אלטרנטיבית',128)" class="paraplus">רפואה אלטרנטיבית</a><ul id="collapse160" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('טיפול בבצקות',129)" class="paraplus">טיפול בבצקות</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('רפואה אסתטית',130)" class="paraplus">רפואה אסתטית</a></li><li><a href="javascript:mygetvaluetodicv('רפואה משלימה',131)" class="paraplus">רפואה משלימה</a></li><li><a href="javascript:mygetvaluetodicv('רפואה משפטית',132)" class="paraplus">רפואה משפטית</a></li><li><a href="javascript:mygetvaluetodicv('רפואה סב-לידתית',133)" class="paraplus">רפואה סב-לידתית</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse166"></a><a href="javascript:mygetvaluetodicv('רפואה פיזיקלית ושיקום',134)" class="paraplus">רפואה פיזיקלית ושיקום</a><ul id="collapse166" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('נפגעי ראש',135)" class="paraplus">נפגעי ראש</a></li><li><a href="javascript:mygetvaluetodicv('נוירופיזיולוגיה קלינית',136)" class="paraplus">נוירופיזיולוגיה קלינית</a></li></ul></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse169"></a><a href="javascript:mygetvaluetodicv('רפואה פנימית',137)" class="paraplus">רפואה פנימית</a><ul id="collapse169" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('זיהומית',138)" class="paraplus">זיהומית</a></li><li><a href="javascript:mygetvaluetodicv('מחלות אנדוקריניות',139)" class="paraplus">מחלות אנדוקריניות</a></li><li><a href="javascript:mygetvaluetodicv('מחלות לב',140)" class="paraplus">מחלות לב</a></li><li><a href="javascript:mygetvaluetodicv('מחלות מעיים',141)" class="paraplus">מחלות מעיים</a></li><li><a href="javascript:mygetvaluetodicv('מחלות ריאה',142)" class="paraplus">מחלות ריאה</a></li></ul></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse175"></a><a href="javascript:mygetvaluetodicv('רפואה תעסוקתית',143)" class="paraplus">רפואה תעסוקתית</a><ul id="collapse175" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('בריאות הציבור',144)" class="paraplus">בריאות הציבור</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse177"></a><a href="javascript:mygetvaluetodicv('מחלות מקצוע',145)" class="paraplus">מחלות מקצוע</a><ul id="collapse177" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('סרטן תעסוקתי',146)" class="paraplus">סרטן תעסוקתי</a></li></ul></li></ul></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse179"></a><a href="javascript:mygetvaluetodicv('רפואת אף-אוזן-גרון',147)" class="paraplus">רפואת אף-אוזן-גרון</a><ul id="collapse179" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('אוטונוירולוגיה',148)" class="paraplus">אוטונוירולוגיה</a></li><li><a href="javascript:mygetvaluetodicv('בדיקות שמיעה',149)" class="paraplus">בדיקות שמיעה</a></li><li><a href="javascript:mygetvaluetodicv('סחרחורות',150)" class="paraplus">סחרחורות</a></li><li><a href="javascript:mygetvaluetodicv('קול ובליעה',151)" class="paraplus">קול ובליעה</a></li><li><a href="javascript:mygetvaluetodicv('שמיעה וטיניטוס',152)" class="paraplus">שמיעה וטיניטוס</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('רפואת הרדמה',153)" class="paraplus">רפואת הרדמה</a></li><li><a href="javascript:mygetvaluetodicv('רפואת ילדים',154)" class="paraplus">רפואת ילדים</a></li><li><a href="javascript:mygetvaluetodicv('רפואת מחלות הריאה',155)" class="paraplus">רפואת מחלות הריאה</a></li><li><a href="javascript:mygetvaluetodicv('רפואת מערכת העיכול והכבד',156)" class="paraplus">רפואת מערכת העיכול והכבד</a></li><li><a href="javascript:mygetvaluetodicv('רפואת משפחה',157)" class="paraplus">רפואת משפחה</a></li><li><a href="javascript:mygetvaluetodicv('רפואת עור ומין',158)" class="paraplus">רפואת עור ומין</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse191"></a><a href="javascript:mygetvaluetodicv('רפואת עיניים',159)" class="paraplus">רפואת עיניים</a><ul id="collapse191" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('גלאוקומה',160)" class="paraplus">גלאוקומה</a></li><li><a href="javascript:mygetvaluetodicv('חבלות העין',161)" class="paraplus">חבלות העין</a></li><li><a href="javascript:mygetvaluetodicv('טראומה ורשתית',162)" class="paraplus">טראומה ורשתית</a></li><li><a href="javascript:mygetvaluetodicv('כללי',163)" class="paraplus">כללי</a></li><li><a href="javascript:mygetvaluetodicv('מחלות עיניים',164)" class="paraplus">מחלות עיניים</a></li><li><a href="javascript:mygetvaluetodicv('נוירואופטלמולוגיה',165)" class="paraplus">נוירואופטלמולוגיה</a></li><li><a href="javascript:mygetvaluetodicv('פלסטיקת עיניים',166)" class="paraplus">פלסטיקת עיניים</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('רפואת עמוד שידרה',167)" class="paraplus">רפואת עמוד שידרה</a></li><li><a href="javascript:mygetvaluetodicv('רפואת צלילה',168)" class="paraplus">רפואת צלילה</a></li><li><a href="javascript:mygetvaluetodicv('רפואת ריאות',169)" class="paraplus">רפואת ריאות</a></li><li><a href="javascript:mygetvaluetodicv('רפואת שינה',170)" class="paraplus">רפואת שינה</a></li><li><a href="javascript:mygetvaluetodicv('מחלות ריאה',171)" class="paraplus">מחלות ריאה</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse204"></a><a href="javascript:mygetvaluetodicv('רפואת שיניים',172)" class="paraplus">רפואת שיניים</a><ul id="collapse204" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('אורתודונטיה',173)" class="paraplus">אורתודונטיה</a></li><li><a href="javascript:mygetvaluetodicv('אסתטיקה',174)" class="paraplus">אסתטיקה</a></li><li><a href="javascript:mygetvaluetodicv('ביטוחי שיניים',175)" class="paraplus">ביטוחי שיניים</a></li><li><a href="javascript:mygetvaluetodicv('השתלות שיניים',176)" class="paraplus">השתלות שיניים</a></li><li><a href="javascript:mygetvaluetodicv('חניכיים',177)" class="paraplus">חניכיים</a></li><li><a href="javascript:mygetvaluetodicv('טיפולי שורש / אנדודונטיה',178)" class="paraplus">טיפולי שורש / אנדודונטיה</a></li><li><a href="javascript:mygetvaluetodicv('ייעוץ שיקומי',179)" class="paraplus">ייעוץ שיקומי</a></li><li><a href="javascript:mygetvaluetodicv('ילדים ונוער',180)" class="paraplus">ילדים ונוער</a></li><li><a href="javascript:mygetvaluetodicv('כאבי פנים ולסתות',181)" class="paraplus">כאבי פנים ולסתות</a></li><li><a href="javascript:mygetvaluetodicv('כללי',182)" class="paraplus">כללי</a></li><li><a href="javascript:mygetvaluetodicv('מפרקי הלסתות',183)" class="paraplus">מפרקי הלסתות</a></li><li><a href="javascript:mygetvaluetodicv('רפואת הפה',184)" class="paraplus">רפואת הפה</a></li><li><a href="javascript:mygetvaluetodicv('שיקום הפה',185)" class="paraplus">שיקום הפה</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('שד',186)" class="paraplus">שד</a></li><li><a href="javascript:mygetvaluetodicv('שיקום',187)" class="paraplus">שיקום</a></li><li><a href="javascript:mygetvaluetodicv('שיקום מיני',188)" class="paraplus">שיקום מיני</a></li><li><a href="javascript:mygetvaluetodicv('שיקום נוירולוגי',189)" class="paraplus">שיקום נוירולוגי</a></li><li><a href="javascript:mygetvaluetodicv('שיתוק ילדים',190)" class="paraplus">שיתוק ילדים</a></li></ul></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse223"></a><a href="javascript:void(0)" class="paraplus">הנדסי</a><ul id="collapse223" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('אגרונומיה',192)" class="paraplus">אגרונומיה</a></li><li><a href="javascript:mygetvaluetodicv('אוניות',193)" class="paraplus">אוניות</a></li><li><a href="javascript:mygetvaluetodicv('אוקיינוגרפיה',853)" class="paraplus">אוקיינוגרפיה</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse227"></a><a href="javascript:mygetvaluetodicv('אזרחית',194)" class="paraplus">אזרחית</a><ul id="collapse227" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('שדרוג מסילות רכבת',195)" class="paraplus">שדרוג מסילות רכבת</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('איטום',196)" class="paraplus">איטום</a></li><li><a href="javascript:mygetvaluetodicv('איכות',197)" class="paraplus">איכות</a></li><li><a href="javascript:mygetvaluetodicv('איכות הסביבה',198)" class="paraplus">איכות הסביבה</a></li><li><a href="javascript:mygetvaluetodicv('אינסטלציה',199)" class="paraplus">אינסטלציה</a></li><li><a href="javascript:mygetvaluetodicv('אלקטרוניקה',200)" class="paraplus">אלקטרוניקה</a></li><li><a href="javascript:mygetvaluetodicv('אקוסטית',201)" class="paraplus">אקוסטית</a></li><li><a href="javascript:mygetvaluetodicv('ביולוגיה',202)" class="paraplus">ביולוגיה</a></li><li><a href="javascript:mygetvaluetodicv('בטיחות',203)" class="paraplus">בטיחות</a></li><li><a href="javascript:mygetvaluetodicv('בטיחות וגיהות',204)" class="paraplus">בטיחות וגיהות</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse238"></a><a href="javascript:mygetvaluetodicv('בניין',205)" class="paraplus">בניין</a><ul id="collapse238" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('הידראולית',206)" class="paraplus">הידראולית</a></li><li><a href="javascript:mygetvaluetodicv('קונסטרוקציה',207)" class="paraplus">קונסטרוקציה</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('גנטיקה',208)" class="paraplus">גנטיקה</a></li><li><a href="javascript:mygetvaluetodicv('גשרים',209)" class="paraplus">גשרים</a></li><li><a href="javascript:mygetvaluetodicv('דנ&quot;א DNA',210)" class="paraplus">דנ"א DNA</a></li><li><a href="javascript:mygetvaluetodicv('הידרולוגיה',211)" class="paraplus">הידרולוגיה</a></li><li><a href="javascript:mygetvaluetodicv('חומרים',212)" class="paraplus">חומרים</a></li><li><a href="javascript:mygetvaluetodicv('חילוץ',213)" class="paraplus">חילוץ</a></li><li><a href="javascript:mygetvaluetodicv('חקירת כשלים הנדסיים',214)" class="paraplus">חקירת כשלים הנדסיים</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse248"></a><a href="javascript:mygetvaluetodicv('חקלאית',215)" class="paraplus">חקלאית</a><ul id="collapse248" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('חקלאות ימית',852)" class="paraplus">חקלאות ימית</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('חשמל',216)" class="paraplus">חשמל</a></li><li><a href="javascript:mygetvaluetodicv('בודק חשמל דרגה 2',217)" class="paraplus">בודק חשמל דרגה 2</a></li><li><a href="javascript:mygetvaluetodicv('טקסטיל',218)" class="paraplus">טקסטיל</a></li><li><a href="javascript:mygetvaluetodicv('ייצור',219)" class="paraplus">ייצור</a></li><li><a href="javascript:mygetvaluetodicv('כבישים',220)" class="paraplus">כבישים</a></li><li><a href="javascript:mygetvaluetodicv('כיבוי אש',221)" class="paraplus">כיבוי אש</a></li><li><a href="javascript:mygetvaluetodicv('כימיה',222)" class="paraplus">כימיה</a></li><li><a href="javascript:mygetvaluetodicv('כלכלית',223)" class="paraplus">כלכלית</a></li><li><a href="javascript:mygetvaluetodicv('כללי',224)" class="paraplus">כללי</a></li><li><a href="javascript:mygetvaluetodicv('כשלי בניה ',872)" class="paraplus">כשלי בניה </a></li><li><a href="javascript:mygetvaluetodicv('מדידות',225)" class="paraplus">מדידות</a></li><li><a href="javascript:mygetvaluetodicv('מזון',226)" class="paraplus">מזון</a></li><li><a href="javascript:mygetvaluetodicv('מחשבים',227)" class="paraplus">מחשבים</a></li><li><a href="javascript:mygetvaluetodicv('מיזוג אויר',228)" class="paraplus">מיזוג אויר</a></li><li><a href="javascript:mygetvaluetodicv('מיזוג אוויר',229)" class="paraplus">מיזוג אוויר</a></li><li><a href="javascript:mygetvaluetodicv('מים וביוב',230)" class="paraplus">מים וביוב</a></li><li><a href="javascript:mygetvaluetodicv('מכונות',231)" class="paraplus">מכונות</a></li><li><a href="javascript:mygetvaluetodicv('מעליות',232)" class="paraplus">מעליות</a></li><li><a href="javascript:mygetvaluetodicv('ניהול וביצוע',233)" class="paraplus">ניהול וביצוע</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse269"></a><a href="javascript:mygetvaluetodicv('ניקוז',234)" class="paraplus">ניקוז</a><ul id="collapse269" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('מניעת שטפונות',235)" class="paraplus">מניעת שטפונות</a></li><li><a href="javascript:mygetvaluetodicv('תיעול עירוני',236)" class="paraplus">תיעול עירוני</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('סאונד',237)" class="paraplus">סאונד</a></li><li><a href="javascript:mygetvaluetodicv('סביבה',238)" class="paraplus">סביבה</a></li><li><a href="javascript:mygetvaluetodicv('סלילה',239)" class="paraplus">סלילה</a></li><li><a href="javascript:mygetvaluetodicv('עגורנים',240)" class="paraplus">עגורנים</a></li><li><a href="javascript:mygetvaluetodicv('פלסטיקה',241)" class="paraplus">פלסטיקה</a></li><li><a href="javascript:mygetvaluetodicv('פרוייקטים',242)" class="paraplus">פרוייקטים</a></li><li><a href="javascript:mygetvaluetodicv('צמיגים',243)" class="paraplus">צמיגים</a></li><li><a href="javascript:mygetvaluetodicv('קורוזיה',244)" class="paraplus">קורוזיה</a></li><li><a href="javascript:mygetvaluetodicv('קירור',245)" class="paraplus">קירור</a></li><li><a href="javascript:mygetvaluetodicv('קרקע',246)" class="paraplus">קרקע</a></li><li><a href="javascript:mygetvaluetodicv('רכב',247)" class="paraplus">רכב</a></li><li><a href="javascript:mygetvaluetodicv('תברואה',248)" class="paraplus">תברואה</a></li><li><a href="javascript:mygetvaluetodicv('תוכנה',249)" class="paraplus">תוכנה</a></li><li><a href="javascript:mygetvaluetodicv('תחבורה',250)" class="paraplus">תחבורה</a></li><li><a href="javascript:mygetvaluetodicv('תנועה',251)" class="paraplus">תנועה</a></li><li><a href="javascript:mygetvaluetodicv('תעשיה וניהול',252)" class="paraplus">תעשיה וניהול</a></li></ul></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse288"></a><a href="javascript:void(0)" class="paraplus">אחר</a><ul id="collapse288" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('איתחול',289)" class="paraplus">איתחול</a></li><li><a href="javascript:mygetvaluetodicv('אבטחה',290)" class="paraplus">אבטחה</a></li><li><a href="javascript:mygetvaluetodicv('מיגון ואבטחה',291)" class="paraplus">מיגון ואבטחה</a></li><li><a href="javascript:mygetvaluetodicv('אבטחת מערכות מידע',292)" class="paraplus">אבטחת מערכות מידע</a></li><li><a href="javascript:mygetvaluetodicv('אביזרי שיקום',293)" class="paraplus">אביזרי שיקום</a></li><li><a href="javascript:mygetvaluetodicv('אגרואינדוסטריה',294)" class="paraplus">אגרואינדוסטריה</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse295"></a><a href="javascript:mygetvaluetodicv('אגרונומיה',295)" class="paraplus">אגרונומיה</a><ul id="collapse295" class="panel-collapse line-tree collapse"><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse296"></a><a href="javascript:mygetvaluetodicv('פרי הדר',296)" class="paraplus">פרי הדר</a><ul id="collapse296" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('הדברה',297)" class="paraplus">הדברה</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('נזקי טבע',298)" class="paraplus">נזקי טבע</a></li><li><a href="javascript:mygetvaluetodicv('הדברה',299)" class="paraplus">הדברה</a></li></ul></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse300"></a><a href="javascript:mygetvaluetodicv('אדריכלות',300)" class="paraplus">אדריכלות</a><ul id="collapse300" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('בניין',301)" class="paraplus">בניין</a></li><li><a href="javascript:mygetvaluetodicv('בניין ערים',302)" class="paraplus">בניין ערים</a></li><li><a href="javascript:mygetvaluetodicv('גריאטריה',303)" class="paraplus">גריאטריה</a></li><li><a href="javascript:mygetvaluetodicv('וילות יוקרה',304)" class="paraplus">וילות יוקרה</a></li><li><a href="javascript:mygetvaluetodicv('כללי',305)" class="paraplus">כללי</a></li><li><a href="javascript:mygetvaluetodicv('מבני ציבור',306)" class="paraplus">מבני ציבור</a></li><li><a href="javascript:mygetvaluetodicv('מגורים',307)" class="paraplus">מגורים</a></li><li><a href="javascript:mygetvaluetodicv('מרכזים מסחריים',308)" class="paraplus">מרכזים מסחריים</a></li><li><a href="javascript:mygetvaluetodicv('נוף',309)" class="paraplus">נוף</a></li><li><a href="javascript:mygetvaluetodicv('ניהול תכנון',310)" class="paraplus">ניהול תכנון</a></li><li><a href="javascript:mygetvaluetodicv('פנים',311)" class="paraplus">פנים</a></li><li><a href="javascript:mygetvaluetodicv('פרטי בניין',312)" class="paraplus">פרטי בניין</a></li><li><a href="javascript:mygetvaluetodicv('תחנות תדלוק',313)" class="paraplus">תחנות תדלוק</a></li><li><a href="javascript:mygetvaluetodicv('תכנון ערים',314)" class="paraplus">תכנון ערים</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('אובדן רווחים',315)" class="paraplus">אובדן רווחים</a></li><li><a href="javascript:mygetvaluetodicv('אולפני הקלטה ועריכה',316)" class="paraplus">אולפני הקלטה ועריכה</a></li><li><a href="javascript:mygetvaluetodicv('אופטומטריה',317)" class="paraplus">אופטומטריה</a></li><li><a href="javascript:mygetvaluetodicv('אוקיאנוגרפיה פיסיקלית',318)" class="paraplus">אוקיאנוגרפיה פיסיקלית</a></li><li><a href="javascript:mygetvaluetodicv('אחזקה-כללי',319)" class="paraplus">אחזקה-כללי</a></li><li><a href="javascript:mygetvaluetodicv('אחזקת רכב',320)" class="paraplus">אחזקת רכב</a></li><li><a href="javascript:mygetvaluetodicv('אחסון',321)" class="paraplus">אחסון</a></li><li><a href="javascript:mygetvaluetodicv('איכות אריזה',322)" class="paraplus">איכות אריזה</a></li><li><a href="javascript:mygetvaluetodicv('איכות הסביבה',323)" class="paraplus">איכות הסביבה</a></li><li><a href="javascript:mygetvaluetodicv('אילוף כלבים',324)" class="paraplus">אילוף כלבים</a></li><li><a href="javascript:mygetvaluetodicv('אינסטלציה וצנרת',325)" class="paraplus">אינסטלציה וצנרת</a></li><li><a href="javascript:mygetvaluetodicv('אכיפה במכשור',326)" class="paraplus">אכיפה במכשור</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse327"></a><a href="javascript:mygetvaluetodicv('אלומיניום',327)" class="paraplus">אלומיניום</a><ul id="collapse327" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('מפקח אלומיניום',328)" class="paraplus">מפקח אלומיניום</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('אלקטרואופטיקה ולייזרים',329)" class="paraplus">אלקטרואופטיקה ולייזרים</a></li><li><a href="javascript:mygetvaluetodicv('אמנות',330)" class="paraplus">אמנות</a></li><li><a href="javascript:mygetvaluetodicv('אנרגיה',331)" class="paraplus">אנרגיה</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse332"></a><a href="javascript:mygetvaluetodicv('אקוסטיקה',332)" class="paraplus">אקוסטיקה</a><ul id="collapse332" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('בדיקות רעש',333)" class="paraplus">בדיקות רעש</a></li><li><a href="javascript:mygetvaluetodicv('פנים',334)" class="paraplus">פנים</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('אקטואריה',335)" class="paraplus">אקטואריה</a></li><li><a href="javascript:mygetvaluetodicv('ארגונומיה',336)" class="paraplus">ארגונומיה</a></li><li><a href="javascript:mygetvaluetodicv('אריחי ריצוף',337)" class="paraplus">אריחי ריצוף</a></li><li><a href="javascript:mygetvaluetodicv('ארכיאולוגיה',338)" class="paraplus">ארכיאולוגיה</a></li><li><a href="javascript:mygetvaluetodicv('אשראי בנקאי',339)" class="paraplus">אשראי בנקאי</a></li><li><a href="javascript:mygetvaluetodicv('אתרי אינטרנט ',871)" class="paraplus">אתרי אינטרנט </a></li><li><a href="javascript:mygetvaluetodicv('בוחני נהיגה',340)" class="paraplus">בוחני נהיגה</a></li><li><a href="javascript:mygetvaluetodicv('בוחני רכב',341)" class="paraplus">בוחני רכב</a></li><li><a href="javascript:mygetvaluetodicv('בוחני תאונות דרכים',342)" class="paraplus">בוחני תאונות דרכים</a></li><li><a href="javascript:mygetvaluetodicv('בוטניקה',343)" class="paraplus">בוטניקה</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse345"></a><a href="javascript:mygetvaluetodicv('בטיחות',344)" class="paraplus">בטיחות</a><ul id="collapse345" class="panel-collapse line-tree collapse"><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse346"></a><a href="javascript:mygetvaluetodicv('תעשייתית',345)" class="paraplus">תעשייתית</a><ul id="collapse346" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('סיכונים במפעלי מתכת',346)" class="paraplus">סיכונים במפעלי מתכת</a></li><li><a href="javascript:mygetvaluetodicv('סיכונים ותאונות',347)" class="paraplus">סיכונים ותאונות</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('תעבורה',348)" class="paraplus">תעבורה</a></li><li><a href="javascript:mygetvaluetodicv('תעופה',349)" class="paraplus">תעופה</a></li><li><a href="javascript:mygetvaluetodicv('קציני בטיחות-ממוני בטיחות',350)" class="paraplus">קציני בטיחות-ממוני בטיחות</a></li><li><a href="javascript:mygetvaluetodicv('עבודות בגובה',351)" class="paraplus">עבודות בגובה</a></li><li><a href="javascript:mygetvaluetodicv('עבודות בניה',352)" class="paraplus">עבודות בניה</a></li><li><a href="javascript:mygetvaluetodicv('ניהול',353)" class="paraplus">ניהול</a></li><li><a href="javascript:mygetvaluetodicv('אש',354)" class="paraplus">אש</a></li><li><a href="javascript:mygetvaluetodicv('כללי',355)" class="paraplus">כללי</a></li><li><a href="javascript:mygetvaluetodicv('מיגון',356)" class="paraplus">מיגון</a></li><li><a href="javascript:mygetvaluetodicv('מים - בטיחות מים',357)" class="paraplus">מים - בטיחות מים</a></li><li><a href="javascript:mygetvaluetodicv('מעליות',358)" class="paraplus">מעליות</a></li><li><a href="javascript:mygetvaluetodicv('מערכות אזעקה',359)" class="paraplus">מערכות אזעקה</a></li><li><a href="javascript:mygetvaluetodicv('קרינה',360)" class="paraplus">קרינה</a></li><li><a href="javascript:mygetvaluetodicv('רחצה - בטיחות רחצה בחופים ועוד',361)" class="paraplus">רחצה - בטיחות רחצה בחופים ועוד</a></li><li><a href="javascript:mygetvaluetodicv('שערים חשמליים',362)" class="paraplus">שערים חשמליים</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('ביוטכנולוגיה',363)" class="paraplus">ביוטכנולוגיה</a></li><li><a href="javascript:mygetvaluetodicv('ביוכימיה',364)" class="paraplus">ביוכימיה</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse366"></a><a href="javascript:mygetvaluetodicv('ביטוח',365)" class="paraplus">ביטוח</a><ul id="collapse366" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('חיים',366)" class="paraplus">חיים</a></li><li><a href="javascript:mygetvaluetodicv('כללי',367)" class="paraplus">כללי</a></li><li><a href="javascript:mygetvaluetodicv('לאומי',368)" class="paraplus">לאומי</a></li><li><a href="javascript:mygetvaluetodicv('מנהלים',369)" class="paraplus">מנהלים</a></li><li><a href="javascript:mygetvaluetodicv('פדיון פוליסות',370)" class="paraplus">פדיון פוליסות</a></li><li><a href="javascript:mygetvaluetodicv('פנסיה',371)" class="paraplus">פנסיה</a></li><li><a href="javascript:mygetvaluetodicv('יעוץ פנסיוני',372)" class="paraplus">יעוץ פנסיוני</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('ביטחון',373)" class="paraplus">ביטחון</a></li><li><a href="javascript:mygetvaluetodicv('ביקורת אלקטרוניקה',374)" class="paraplus">ביקורת אלקטרוניקה</a></li><li><a href="javascript:mygetvaluetodicv('ביקורת חקירתית',375)" class="paraplus">ביקורת חקירתית</a></li><li><a href="javascript:mygetvaluetodicv('ביקורת חשבונות',376)" class="paraplus">ביקורת חשבונות</a></li><li><a href="javascript:mygetvaluetodicv('ביקורת טיב בניה',377)" class="paraplus">ביקורת טיב בניה</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse379"></a><a href="javascript:mygetvaluetodicv('ביקורת כספים',378)" class="paraplus">ביקורת כספים</a><ul id="collapse379" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('ועד עובדים',379)" class="paraplus">ועד עובדים</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('ביקורת מבנים',380)" class="paraplus">ביקורת מבנים</a></li><li><a href="javascript:mygetvaluetodicv('ביקורת פנימית',381)" class="paraplus">ביקורת פנימית</a></li><li><a href="javascript:mygetvaluetodicv('ביקורת עמותות',382)" class="paraplus">ביקורת עמותות</a></li><li><a href="javascript:mygetvaluetodicv('ביקורת ענ&quot;א',383)" class="paraplus">ביקורת ענ"א</a></li><li><a href="javascript:mygetvaluetodicv('בלשנות משפטית',384)" class="paraplus">בלשנות משפטית</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse386"></a><a href="javascript:mygetvaluetodicv('בניה',385)" class="paraplus">בניה</a><ul id="collapse386" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('הרס בבניה',386)" class="paraplus">הרס בבניה</a></li><li><a href="javascript:mygetvaluetodicv('כשלים בבניה',387)" class="paraplus">כשלים בבניה</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse389"></a><a href="javascript:mygetvaluetodicv('קונסטרוקציית בניה',388)" class="paraplus">קונסטרוקציית בניה</a><ul id="collapse389" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('קונסטרוקציית פלדה ובניה',389)" class="paraplus">קונסטרוקציית פלדה ובניה</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('איטום',841)" class="paraplus">איטום</a></li></ul></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse392"></a><a href="javascript:mygetvaluetodicv('בנקאות',390)" class="paraplus">בנקאות</a><ul id="collapse392" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('חשבונות בנקים',391)" class="paraplus">חשבונות בנקים</a></li><li><a href="javascript:mygetvaluetodicv('תביעות בנקים',392)" class="paraplus">תביעות בנקים</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('בריכות שחייה',393)" class="paraplus">בריכות שחייה</a></li><li><a href="javascript:mygetvaluetodicv('חימום בריכות שחיה',394)" class="paraplus">חימום בריכות שחיה</a></li><li><a href="javascript:mygetvaluetodicv('בתים משותפים',395)" class="paraplus">בתים משותפים</a></li><li><a href="javascript:mygetvaluetodicv('גגות-רעפים',396)" class="paraplus">גגות-רעפים</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse399"></a><a href="javascript:mygetvaluetodicv('גז',397)" class="paraplus">גז</a><ul id="collapse399" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('גז מערכות',398)" class="paraplus">גז מערכות</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('גיאוגרפיה',399)" class="paraplus">גיאוגרפיה</a></li><li><a href="javascript:mygetvaluetodicv('גיאולוגיה',400)" class="paraplus">גיאולוגיה</a></li><li><a href="javascript:mygetvaluetodicv('גיהות',401)" class="paraplus">גיהות</a></li><li><a href="javascript:mygetvaluetodicv('גילוי נזילת',869)" class="paraplus">גילוי נזילת</a></li><li><a href="javascript:mygetvaluetodicv('גאולוגיה ימית',402)" class="paraplus">גאולוגיה ימית</a></li><li><a href="javascript:mygetvaluetodicv('גלידות',403)" class="paraplus">גלידות</a></li><li><a href="javascript:mygetvaluetodicv('גמולוגיה',861)" class="paraplus">גמולוגיה</a></li><li><a href="javascript:mygetvaluetodicv('גננות',404)" class="paraplus">גננות</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse409"></a><a href="javascript:mygetvaluetodicv('גרפולוגיה',405)" class="paraplus">גרפולוגיה</a><ul id="collapse409" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('איבחון בעזרת ציורים',406)" class="paraplus">איבחון בעזרת ציורים</a></li><li><a href="javascript:mygetvaluetodicv('אימות הצהרות',407)" class="paraplus">אימות הצהרות</a></li><li><a href="javascript:mygetvaluetodicv('בדיקת מסמכים',408)" class="paraplus">בדיקת מסמכים</a></li><li><a href="javascript:mygetvaluetodicv('זיופים',409)" class="paraplus">זיופים</a></li><li><a href="javascript:mygetvaluetodicv('השוואת כתב יד',410)" class="paraplus">השוואת כתב יד</a></li><li><a href="javascript:mygetvaluetodicv('ייעוץ וסיוע',411)" class="paraplus">ייעוץ וסיוע</a></li><li><a href="javascript:mygetvaluetodicv('כתבי יד וחתימות',412)" class="paraplus">כתבי יד וחתימות</a></li><li><a href="javascript:mygetvaluetodicv('מכתבים אנונימיים',413)" class="paraplus">מכתבים אנונימיים</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('גרפיקה ',860)" class="paraplus">גרפיקה </a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse419"></a><a href="javascript:mygetvaluetodicv('דואר',414)" class="paraplus">דואר</a><ul id="collapse419" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('מיון דואר',415)" class="paraplus">מיון דואר</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('דלתות',416)" class="paraplus">דלתות</a></li><li><a href="javascript:mygetvaluetodicv('דפוס',417)" class="paraplus">דפוס</a></li><li><a href="javascript:mygetvaluetodicv('הבטחת איכות',418)" class="paraplus">הבטחת איכות</a></li><li><a href="javascript:mygetvaluetodicv('הדברה',419)" class="paraplus">הדברה</a></li><li><a href="javascript:mygetvaluetodicv('הוצאה לפועל',420)" class="paraplus">הוצאה לפועל</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse426"></a><a href="javascript:mygetvaluetodicv('הוראה-כללי',421)" class="paraplus">הוראה-כללי</a><ul id="collapse426" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('שיפור רמת ההוראה',422)" class="paraplus">שיפור רמת ההוראה</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('הוראת נהיגה',423)" class="paraplus">הוראת נהיגה</a></li><li><a href="javascript:mygetvaluetodicv('הידרולוגיה',424)" class="paraplus">הידרולוגיה</a></li><li><a href="javascript:mygetvaluetodicv('הידרוליקת זרימה',425)" class="paraplus">הידרוליקת זרימה</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse431"></a><a href="javascript:mygetvaluetodicv('הנדסאות',426)" class="paraplus">הנדסאות</a><ul id="collapse431" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('מכונות',427)" class="paraplus">מכונות</a></li><li><a href="javascript:mygetvaluetodicv('תעשייה',428)" class="paraplus">תעשייה</a></li><li><a href="javascript:mygetvaluetodicv('תעשייה וניהול',429)" class="paraplus">תעשייה וניהול</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('הסקה מרכזית וחימום',430)" class="paraplus">הסקה מרכזית וחימום</a></li><li><a href="javascript:mygetvaluetodicv('הסקה ברדיאטורים והסקה תת ריצפתית',431)" class="paraplus">הסקה ברדיאטורים והסקה תת ריצפתית</a></li><li><a href="javascript:mygetvaluetodicv('בניין',432)" class="paraplus">בניין</a></li><li><a href="javascript:mygetvaluetodicv('הנהלת חשבונות',433)" class="paraplus">הנהלת חשבונות</a></li><li><a href="javascript:mygetvaluetodicv('הערכת נזקים',434)" class="paraplus">הערכת נזקים</a></li><li><a href="javascript:mygetvaluetodicv('הערכת שווי',435)" class="paraplus">הערכת שווי</a></li><li><a href="javascript:mygetvaluetodicv('הערכת שווי מוניטין',436)" class="paraplus">הערכת שווי מוניטין</a></li><li><a href="javascript:mygetvaluetodicv('הערכת שווי עסקים',437)" class="paraplus">הערכת שווי עסקים</a></li><li><a href="javascript:mygetvaluetodicv('הפקעות ופיצויים',438)" class="paraplus">הפקעות ופיצויים</a></li><li><a href="javascript:mygetvaluetodicv('הרחבת מושבים',439)" class="paraplus">הרחבת מושבים</a></li><li><a href="javascript:mygetvaluetodicv('השבחת נכסים',440)" class="paraplus">השבחת נכסים</a></li><li><a href="javascript:mygetvaluetodicv('התיישבות כפרית',441)" class="paraplus">התיישבות כפרית</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse447"></a><a href="javascript:mygetvaluetodicv('התנהגות בע&quot;ח',442)" class="paraplus">התנהגות בע"ח</a><ul id="collapse447" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('כלבים',443)" class="paraplus">כלבים</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('התעללות מינית',444)" class="paraplus">התעללות מינית</a></li><li><a href="javascript:mygetvaluetodicv('התקנת מעליות',445)" class="paraplus">התקנת מעליות</a></li><li><a href="javascript:mygetvaluetodicv('זוגיות וגירושין',446)" class="paraplus">זוגיות וגירושין</a></li><li><a href="javascript:mygetvaluetodicv('זוגיות ומשפחה',447)" class="paraplus">זוגיות ומשפחה</a></li><li><a href="javascript:mygetvaluetodicv('זיהוי טביעות אצבעות',448)" class="paraplus">זיהוי טביעות אצבעות</a></li><li><a href="javascript:mygetvaluetodicv('זיהוי פלילי',449)" class="paraplus">זיהוי פלילי</a></li><li><a href="javascript:mygetvaluetodicv('זיוף דרכונים',450)" class="paraplus">זיוף דרכונים</a></li><li><a href="javascript:mygetvaluetodicv('זכוכית',451)" class="paraplus">זכוכית</a></li><li><a href="javascript:mygetvaluetodicv('זרימה בנחלים',452)" class="paraplus">זרימה בנחלים</a></li><li><a href="javascript:mygetvaluetodicv('זרעים',453)" class="paraplus">זרעים</a></li><li><a href="javascript:mygetvaluetodicv('חבלה מחלק משטרת ישראל',454)" class="paraplus">חבלה מחלק משטרת ישראל</a></li><li><a href="javascript:mygetvaluetodicv('חומרי בניה',455)" class="paraplus">חומרי בניה</a></li><li><a href="javascript:mygetvaluetodicv('חומרי נפץ',456)" class="paraplus">חומרי נפץ</a></li><li><a href="javascript:mygetvaluetodicv('חומרים מסוכנים',457)" class="paraplus">חומרים מסוכנים</a></li><li><a href="javascript:mygetvaluetodicv('חיזוק יסודות',458)" class="paraplus">חיזוק יסודות</a></li><li><a href="javascript:mygetvaluetodicv('חינוך ילדים',459)" class="paraplus">חינוך ילדים</a></li><li><a href="javascript:mygetvaluetodicv('חינוך-כללי',460)" class="paraplus">חינוך-כללי</a></li><li><a href="javascript:mygetvaluetodicv('חינוך מיוחד',461)" class="paraplus">חינוך מיוחד</a></li><li><a href="javascript:mygetvaluetodicv('חיפויי חזיתות',462)" class="paraplus">חיפויי חזיתות</a></li><li><a href="javascript:mygetvaluetodicv('חישובי ריבית',463)" class="paraplus">חישובי ריבית</a></li><li><a href="javascript:mygetvaluetodicv('חישובים מסחריים',464)" class="paraplus">חישובים מסחריים</a></li><li><a href="javascript:mygetvaluetodicv('חניונים וחניה',465)" class="paraplus">חניונים וחניה</a></li><li><a href="javascript:mygetvaluetodicv('חקירות',466)" class="paraplus">חקירות</a></li><li><a href="javascript:mygetvaluetodicv('חקירות פרטיות',467)" class="paraplus">חקירות פרטיות</a></li><li><a href="javascript:mygetvaluetodicv('חקירת שריפות',468)" class="paraplus">חקירת שריפות</a></li><li><a href="javascript:mygetvaluetodicv('חקירת דליקות',469)" class="paraplus">חקירת דליקות</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse475"></a><a href="javascript:mygetvaluetodicv('חקירת תאונות',470)" class="paraplus">חקירת תאונות</a><ul id="collapse475" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('פענוח',471)" class="paraplus">פענוח</a></li><li><a href="javascript:mygetvaluetodicv('שחזור',472)" class="paraplus">שחזור</a></li><li><a href="javascript:mygetvaluetodicv('תאונות דרכים',473)" class="paraplus">תאונות דרכים</a></li><li><a href="javascript:mygetvaluetodicv('תאונות מטוסים',474)" class="paraplus">תאונות מטוסים</a></li></ul></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse480"></a><a href="javascript:mygetvaluetodicv('חקירת תאונות עבודה',475)" class="paraplus">חקירת תאונות עבודה</a><ul id="collapse480" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('תאונות הרמה',476)" class="paraplus">תאונות הרמה</a></li><li><a href="javascript:mygetvaluetodicv('תאונות מלגזה',477)" class="paraplus">תאונות מלגזה</a></li></ul></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse483"></a><a href="javascript:mygetvaluetodicv('חקלאות',478)" class="paraplus">חקלאות</a><ul id="collapse483" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('גידולים חקלאיים',479)" class="paraplus">גידולים חקלאיים</a></li><li><a href="javascript:mygetvaluetodicv('הנדסאי חקלאות',480)" class="paraplus">הנדסאי חקלאות</a></li></ul></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse486"></a><a href="javascript:mygetvaluetodicv('חשבונאות',481)" class="paraplus">חשבונאות</a><ul id="collapse486" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('כללי',482)" class="paraplus">כללי</a></li><li><a href="javascript:mygetvaluetodicv('אובדן רווחים',483)" class="paraplus">אובדן רווחים</a></li><li><a href="javascript:mygetvaluetodicv('ביטוח',484)" class="paraplus">ביטוח</a></li><li><a href="javascript:mygetvaluetodicv('ביקורתית',485)" class="paraplus">ביקורתית</a></li><li><a href="javascript:mygetvaluetodicv('הערכות מלאי',486)" class="paraplus">הערכות מלאי</a></li><li><a href="javascript:mygetvaluetodicv('חקירתית',487)" class="paraplus">חקירתית</a></li><li><a href="javascript:mygetvaluetodicv('שמאות',488)" class="paraplus">שמאות</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('חשבונאות ומשכורות',489)" class="paraplus">חשבונאות ומשכורות</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse495"></a><a href="javascript:mygetvaluetodicv('חשבות',490)" class="paraplus">חשבות</a><ul id="collapse495" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('חשב משכורות',491)" class="paraplus">חשב משכורות</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('חשבות פירמה קטנה',492)" class="paraplus">חשבות פירמה קטנה</a></li><li><a href="javascript:mygetvaluetodicv('חשמלאות',493)" class="paraplus">חשמלאות</a></li><li><a href="javascript:mygetvaluetodicv('חשמלאות-רכב',494)" class="paraplus">חשמלאות-רכב</a></li><li><a href="javascript:mygetvaluetodicv('טביעות',854)" class="paraplus">טביעות</a></li><li><a href="javascript:mygetvaluetodicv('טביעות אניות',855)" class="paraplus">טביעות אניות</a></li><li><a href="javascript:mygetvaluetodicv('טביעת בני אדם',856)" class="paraplus">טביעת בני אדם</a></li><li><a href="javascript:mygetvaluetodicv('טיולים-הדרכה',495)" class="paraplus">טיולים-הדרכה</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse504"></a><a href="javascript:mygetvaluetodicv('טכנאות',496)" class="paraplus">טכנאות</a><ul id="collapse504" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('אורטופדיה',497)" class="paraplus">אורטופדיה</a></li><li><a href="javascript:mygetvaluetodicv('הידראוליקה',498)" class="paraplus">הידראוליקה</a></li><li><a href="javascript:mygetvaluetodicv('כללי',499)" class="paraplus">כללי</a></li><li><a href="javascript:mygetvaluetodicv('מיזוג אוויר',500)" class="paraplus">מיזוג אוויר</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse509"></a><a href="javascript:mygetvaluetodicv('מכונות',501)" class="paraplus">מכונות</a><ul id="collapse509" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('אחזקה כללית',502)" class="paraplus">אחזקה כללית</a></li><li><a href="javascript:mygetvaluetodicv('כלי עבודה',503)" class="paraplus">כלי עבודה</a></li><li><a href="javascript:mygetvaluetodicv('מיכון תעשייתי',504)" class="paraplus">מיכון תעשייתי</a></li><li><a href="javascript:mygetvaluetodicv('מלגזות',505)" class="paraplus">מלגזות</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('מכשירי שמיעה',506)" class="paraplus">מכשירי שמיעה</a></li><li><a href="javascript:mygetvaluetodicv('מערכות',507)" class="paraplus">מערכות</a></li><li><a href="javascript:mygetvaluetodicv('פרוטזות',508)" class="paraplus">פרוטזות</a></li><li><a href="javascript:mygetvaluetodicv('קול',509)" class="paraplus">קול</a></li><li><a href="javascript:mygetvaluetodicv('שיניים',510)" class="paraplus">שיניים</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('טכנולוגיה',511)" class="paraplus">טכנולוגיה</a></li><li><a href="javascript:mygetvaluetodicv('טכנולוגיה באלקטרוניקה',512)" class="paraplus">טכנולוגיה באלקטרוניקה</a></li><li><a href="javascript:mygetvaluetodicv('טרמוגרפיה',513)" class="paraplus">טרמוגרפיה</a></li><li><a href="javascript:mygetvaluetodicv('טרקטורים ומתקני הרמה',514)" class="paraplus">טרקטורים ומתקני הרמה</a></li><li><a href="javascript:mygetvaluetodicv('יבוא דגים',515)" class="paraplus">יבוא דגים</a></li><li><a href="javascript:mygetvaluetodicv('יהלומנות',516)" class="paraplus">יהלומנות</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse525"></a><a href="javascript:mygetvaluetodicv('ייעוץ',517)" class="paraplus">ייעוץ</a><ul id="collapse525" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('איטום',518)" class="paraplus">איטום</a></li><li><a href="javascript:mygetvaluetodicv('אלומיניום',519)" class="paraplus">אלומיניום</a></li><li><a href="javascript:mygetvaluetodicv('ארגוני',520)" class="paraplus">ארגוני</a></li><li><a href="javascript:mygetvaluetodicv('בטיחות',521)" class="paraplus">בטיחות</a></li><li><a href="javascript:mygetvaluetodicv('ביטוח',522)" class="paraplus">ביטוח</a></li><li><a href="javascript:mygetvaluetodicv('ביטוח לאומי',523)" class="paraplus">ביטוח לאומי</a></li><li><a href="javascript:mygetvaluetodicv('גיאוטכני',524)" class="paraplus">גיאוטכני</a></li><li><a href="javascript:mygetvaluetodicv('גיאו-סביבתי',525)" class="paraplus">גיאו-סביבתי</a></li><li><a href="javascript:mygetvaluetodicv('הנדסי',526)" class="paraplus">הנדסי</a></li><li><a href="javascript:mygetvaluetodicv('השקעות',527)" class="paraplus">השקעות</a></li><li><a href="javascript:mygetvaluetodicv('זוגי',528)" class="paraplus">זוגי</a></li><li><a href="javascript:mygetvaluetodicv('חינוכי',529)" class="paraplus">חינוכי</a></li><li><a href="javascript:mygetvaluetodicv('חקלאי',530)" class="paraplus">חקלאי</a></li><li><a href="javascript:mygetvaluetodicv('טכני לרכב',531)" class="paraplus">טכני לרכב</a></li><li><a href="javascript:mygetvaluetodicv('כלכלי',532)" class="paraplus">כלכלי</a></li><li><a href="javascript:mygetvaluetodicv('מט&quot;ח',533)" class="paraplus">מט"ח</a></li><li><a href="javascript:mygetvaluetodicv('מכונאות',534)" class="paraplus">מכונאות</a></li><li><a href="javascript:mygetvaluetodicv('מס',535)" class="paraplus">מס</a></li><li><a href="javascript:mygetvaluetodicv('מקרקעין',536)" class="paraplus">מקרקעין</a></li><li><a href="javascript:mygetvaluetodicv('משפחתי',537)" class="paraplus">משפחתי</a></li><li><a href="javascript:mygetvaluetodicv('עסקי',538)" class="paraplus">עסקי</a></li><li><a href="javascript:mygetvaluetodicv('פיננסי',539)" class="paraplus">פיננסי</a></li><li><a href="javascript:mygetvaluetodicv('פנסיוני',540)" class="paraplus">פנסיוני</a></li><li><a href="javascript:mygetvaluetodicv('שכר',541)" class="paraplus">שכר</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('ייצור אלקטרוני',542)" class="paraplus">ייצור אלקטרוני</a></li><li><a href="javascript:mygetvaluetodicv('ייצור כבלים',543)" class="paraplus">ייצור כבלים</a></li><li><a href="javascript:mygetvaluetodicv('ירידת ערך',544)" class="paraplus">ירידת ערך</a></li><li><a href="javascript:mygetvaluetodicv('כדורגל-שיפוט',545)" class="paraplus">כדורגל-שיפוט</a></li><li><a href="javascript:mygetvaluetodicv('כוריאוגרפיה',546)" class="paraplus">כוריאוגרפיה</a></li><li><a href="javascript:mygetvaluetodicv('כיבוי והצלה',547)" class="paraplus">כיבוי והצלה</a></li><li><a href="javascript:mygetvaluetodicv('כימיה',548)" class="paraplus">כימיה</a></li><li><a href="javascript:mygetvaluetodicv('כלי רכב',549)" class="paraplus">כלי רכב</a></li><li><a href="javascript:mygetvaluetodicv('כלכלה',550)" class="paraplus">כלכלה</a></li><li><a href="javascript:mygetvaluetodicv('לוחמה בסמים',551)" class="paraplus">לוחמה בסמים</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse560"></a><a href="javascript:mygetvaluetodicv('לחימה אמנויות ',863)" class="paraplus">לחימה אמנויות </a><ul id="collapse560" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('',865)" class="paraplus"></a></li><li><a href="javascript:mygetvaluetodicv('NLP',866)" class="paraplus">NLP</a></li><li><a href="javascript:mygetvaluetodicv('קארטה ',867)" class="paraplus">קארטה </a></li></ul></li><li><a href="javascript:mygetvaluetodicv('ליווי פרוייקטים',552)" class="paraplus">ליווי פרוייקטים</a></li><li><a href="javascript:mygetvaluetodicv('לייזר-אקדח-ממל&quot;ז',553)" class="paraplus">לייזר-אקדח-ממל"ז</a></li><li><a href="javascript:mygetvaluetodicv('ליקויי בניה',554)" class="paraplus">ליקויי בניה</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse567"></a><a href="javascript:mygetvaluetodicv('ליקויי-למידה',555)" class="paraplus">ליקויי-למידה</a><ul id="collapse567" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('אבחון',556)" class="paraplus">אבחון</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('מבדקי איכות',557)" class="paraplus">מבדקי איכות</a></li><li><a href="javascript:mygetvaluetodicv('מבנים חקלאיים',558)" class="paraplus">מבנים חקלאיים</a></li><li><a href="javascript:mygetvaluetodicv('מד (אוץ) מהירות/לייזר',559)" class="paraplus">מד (אוץ) מהירות/לייזר</a></li><li><a href="javascript:mygetvaluetodicv('מדידות',560)" class="paraplus">מדידות</a></li><li><a href="javascript:mygetvaluetodicv('מדידות ומיפוי',561)" class="paraplus">מדידות ומיפוי</a></li><li><a href="javascript:mygetvaluetodicv('מוהלים',562)" class="paraplus">מוהלים</a></li><li><a href="javascript:mygetvaluetodicv('מוזאולוגיה',563)" class="paraplus">מוזאולוגיה</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse576"></a><a href="javascript:mygetvaluetodicv('מוסיקה',564)" class="paraplus">מוסיקה</a><ul id="collapse576" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('ממוחשבת',565)" class="paraplus">ממוחשבת</a></li></ul></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse578"></a><a href="javascript:mygetvaluetodicv('מוסכים-ניהול',566)" class="paraplus">מוסכים-ניהול</a><ul id="collapse578" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('אחריות',567)" class="paraplus">אחריות</a></li><li><a href="javascript:mygetvaluetodicv('הונדה',568)" class="paraplus">הונדה</a></li><li><a href="javascript:mygetvaluetodicv('וולבו',569)" class="paraplus">וולבו</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('מורה דרך',570)" class="paraplus">מורה דרך</a></li><li><a href="javascript:mygetvaluetodicv('מטעני חבלה',571)" class="paraplus">מטעני חבלה</a></li><li><a href="javascript:mygetvaluetodicv('מיגון ואבטחה',572)" class="paraplus">מיגון ואבטחה</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse585"></a><a href="javascript:mygetvaluetodicv('מיזוג אוויר',573)" class="paraplus">מיזוג אוויר</a><ul id="collapse585" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('מערכות אוורור',574)" class="paraplus">מערכות אוורור</a></li><li><a href="javascript:mygetvaluetodicv('מערכות חימום',575)" class="paraplus">מערכות חימום</a></li><li><a href="javascript:mygetvaluetodicv('מתקני קירור',576)" class="paraplus">מתקני קירור</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('מיחזור',577)" class="paraplus">מיחזור</a></li><li><a href="javascript:mygetvaluetodicv('מימון בינלאומי',578)" class="paraplus">מימון בינלאומי</a></li><li><a href="javascript:mygetvaluetodicv('מימון מקרקעין',579)" class="paraplus">מימון מקרקעין</a></li><li><a href="javascript:mygetvaluetodicv('מימון פיננסי',580)" class="paraplus">מימון פיננסי</a></li><li><a href="javascript:mygetvaluetodicv('מיסוי מונציפלי',581)" class="paraplus">מיסוי מונציפלי</a></li><li><a href="javascript:mygetvaluetodicv('מיסוי מקרקעין',582)" class="paraplus">מיסוי מקרקעין</a></li><li><a href="javascript:mygetvaluetodicv('מיסוי עסקאות',583)" class="paraplus">מיסוי עסקאות</a></li><li><a href="javascript:mygetvaluetodicv('מי תהום',584)" class="paraplus">מי תהום</a></li><li><a href="javascript:mygetvaluetodicv('מיקרוביולוגיה',585)" class="paraplus">מיקרוביולוגיה</a></li><li><a href="javascript:mygetvaluetodicv('מכונאות-כללי',586)" class="paraplus">מכונאות-כללי</a></li><li><a href="javascript:mygetvaluetodicv('מכמנות מהירות',587)" class="paraplus">מכמנות מהירות</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse600"></a><a href="javascript:mygetvaluetodicv('מכס',588)" class="paraplus">מכס</a><ul id="collapse600" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('עמילי מכס',589)" class="paraplus">עמילי מכס</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('מכשור אורטופדי',590)" class="paraplus">מכשור אורטופדי</a></li><li><a href="javascript:mygetvaluetodicv('מלחמה בסמים',591)" class="paraplus">מלחמה בסמים</a></li><li><a href="javascript:mygetvaluetodicv('ממוני מקרקעין',592)" class="paraplus">ממוני מקרקעין</a></li><li><a href="javascript:mygetvaluetodicv('מנהל כספים',593)" class="paraplus">מנהל כספים</a></li><li><a href="javascript:mygetvaluetodicv('מניעת דליקות',594)" class="paraplus">מניעת דליקות</a></li><li><a href="javascript:mygetvaluetodicv('מנעולנים',595)" class="paraplus">מנעולנים</a></li><li><a href="javascript:mygetvaluetodicv('מסגור תמונות',596)" class="paraplus">מסגור תמונות</a></li><li><a href="javascript:mygetvaluetodicv('מסגרות',597)" class="paraplus">מסגרות</a></li><li><a href="javascript:mygetvaluetodicv('מעונות יום',598)" class="paraplus">מעונות יום</a></li><li><a href="javascript:mygetvaluetodicv('מעריך אמנות',599)" class="paraplus">מעריך אמנות</a></li><li><a href="javascript:mygetvaluetodicv('מעריך עתיקות',600)" class="paraplus">מעריך עתיקות</a></li><li><a href="javascript:mygetvaluetodicv('מעריך תכולות',601)" class="paraplus">מעריך תכולות</a></li><li><a href="javascript:mygetvaluetodicv('מעריך תכשיטים',602)" class="paraplus">מעריך תכשיטים</a></li><li><a href="javascript:mygetvaluetodicv('מערכות אזעקה',603)" class="paraplus">מערכות אזעקה</a></li><li><a href="javascript:mygetvaluetodicv('מערכות טיהור',604)" class="paraplus">מערכות טיהור</a></li><li><a href="javascript:mygetvaluetodicv('מערכות מידע ממוחשבות',605)" class="paraplus">מערכות מידע ממוחשבות</a></li><li><a href="javascript:mygetvaluetodicv('מקלטים',606)" class="paraplus">מקלטים</a></li><li><a href="javascript:mygetvaluetodicv('מקרא',607)" class="paraplus">מקרא</a></li><li><a href="javascript:mygetvaluetodicv('משאבות',608)" class="paraplus">משאבות</a></li><li><a href="javascript:mygetvaluetodicv('משאבות לבניינים',609)" class="paraplus">משאבות לבניינים</a></li><li><a href="javascript:mygetvaluetodicv('מתורגמנות',610)" class="paraplus">מתורגמנות</a></li><li><a href="javascript:mygetvaluetodicv('מתכת מסגרות וריתוך',611)" class="paraplus">מתכת מסגרות וריתוך</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse624"></a><a href="javascript:mygetvaluetodicv('נגרות',612)" class="paraplus">נגרות</a><ul id="collapse624" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('מעקות',613)" class="paraplus">מעקות</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('נהיגה',614)" class="paraplus">נהיגה</a></li><li><a href="javascript:mygetvaluetodicv('נוהלי עבודה',615)" class="paraplus">נוהלי עבודה</a></li><li><a href="javascript:mygetvaluetodicv('נזקי ביטוח',616)" class="paraplus">נזקי ביטוח</a></li><li><a href="javascript:mygetvaluetodicv('נטורופתיה',617)" class="paraplus">נטורופתיה</a></li><li><a href="javascript:mygetvaluetodicv('ניהול בטיחות וסיכונים',618)" class="paraplus">ניהול בטיחות וסיכונים</a></li><li><a href="javascript:mygetvaluetodicv('ניהול ופיקוח חינוך',619)" class="paraplus">ניהול ופיקוח חינוך</a></li><li><a href="javascript:mygetvaluetodicv('ניהול ופיתוח יישובים',620)" class="paraplus">ניהול ופיתוח יישובים</a></li><li><a href="javascript:mygetvaluetodicv('ניהול חופים',621)" class="paraplus">ניהול חופים</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse634"></a><a href="javascript:mygetvaluetodicv('ניהול ייצור',622)" class="paraplus">ניהול ייצור</a><ul id="collapse634" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('אספקה- ניהול',623)" class="paraplus">אספקה- ניהול</a></li><li><a href="javascript:mygetvaluetodicv('בקרת תצורה-ביצוע',624)" class="paraplus">בקרת תצורה-ביצוע</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('ניהול מוסד רפואי וסיעודי',625)" class="paraplus">ניהול מוסד רפואי וסיעודי</a></li><li><a href="javascript:mygetvaluetodicv('ניהול מוסדות חינוך',626)" class="paraplus">ניהול מוסדות חינוך</a></li><li><a href="javascript:mygetvaluetodicv('ניהול נדל&quot;ן',627)" class="paraplus">ניהול נדל"ן</a></li><li><a href="javascript:mygetvaluetodicv('ניהול נכסים',628)" class="paraplus">ניהול נכסים</a></li><li><a href="javascript:mygetvaluetodicv('ניהול עסקים',629)" class="paraplus">ניהול עסקים</a></li><li><a href="javascript:mygetvaluetodicv('ניהול פרוייקטים',630)" class="paraplus">ניהול פרוייקטים</a></li><li><a href="javascript:mygetvaluetodicv('ניהול פרוייקטים-בניה',631)" class="paraplus">ניהול פרוייקטים-בניה</a></li><li><a href="javascript:mygetvaluetodicv('ניהול פרוייקטים- תכניתנות',632)" class="paraplus">ניהול פרוייקטים- תכניתנות</a></li><li><a href="javascript:mygetvaluetodicv('ניהול שיווק',633)" class="paraplus">ניהול שיווק</a></li><li><a href="javascript:mygetvaluetodicv('ניהול שרותי אמבולנסים',634)" class="paraplus">ניהול שרותי אמבולנסים</a></li><li><a href="javascript:mygetvaluetodicv('ניידות נכים',635)" class="paraplus">ניידות נכים</a></li><li><a href="javascript:mygetvaluetodicv('ניקוי יבש',636)" class="paraplus">ניקוי יבש</a></li><li><a href="javascript:mygetvaluetodicv('נשק וירי-הדרכה',637)" class="paraplus">נשק וירי-הדרכה</a></li><li><a href="javascript:mygetvaluetodicv('נשק ותחמושת',638)" class="paraplus">נשק ותחמושת</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse651"></a><a href="javascript:mygetvaluetodicv('סאונד',639)" class="paraplus">סאונד</a><ul id="collapse651" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('ראה גם אולפני הקלטה ועריכה',640)" class="paraplus">ראה גם אולפני הקלטה ועריכה</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('סדקים במבנים',641)" class="paraplus">סדקים במבנים</a></li><li><a href="javascript:mygetvaluetodicv('סוכני ביטוח',642)" class="paraplus">סוכני ביטוח</a></li><li><a href="javascript:mygetvaluetodicv('סוכני נסיעות',643)" class="paraplus">סוכני נסיעות</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse656"></a><a href="javascript:mygetvaluetodicv('סיעוד',644)" class="paraplus">סיעוד</a><ul id="collapse656" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('התאמת טיפול סיעודי',645)" class="paraplus">התאמת טיפול סיעודי</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('סלילת כבישים',646)" class="paraplus">סלילת כבישים</a></li><li><a href="javascript:mygetvaluetodicv('ספורט',647)" class="paraplus">ספורט</a></li><li><a href="javascript:mygetvaluetodicv('ניהול קבוצות',648)" class="paraplus">ניהול קבוצות</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse661"></a><a href="javascript:mygetvaluetodicv('סמים',649)" class="paraplus">סמים</a><ul id="collapse661" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('לוחמה בסמים',650)" class="paraplus">לוחמה בסמים</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse663"></a><a href="javascript:mygetvaluetodicv('סמים ואלכוהול',651)" class="paraplus">סמים ואלכוהול</a><ul id="collapse663" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('התמכרויות',652)" class="paraplus">התמכרויות</a></li></ul></li></ul></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse665"></a><a href="javascript:mygetvaluetodicv('ספורט אתגרי',653)" class="paraplus">ספורט אתגרי</a><ul id="collapse665" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('טיולי ג'יפים',654)" class="paraplus">טיולי ג'יפים</a></li><li><a href="javascript:mygetvaluetodicv('סנפלינג',655)" class="paraplus">סנפלינג</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('ספנות',656)" class="paraplus">ספנות</a></li><li><a href="javascript:mygetvaluetodicv('סקסולוגיה',657)" class="paraplus">סקסולוגיה</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse670"></a><a href="javascript:mygetvaluetodicv('עבודה סוציאלית',658)" class="paraplus">עבודה סוציאלית</a><ul id="collapse670" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('טיפול משפחתי',659)" class="paraplus">טיפול משפחתי</a></li><li><a href="javascript:mygetvaluetodicv('ילדים ונוער',660)" class="paraplus">ילדים ונוער</a></li><li><a href="javascript:mygetvaluetodicv('כללי',661)" class="paraplus">כללי</a></li><li><a href="javascript:mygetvaluetodicv('פסיכותרפיה',662)" class="paraplus">פסיכותרפיה</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse675"></a><a href="javascript:mygetvaluetodicv('קלינית',663)" class="paraplus">קלינית</a><ul id="collapse675" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('אבחון הסתגלותי',664)" class="paraplus">אבחון הסתגלותי</a></li><li><a href="javascript:mygetvaluetodicv('התמכרות לסמים',665)" class="paraplus">התמכרות לסמים</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('קשישים',666)" class="paraplus">קשישים</a></li><li><a href="javascript:mygetvaluetodicv('שיקום פסיכיאטרי',667)" class="paraplus">שיקום פסיכיאטרי</a></li><li><a href="javascript:mygetvaluetodicv('שיקומית',668)" class="paraplus">שיקומית</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('עבודות פיתוח',669)" class="paraplus">עבודות פיתוח</a></li><li><a href="javascript:mygetvaluetodicv('עזרה לאוניות-גוררות',670)" class="paraplus">עזרה לאוניות-גוררות</a></li><li><a href="javascript:mygetvaluetodicv('עיצוב גרפי',671)" class="paraplus">עיצוב גרפי</a></li><li><a href="javascript:mygetvaluetodicv('עיצוב פנים',672)" class="paraplus">עיצוב פנים</a></li><li><a href="javascript:mygetvaluetodicv('עמותות-ניהול',673)" class="paraplus">עמותות-ניהול</a></li><li><a href="javascript:mygetvaluetodicv('עמותות-גיוס כספים',674)" class="paraplus">עמותות-גיוס כספים</a></li><li><a href="javascript:mygetvaluetodicv('עץ-עבודות עץ',675)" class="paraplus">עץ-עבודות עץ</a></li><li><a href="javascript:mygetvaluetodicv('פוליגרף',676)" class="paraplus">פוליגרף</a></li><li><a href="javascript:mygetvaluetodicv('פיקוח בניה',677)" class="paraplus">פיקוח בניה</a></li><li><a href="javascript:mygetvaluetodicv('פיקוח פרוייקטים',678)" class="paraplus">פיקוח פרוייקטים</a></li><li><a href="javascript:mygetvaluetodicv('פיקוח פרוייקטים וניהולם',679)" class="paraplus">פיקוח פרוייקטים וניהולם</a></li><li><a href="javascript:mygetvaluetodicv('פנסיה',680)" class="paraplus">פנסיה</a></li><li><a href="javascript:mygetvaluetodicv('פנסיה גרמנית',681)" class="paraplus">פנסיה גרמנית</a></li><li><a href="javascript:mygetvaluetodicv('פסיכוטראומה',682)" class="paraplus">פסיכוטראומה</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse695"></a><a href="javascript:mygetvaluetodicv('פסיכולוגיה',683)" class="paraplus">פסיכולוגיה</a><ul id="collapse695" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('חינוכית',684)" class="paraplus">חינוכית</a></li><li><a href="javascript:mygetvaluetodicv('כללי',685)" class="paraplus">כללי</a></li><li><a href="javascript:mygetvaluetodicv('משפחתית',686)" class="paraplus">משפחתית</a></li><li><a href="javascript:mygetvaluetodicv('נוירופסיכולוגיה',687)" class="paraplus">נוירופסיכולוגיה</a></li></ul></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse700"></a><a href="javascript:mygetvaluetodicv('פסיכולוגיה המשך',688)" class="paraplus">פסיכולוגיה המשך</a><ul id="collapse700" class="panel-collapse line-tree collapse"><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse701"></a><a href="javascript:mygetvaluetodicv('קלינית',689)" class="paraplus">קלינית</a><ul id="collapse701" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('אבחונים פסיכולוגים',690)" class="paraplus">אבחונים פסיכולוגים</a></li><li><a href="javascript:mygetvaluetodicv('טפולים פסיכולוגיים',691)" class="paraplus">טפולים פסיכולוגיים</a></li><li><a href="javascript:mygetvaluetodicv('ילדים ונוער',692)" class="paraplus">ילדים ונוער</a></li><li><a href="javascript:mygetvaluetodicv('כללי',693)" class="paraplus">כללי</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('שיקומית',694)" class="paraplus">שיקומית</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('פסיכותרפיה',695)" class="paraplus">פסיכותרפיה</a></li><li><a href="javascript:mygetvaluetodicv('פענוח תצלומי אוויר',696)" class="paraplus">פענוח תצלומי אוויר</a></li><li><a href="javascript:mygetvaluetodicv('פרוייקטורים',697)" class="paraplus">פרוייקטורים</a></li><li><a href="javascript:mygetvaluetodicv('צבע',698)" class="paraplus">צבע</a></li><li><a href="javascript:mygetvaluetodicv('ציוד חקלאי',699)" class="paraplus">ציוד חקלאי</a></li><li><a href="javascript:mygetvaluetodicv('צילום דיגיטלי',700)" class="paraplus">צילום דיגיטלי</a></li><li><a href="javascript:mygetvaluetodicv('צילום והפקה',701)" class="paraplus">צילום והפקה</a></li><li><a href="javascript:mygetvaluetodicv('צינורות פלסטיים',702)" class="paraplus">צינורות פלסטיים</a></li><li><a href="javascript:mygetvaluetodicv('ציפוי-מתכת',703)" class="paraplus">ציפוי-מתכת</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse716"></a><a href="javascript:mygetvaluetodicv('צלילה',704)" class="paraplus">צלילה</a><ul id="collapse716" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('הדרכה',705)" class="paraplus">הדרכה</a></li><li><a href="javascript:mygetvaluetodicv('צבאית וספורטיבית',706)" class="paraplus">צבאית וספורטיבית</a></li><li><a href="javascript:mygetvaluetodicv('ציוד',707)" class="paraplus">ציוד</a></li></ul></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse720"></a><a href="javascript:mygetvaluetodicv('קבלנות',708)" class="paraplus">קבלנות</a><ul id="collapse720" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('איטום',709)" class="paraplus">איטום</a></li><li><a href="javascript:mygetvaluetodicv('איטום ובידוד',710)" class="paraplus">איטום ובידוד</a></li><li><a href="javascript:mygetvaluetodicv('בניין',711)" class="paraplus">בניין</a></li><li><a href="javascript:mygetvaluetodicv('הריסה',712)" class="paraplus">הריסה</a></li><li><a href="javascript:mygetvaluetodicv('כללי',713)" class="paraplus">כללי</a></li><li><a href="javascript:mygetvaluetodicv('עבודות ציבוריות',714)" class="paraplus">עבודות ציבוריות</a></li><li><a href="javascript:mygetvaluetodicv('שיפוצים',715)" class="paraplus">שיפוצים</a></li><li><a href="javascript:mygetvaluetodicv('שיקום',716)" class="paraplus">שיקום</a></li></ul></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse729"></a><a href="javascript:mygetvaluetodicv('קוסמטיקה',717)" class="paraplus">קוסמטיקה</a><ul id="collapse729" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('הוליסטית',718)" class="paraplus">הוליסטית</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('קורוזיה ושיקום',719)" class="paraplus">קורוזיה ושיקום</a></li><li><a href="javascript:mygetvaluetodicv('קלינאות תקשורת',720)" class="paraplus">קלינאות תקשורת</a></li><li><a href="javascript:mygetvaluetodicv('קציני מבחן',721)" class="paraplus">קציני מבחן</a></li><li><a href="javascript:mygetvaluetodicv('קרימינולוגיה',722)" class="paraplus">קרימינולוגיה</a></li><li><a href="javascript:mygetvaluetodicv('קרקע וביסוס',723)" class="paraplus">קרקע וביסוס</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse736"></a><a href="javascript:mygetvaluetodicv('ראיית חשבון',724)" class="paraplus">ראיית חשבון</a><ul id="collapse736" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('מיסים',725)" class="paraplus">מיסים</a></li><li><a href="javascript:mygetvaluetodicv('עזבונות',726)" class="paraplus">עזבונות</a></li><li><a href="javascript:mygetvaluetodicv('אפוטרופסות',727)" class="paraplus">אפוטרופסות</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('רבנים',728)" class="paraplus">רבנים</a></li><li><a href="javascript:mygetvaluetodicv('רדיואקטיביות',729)" class="paraplus">רדיואקטיביות</a></li><li><a href="javascript:mygetvaluetodicv('רהיטים',730)" class="paraplus">רהיטים</a></li><li><a href="javascript:mygetvaluetodicv('רובוטיקה להרכבות אלקטרוניות',731)" class="paraplus">רובוטיקה להרכבות אלקטרוניות</a></li><li><a href="javascript:mygetvaluetodicv('רוקחות',732)" class="paraplus">רוקחות</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse745"></a><a href="javascript:mygetvaluetodicv('רכב',733)" class="paraplus">רכב</a><ul id="collapse745" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('דו גלגלי',734)" class="paraplus">דו גלגלי</a></li><li><a href="javascript:mygetvaluetodicv('חדש',735)" class="paraplus">חדש</a></li><li><a href="javascript:mygetvaluetodicv('כללי',736)" class="paraplus">כללי</a></li><li><a href="javascript:mygetvaluetodicv('מכונאות',737)" class="paraplus">מכונאות</a></li><li><a href="javascript:mygetvaluetodicv('מערכות אזעקה',738)" class="paraplus">מערכות אזעקה</a></li><li><a href="javascript:mygetvaluetodicv('פחחות וצבע',739)" class="paraplus">פחחות וצבע</a></li></ul></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse752"></a><a href="javascript:mygetvaluetodicv('ריפודים',740)" class="paraplus">ריפודים</a><ul id="collapse752" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('בד',741)" class="paraplus">בד</a></li><li><a href="javascript:mygetvaluetodicv('עור',742)" class="paraplus">עור</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('רצפות תעשייתיות',743)" class="paraplus">רצפות תעשייתיות</a></li><li><a href="javascript:mygetvaluetodicv('שדות תעופה',744)" class="paraplus">שדות תעופה</a></li><li><a href="javascript:mygetvaluetodicv('שחזור חשבונות',745)" class="paraplus">שחזור חשבונות</a></li><li><a href="javascript:mygetvaluetodicv('שטפונות',746)" class="paraplus">שטפונות</a></li><li><a href="javascript:mygetvaluetodicv('שילוח בינלאומי',747)" class="paraplus">שילוח בינלאומי</a></li><li><a href="javascript:mygetvaluetodicv('שיערוך ציוד',748)" class="paraplus">שיערוך ציוד</a></li><li><a href="javascript:mygetvaluetodicv('שיפוצים-השגחה',749)" class="paraplus">שיפוצים-השגחה</a></li><li><a href="javascript:mygetvaluetodicv('שיקום',750)" class="paraplus">שיקום</a></li><li><a href="javascript:mygetvaluetodicv('שיקום נויורלוגי',751)" class="paraplus">שיקום נויורלוגי</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse764"></a><a href="javascript:mygetvaluetodicv('שיש',752)" class="paraplus">שיש</a><ul id="collapse764" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('אדני חלונות',753)" class="paraplus">אדני חלונות</a></li><li><a href="javascript:mygetvaluetodicv('חיפוי וריצוף',754)" class="paraplus">חיפוי וריצוף</a></li><li><a href="javascript:mygetvaluetodicv('מדרגות שיש',755)" class="paraplus">מדרגות שיש</a></li><li><a href="javascript:mygetvaluetodicv('שיש טבעי',756)" class="paraplus">שיש טבעי</a></li><li><a href="javascript:mygetvaluetodicv('שיש מטבחים',757)" class="paraplus">שיש מטבחים</a></li><li><a href="javascript:mygetvaluetodicv('שיש קיסר',758)" class="paraplus">שיש קיסר</a></li></ul></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse771"></a><a href="javascript:mygetvaluetodicv('שמאות',759)" class="paraplus">שמאות</a><ul id="collapse771" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('אלמנטרית',760)" class="paraplus">אלמנטרית</a></li><li><a href="javascript:mygetvaluetodicv('ביטוח',761)" class="paraplus">ביטוח</a></li><li><a href="javascript:mygetvaluetodicv('חקלאות',762)" class="paraplus">חקלאות</a></li><li><a href="javascript:mygetvaluetodicv('ימית',763)" class="paraplus">ימית</a></li><li><a href="javascript:mygetvaluetodicv('כללי',764)" class="paraplus">כללי</a></li><li><a href="javascript:mygetvaluetodicv('מיכון חקלאי',765)" class="paraplus">מיכון חקלאי</a></li><li><a href="javascript:mygetvaluetodicv('מכונות',766)" class="paraplus">מכונות</a></li><li><a href="javascript:mygetvaluetodicv('מקרקעין',767)" class="paraplus">מקרקעין</a></li><li><a href="javascript:mygetvaluetodicv('משאיות',768)" class="paraplus">משאיות</a></li><li><a href="javascript:mygetvaluetodicv('ציוד מכונות',769)" class="paraplus">ציוד מכונות</a></li><li><a href="javascript:mygetvaluetodicv('ציוד מכני',770)" class="paraplus">ציוד מכני</a></li><li><a href="javascript:mygetvaluetodicv('צמ&quot;ה',771)" class="paraplus">צמ"ה</a></li><li><a href="javascript:mygetvaluetodicv('רכב',772)" class="paraplus">רכב</a></li><li><a href="javascript:mygetvaluetodicv('רכוש',773)" class="paraplus">רכוש</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse786"></a><a href="javascript:mygetvaluetodicv('שטיחים',774)" class="paraplus">שטיחים</a><ul id="collapse786" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('ניקוי',775)" class="paraplus">ניקוי</a></li><li><a href="javascript:mygetvaluetodicv('שיקום שטיחים',776)" class="paraplus">שיקום שטיחים</a></li><li><a href="javascript:mygetvaluetodicv('תיקון',777)" class="paraplus">תיקון</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('בדים וריפודים',778)" class="paraplus">בדים וריפודים</a></li><li><a href="javascript:mygetvaluetodicv('ריפוד רהיטים',779)" class="paraplus">ריפוד רהיטים</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('שמורת טבע',780)" class="paraplus">שמורת טבע</a></li><li><a href="javascript:mygetvaluetodicv('שפכים-טיפול',781)" class="paraplus">שפכים-טיפול</a></li><li><a href="javascript:mygetvaluetodicv('שרטוט',782)" class="paraplus">שרטוט</a></li><li><a href="javascript:mygetvaluetodicv('תאונות דרכים - חקירה',783)" class="paraplus">תאונות דרכים - חקירה</a></li><li><a href="javascript:mygetvaluetodicv('תאונות עבודה',784)" class="paraplus">תאונות עבודה</a></li><li><a href="javascript:mygetvaluetodicv('תאונות עבודה חשמל',785)" class="paraplus">תאונות עבודה חשמל</a></li><li><a href="javascript:mygetvaluetodicv('תחבורה יבשתית',786)" class="paraplus">תחבורה יבשתית</a></li><li><a href="javascript:mygetvaluetodicv('תיווך נדל&quot;ן',787)" class="paraplus">תיווך נדל"ן</a></li><li><a href="javascript:mygetvaluetodicv('תיירות',788)" class="paraplus">תיירות</a></li><li><a href="javascript:mygetvaluetodicv('תכנון איטום',789)" class="paraplus">תכנון איטום</a></li><li><a href="javascript:mygetvaluetodicv('תכנון בריכות שחייה',790)" class="paraplus">תכנון בריכות שחייה</a></li><li><a href="javascript:mygetvaluetodicv('תכנון וייצור כספות',791)" class="paraplus">תכנון וייצור כספות</a></li><li><a href="javascript:mygetvaluetodicv('תכנון קונסטרוקציה',792)" class="paraplus">תכנון קונסטרוקציה</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse805"></a><a href="javascript:mygetvaluetodicv('תכנון שדות תעופה',793)" class="paraplus">תכנון שדות תעופה</a><ul id="collapse805" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('הגבלות בניה תעופתיות',794)" class="paraplus">הגבלות בניה תעופתיות</a></li></ul></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse807"></a><a href="javascript:mygetvaluetodicv('תכנות מחשבים',795)" class="paraplus">תכנות מחשבים</a><ul id="collapse807" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('אינטרנט',796)" class="paraplus">אינטרנט</a></li><li><a href="javascript:mygetvaluetodicv('בסיסי נתונים',797)" class="paraplus">בסיסי נתונים</a></li><li><a href="javascript:mygetvaluetodicv('ניתוח מערכות',798)" class="paraplus">ניתוח מערכות</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('תכשיטנות-כללי',799)" class="paraplus">תכשיטנות-כללי</a></li><li><a href="javascript:mygetvaluetodicv('תנאים סוציאליים',800)" class="paraplus">תנאים סוציאליים</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse813"></a><a href="javascript:mygetvaluetodicv('תנורי אפיה',801)" class="paraplus">תנורי אפיה</a><ul id="collapse813" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('תנורי אפיית פיתות',802)" class="paraplus">תנורי אפיית פיתות</a></li></ul></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse815"></a><a href="javascript:mygetvaluetodicv('תעבורה',803)" class="paraplus">תעבורה</a><ul id="collapse815" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('דיני תעבורה',804)" class="paraplus">דיני תעבורה</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('תעשיית היין',805)" class="paraplus">תעשיית היין</a></li><li><a href="javascript:mygetvaluetodicv('תקינה בפלסטיקה',806)" class="paraplus">תקינה בפלסטיקה</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse819"></a><a href="javascript:mygetvaluetodicv('תרגום',807)" class="paraplus">תרגום</a><ul id="collapse819" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('פרסית',808)" class="paraplus">פרסית</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('תשתיות תחבורתיות',809)" class="paraplus">תשתיות תחבורתיות</a></li><li><a href="javascript:mygetvaluetodicv('שערים חשמליים',810)" class="paraplus">שערים חשמליים</a></li><li><a href="javascript:mygetvaluetodicv('איתור נזילות',846)" class="paraplus">איתור נזילות</a></li></ul></li></ul>
+													</li>
+													</ul>
+													<ul class="DefineTree treeplant">
+													<li><a data-toggle="collapse" href="#collapse823" class="fromtree insExtra"></a><span>בוררים</span>
+													<ul id="collapse823" class="panel-collapse line-tree collapse in"><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse824"></a><a href="javascript:mygetvaluetodicv('שופטים בדימוס/עורכי דין',811)" class="paraplus">שופטים בדימוס/עורכי דין</a><ul id="collapse824" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('שופטים בדימוס',830)" class="paraplus">שופטים בדימוס</a></li><li><a href="javascript:mygetvaluetodicv('עורכי דין',831)" class="paraplus">עורכי דין</a></li></ul></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse827"></a><a href="javascript:mygetvaluetodicv('משפטנים/טוענים משפטיים',812)" class="paraplus">משפטנים/טוענים משפטיים</a><ul id="collapse827" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('משפטנים',832)" class="paraplus">משפטנים</a></li><li><a href="javascript:mygetvaluetodicv('טוענים משפטיים',833)" class="paraplus">טוענים משפטיים</a></li><li><a href="javascript:mygetvaluetodicv('טוענים רבניים',834)" class="paraplus">טוענים רבניים</a></li></ul></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse831"></a><a href="javascript:mygetvaluetodicv('נבחרי ציבור',813)" class="paraplus">נבחרי ציבור</a><ul id="collapse831" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('ראשי ערים',835)" class="paraplus">ראשי ערים</a></li><li><a href="javascript:mygetvaluetodicv('ראשי מועצות',836)" class="paraplus">ראשי מועצות</a></li><li><a href="javascript:mygetvaluetodicv('רבנים',837)" class="paraplus">רבנים</a></li></ul></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse835"></a><a href="javascript:void(0)" class="paraplus">סקטוריאלי: רו"ח/ מקצועות הנדסיים</a><ul id="collapse835" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('רואה חשבון',823)" class="paraplus">רואה חשבון</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse837"></a><a href="javascript:mygetvaluetodicv('מקצועות הנדסיים',824)" class="paraplus">מקצועות הנדסיים</a><ul id="collapse837" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('הנדסת חשמל',840)" class="paraplus">הנדסת חשמל</a></li></ul></li></ul></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse839"></a><a href="javascript:void(0)" class="paraplus">א-סקטוריאלי</a><ul id="collapse839" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('אדריכל',825)" class="paraplus">אדריכל</a></li><li><a href="javascript:mygetvaluetodicv('מודד',827)" class="paraplus">מודד</a></li><li><a href="javascript:mygetvaluetodicv('מנהל',828)" class="paraplus">מנהל</a></li><li><a href="javascript:mygetvaluetodicv('מתכנן',829)" class="paraplus">מתכנן</a></li><li><a class="insExtra collapsed" data-toggle="collapse" href="#collapse844"></a><a href="javascript:mygetvaluetodicv('שמאי',826)" class="paraplus">שמאי</a><ul id="collapse844" class="panel-collapse line-tree collapse"><li><a href="javascript:mygetvaluetodicv('רכוש',862)" class="paraplus">רכוש</a></li></ul></li><li><a href="javascript:mygetvaluetodicv('איטום',843)" class="paraplus">איטום</a></li></ul></li></ul>
+													</li>
+													</ul>
+													<ul class="DefineTree treeplant">
+													<li><a data-toggle="collapse" href="#collapse846" class="fromtree insExtra"></a><a href="index2.php?id=5125&amp;catId=5&amp;lang=HEB">מגשרים</a>
+													<ul id="collapse846" class="panel-collapse line-tree collapse in"><li><a href="javascript:mygetvaluetodicv('מגשרים',819)" class="paraplus">מגשרים</a></li><li><a href="javascript:mygetvaluetodicv('מגשרים-בוררים',820)" class="paraplus">מגשרים-בוררים</a></li></ul>
+													</li>
+													</ul>
+												
+									   </div>
+									</div>
+									<div class="col-md-1 col-sm-1 col-xs-12 row-grid ">
+									<img src="designFiles/arrow-iconsilde.png" class="rformimg" alt="arrow-iconsilde">
+									</div>
+									<div class="col-md-4 col-sm-4 col-xs-12 row-grid pdht15">
+									<div class="rltdivp widthrldiv">
+										<div class="col-md-12 col-sm-12 col-xs-12 paddingZ clRmvse"></div>
+									</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								</div>
+								</div>
+								</div>
+
+					<div class=" col-md-12  col-sm-12  col-xs-12 pagespecialpara brtop">
+					<h2 class="para"><span class="para-num">כ</span>הגשת בקשות ליצירת סיווג שלא נכלל בעץ הסיווגים</h2>
+								<div class="contcactfrom">
+							<div class="contact-right">
+								
+								<div class="row">
+									<div class="col-md-12  col-sm-12  col-xs-12 row-grid pdht15">
+									<input name="catsExtraDetails" placeholder="פרט כאן בקשתך להוספה והיא תועבר לעיון הנהלת המאגר" type="text" id="catsExtraDetails">
+									<label for="catsExtraDetails" class="hidden-section">פרט כאן בקשתך להוספה והיא תועבר לעיון הנהלת המאגר</label>
+									</div>
+								</div>
+								</div>
+								</div>
+								</div><div class=" col-md-12  col-sm-12  col-xs-12 pagespecialpara brtop">
+					<h2 class="para"><span class="para-num">ל</span>תשלום בכרטיס אשראי</h2>	<div class="contcactfrom">
+					<div class="row">
+						<div class="col-xs-12 row-grid pdht15">
+							<p class="from1detail"></p>
+						</div>
+					</div>
+					<p class="editing resigter-margin"><i class="fa fa-star font-icon-1"></i>הסכומים הנקובים אינם כוללים מע"מ</p>
+					<div class="row">
+					<p class="registr-para"> 
+										<label for="paymentOption1" class="hidden-section">12 תשלומים שווים ע"ס - 495 ₪ בתוספת מע"מ כחוק</label>
+										<input type="radio" name="paymentOption" id="paymentOption1" class="registr-radio" value="12" onclick="$('#totalSum').val('5940 + מע&quot;מ');$('#totalPay').val(5940)">12 תשלומים שווים ע"ס - 495 ₪ בתוספת מע"מ כחוק.</p><p class="registr-para"> 
+										<label for="paymentOption2" class="hidden-section">5 תשלומים שווים ע"ס - 1035 ₪ בתוספת מע"מ כחוק</label>
+										<input type="radio" name="paymentOption" id="paymentOption2" class="registr-radio" value="5" onclick="$('#totalSum').val('5175 + מע&quot;מ');$('#totalPay').val(5175)">5 תשלומים שווים ע"ס - 1035 ₪ בתוספת מע"מ כחוק.</p><p class="registr-para"> 
+										<label for="paymentOption3" class="hidden-section">1 תשלומים שווים ע"ס - 4999 ₪ בתוספת מע"מ כחוק</label>
+										<input type="radio" name="paymentOption" id="paymentOption3" class="registr-radio" value="1" onclick="$('#totalSum').val('4999 + מע&quot;מ');$('#totalPay').val(4999)">1 תשלומים שווים ע"ס - 4999 ₪ בתוספת מע"מ כחוק.</p>
+					</div>
+					</div>
+								<div class="contcactfrom">
+							<div class="contact-right">
+								
+								<div class="row">
+									<div class="col-md-6 col-sm-6 col-xs-12 row-grid pdht15">
+									<input id="totalSum" disabled="" placeholder="סה&quot;כ לתשלום" type="text">
+									<label for="totalSum" class="hidden-section">סה"כ לתשלום</label>
+									</div>
+									<div class="col-md-6 col-sm-6 col-xs-12 row-grid pdht15">
+									<input name="creditCardHolder" placeholder="שם בעל הכרטיס" id="creditCardHolder" type="text">
+									<label for="creditCardHolder" class="hidden-section">שם בעל הכרטיס</label>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							<div class="row">
+									<div class="col-md-6 col-sm-6 col-xs-12 row-grid pdht15">
+										<input name="creditCardNumber" placeholder="מספר הכרטיס" type="text" id="creditCardNumber">
+										<label for="creditCardNumber" class="hidden-section">מספר הכרטיס</label>
+									</div>
+								<div class="col-md-6 col-sm-6 col-xs-12 row-grid pdht15">
+												<div class="col-xs-6 fix-pad wid60">
+												<select id="course_creditType" name="course_creditType" class="option-element">
+												 <option selected="" disabled="">סוג הכרטיס</option>
+												 <option value="01">ויזה</option>
+												 <option value="02">מאסטר קארד</option>
+												 <option value="03">דיינרס</option>
+												 <option value="04">ישראכארד</option>
+												 </select>
+												<label for="creditCardMonth" class="hidden-section">סוג הכרטיס</label>
+												
+												</div>
+												<div class="col-xs-6 pdht15 fix-pad wid40 paddingZ">
+															<input name="creditCardCVV" type="text" id="creditCardCVV" maxlength="4">
+															<label for="creditCardCVV" class="cvvlabel ">שלוש ספרות בגב הכרטיס</label>
+												</div>
+								</div>
+									<script>
+									function hasValue() {
+												$("#creditCardCVV").blur(function(){
+												tmpval = $(this).val();
+												if(tmpval == "") {
+													$(this).addClass("empty");
+													$(this).removeClass("not-empty");
+												} else {
+													$(this).addClass("not-empty");
+													$(this).removeClass("empty");
+												}
+											});
+											}
+											hasValue();
+									</script>
+									
+									<div class="clearfix"></div>
+								</div>
+							<div class="row">
+									<div class="col-md-6 col-sm-6 col-xs-12 row-grid pdht15">
+										<input name="creditCardTz" placeholder="מספר ת.ז. של בעל הכרטיס" id="creditCardTz" type="text">
+									<label for="creditCardTz" class="hidden-section">מספר ת.ז. של בעל הכרטיס</label>
+									</div>
+									<div class="col-md-6 col-sm-6 col-xs-12 pdht15">
+									<div class="elementfrm-2 row-grid ">
+									<p class="formpara-1">תוקף הכרטיס:</p>
+									</div>
+									<div class="elementfrm-1 row-grid pdht15">
+									<select id="creditCardMonth" name="creditCardMonth" class="option-element">
+									 <option value="01">01</option>
+									 <option value="02">02</option>
+									 <option value="03">03</option>
+									 <option value="04">04</option>
+									 <option value="05">05</option>
+									 <option value="06">06</option>
+									 <option value="07">07</option>
+									 <option value="08">08</option>
+									 <option value="09">09</option>
+									 <option value="10">10</option>
+									 <option value="11">11</option>
+									 <option value="12">12</option>
+									 </select>
+									<label for="creditCardMonth" class="hidden-section">תוקף הכרטיס - חודש</label>
+									</div>
+									<div class="elementfrm row-grid pdht15">
+									<select name="creditCardYear" id="creditCardYear" class="option-element" type="text">
+									<option value="18">2018</option>
+									<option value="19">2019</option>
+									<option value="20">2020</option>
+									<option value="21">2021</option>
+									<option value="22">2022</option>
+									<option value="23">2023</option>
+									<option value="24">2024</option>
+									<option value="25">2025</option>
+									<option value="26">2026</option>
+									<option value="27">2027</option>
+									<option value="28">2028</option>
+									 </select>
+									<label for="creditCardYear" class="hidden-section">תוקף הכרטיס - שנה</label>
+									</div>
+									</div>
+									
+								</div>
+								</div>							
+								</div>
+								</div>
+					<div class=" col-md-12 col-sm-12  col-xs-12 pagespecialpara brtop">
+					<h2 class="para"><span class="para-num">מ</span>מידע חשבונית</h2>
+					<div class="contcactfrom">
+					<div class="contact-right receipts-block">
+					<div class="row">
+						<p class="from1detail">אני מבקש להוציא את החשבונית על שם:</p>
+						<input name="name4invoice" id="name4invoice" type="text" class="rcontaine">
+						<label for="name4invoice" class="hidden-section">חשבונית על שם</label>
+						<p>&nbsp;</p>
+						<div>
+						<input value="בית" id="invoiceToHome" name="invoiceTo" checked="" type="radio" class="registr-radio"> אני מבקש לשלוח את החשבונית לכתובת ביתי
+						<label for="invoiceToHome" class="hidden-section">חשבונית לכתובת ביתי</label>
+						</div>
+						<div>
+						<input value="משרד" id="invoiceToOffice" name="invoiceTo" type="radio" class="registr-radio"> אני מבקש לשלוח את החשבונית לכתובת משרדי
+						<label for="invoice2office" class="hidden-section">חשבונית לכתובת משרדי</label>
+						</div>
+						<p>&nbsp;</p>
+						<p class="from1detail">אם לכתובת אחרת, נא פרט להיכן:</p>
+						<input name="invoice2addr" id="invoice2addr" type="text" class="rcontaine">
+						<label for="invoice2addr" class="hidden-section">כתובת אחרת למשלוח חשבונית</label>
+					</div>
+					</div>
+					</div>
+					</div>
+
+					<div class=" col-md-12  col-sm-12  col-xs-12 pagespecialpara brtop">
+					<h2 class="para"><span class="para-num">נ</span>העלאת תמונה</h2>
+					<div class="contcactfrom">
+					<div class="contact-right">
+					<div class="row ">
+						<p class="from1detail col-md-12 paddXsZ">באפשרותך להעלות תמונה כבר בשלב זה או לאחר שבקשתך תאושר וישלחו אליך שם משתמש וסיסמא.</p>
+						<div class="form-1 col-md-12 paddXsZ">
+							<input id="picFileName" type="text" class="rcontaine" disabled="">
+							<input name="picFile" id="picFile" type="file" class="retailrtl" style="display:none" accept="image/*">
+							<label for="picFile" class="frm-sect">בחר קובץ</label>
+						</div>
+						<p class="col-md-12 paddXsZ">מוכח : כמות המינויים גדולה פי כמה וכמה למי שמתקינים תמונה בפרופיל שלהם, אנו ממליצים על התקנת 
+									   תמונה , עדיפות לתמונה מקצועית, גברים: מומלצת תמונה מעונבת במקטורן , נשים תמונה בכסות מלאה.</p>
+					</div>
+					</div>
+					</div>
+					</div>
+
+					<div class=" col-md-12  col-sm-12  col-xs-12 pagespecialpara brtop ">
+					<h2 class="para"><span class="para-num">ס</span>עבר פלילי</h2>
+					<div class="contcactfrom">
+					<div class="row">
+					<p class="registr-para-234 poit-mrt col-md-12 paddXsZ">בשל מעמדו/ה המיוחד של הבורר/ת ו/או העד/ה המומחה/ית ושל השירות שעליו/ה לספק, יידרש/תידרש
+					המועמד/ת לחתום על תצהיר המאמת את הפרטים בשאלון הרשמה זה, לרבות העובדה כי אין למועמד/ת
+					הרשעות קודמות בפלילים, וכי למיטב ידיעתו/ה אין כל כוונה להעמידו/ה לדין פלילי. החתימה על התצהיר 
+					תהא בפני עו"ד, והיא מהווה חלק בלתי נפרד מתנאי הקבלה והרישום במאגר.</p>
+					<p class="registr-para-2 col-md-12 paddXsZ">בכל מקרה של ספק, בעניין מחיקת עבר פלילי, התיישנות עבירות, סוגי עבירות ( כגון: במיוחד תכנון ובניה,
+					תעבורה וכד\' ) תיק פתוח שלא הבשיל כדי העמדה לדין, כל הליך פלילי אחר , אנא פנה אלינו ליעוץ טלפוני
+					מול עו"ד מטעם המכון, הייעוץ אינו כרוך בתשלום ואנו מחויבים ומתחייבים לדיסקרטיות מלאה.</p>
+				
+					</div>
+					</div>
+					</div>
+						<div class=" col-md-12  col-sm-12  col-xs-12 pagespecialpara brtop ">
+					<h2 class="para"><span class="para-num">ע</span>הנחת מומחה מביא מומחה</h2>
+					<div class="contcactfrom">
+					<div class="row">
+					<p class="registr-para-234 poit-mrt col-md-12 paddXsZ"> נודה לציון שמות שני מומחים הראויים לדעתך להצטרף להשתלמות/למאגר. ככל שהמלצתך תביא לרישומם 
+		(ולא קדמה להמלצתך פניה מהם/אליהם) אנו נזכה את חשבונך בהנחה בת 5% בהתאם להנחיותיך.  </p>
+					</div>
+					</div>
+					<div class="contcactfrom">
+							<div class="contact-right">
+								
+								<div id="formsdivsagain">
+								<div class="row" id="formfiele1">
+									<div class="col-md-3 col-sm-3  col-xs-12 row-grid pdht15">
+										<input name="lead1firstname" placeholder="שם פרטי" id="lead1firstname" type="text">
+									<label for="lead1firstname" class="hidden-section">שם פרטי</label>
+									</div>
+									<div class="col-md-3 col-sm-3  col-xs-12 row-grid pdht15">
+									<input name="lead1lastname" placeholder="שם משפחה" id="lead1lastname" type="text">
+									<label for="lead1lastname" class="hidden-section">שם משפחה</label>
+									</div>
+									<div class="col-md-3 col-sm-3  col-xs-12 row-grid pdht15">
+										<input name="lead1cellphone" placeholder="מס נייד" id="lead1cellphone" type="text">
+									<label for="lead1cellphone" class="hidden-section">מס נייד</label>
+									</div>
+									<div class="col-md-3 col-sm-3  col-xs-12 row-grid pdht15">
+									<input name="lead1profession" placeholder="מקצוע" id="lead1profession" type="text">
+									<label for="lead1profession" class="hidden-section">מקצוע</label>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								</div>
+								<div class="row IconPlusEfr">
+									<div class="col-md-3  col-sm-3  col-xs-12 row-grid pdht15">
+										<i id="addddagain" class="fa fa-plus" onclick="addddagain();"></i>
+										<i class="fa fa-minus deleteEfr" id="delete12again" onclick="removefieldagain();"></i>
+									</div>
+								</div>
+								<script>
+							var defaultvalueagan=1;
+								function addddagain(){
+									defaultvalueagan++;
+									$("#formsdivsagain").append('<div class="row" id="formfiele'+defaultvalueagan+'"><div class="col-md-3 col-sm-3  col-xs-12 row-grid pdht15"><input name="lead'+defaultvalueagan+'firstname" placeholder="שם פרטי" id="lead'+defaultvalueagan+'firstname" type="text"><label for="lead'+defaultvalueagan+'firstname" class="hidden-section">שם פרטי</label></div><div class="col-md-3 col-sm-3  col-xs-12 row-grid pdht15"><input name="lead'+defaultvalueagan+'lastname" placeholder="T"  id="lead'+defaultvalueagan+'lastname" type="text"><label for="lead'+defaultvalueagan+'lastname" class="hidden-section">T</label></div><div class="col-md-3 col-sm-3  col-xs-12 row-grid pdht15"><input name="lead'+defaultvalueagan+'cellphone" placeholder="מס נייד"  id="lead'+defaultvalueagan+'cellphone" type="text"><label for="lead'+defaultvalueagan+'cellphone" class="hidden-section">מס נייד</label></div><div class="col-md-3 col-sm-3  col-xs-12 row-grid pdht15"><input name="lead'+defaultvalueagan+'profession" placeholder="מקצוע" id="lead'+defaultvalueagan+'profession" type="text"><label for="lead'+defaultvalueagan+'profession" class="hidden-section">מקצוע</label></div><div class="clearfix"></div></div>');
+									if(defaultvalueagan>1){
+										$("#delete12again").show();
+									}
+								}
+								function removefieldagain(){
+									if(defaultvalueagan==2){
+										$("#formfiele"+defaultvalueagan).remove();
+										defaultvalueagan--;
+										$("#delete12again").hide();
+									
+									}else{
+										$("#formfiele"+defaultvalueagan).remove();
+										defaultvalueagan--;
+									}
+								}
+						</script>
+								</div>
+								</div>
+								</div>
+								
+											<div class=" col-md-12  col-sm-12  col-xs-12 pagespecialpara brtop brbotom ">
+					<h2 class="para"><span class="para-num">פ</span>יש לאשר ההערות והתנאים</h2>
+					<div class="contcactfrom">
+							<div class="contact-right">
+					
+					<p class="editing mty resigter-margin"><i class="fa fa-star font-icon-1"></i>הנהלת המכון שומרת על זכותה לדחות רישומו ו/או הצטרפותו של כל מגיש בקשה ללא צורך בהנמקה.</p>
+					<p class="editing resigter-margin"><i class="fa fa-star font-icon-1"></i>הנהלת המכון שומרת על זכותה הבלעדית לערוך שינויים בתוכנית ההרצאות ו/או במרצים ו/או באתר  <br>הלימודים ו/או במועדים.</p>
+					
+					<p class="editing resigter-margin"><i class="fa fa-star font-icon-1"></i>הנהלת המכון שומרת על זכותה לא להעניק תעודת סיום למי שנמצאו בלתי מתאימים במהלך הקורס,  <br>  ו/או עד למועד הענקת התעודה.</p>
+					<p class="editing resigter-margin"><i class="fa fa-star font-icon-1"></i>בטול השתתפותך בהשתלמות החל מ - 14 יום לפני מועד תחילתה המשוער יחייבך בדמי בטול בסך 15%, <br>ובתוספת של 1% לכל יום נוסף.</p>
+					<p class="editing resigter-margin"><i class="fa fa-star font-icon-1"></i>מחיר הקורס כולל סך של 175 ₪ המהווים דמי חבר לשנה ראשונה.</p>
+					
+					<p class="editing resigter-margin"><i class="fa fa-star font-icon-1"></i>חשבונית תישלח בנפרד לאחר פירעון כל תקבול ו/או זיכוי חשבוננו.</p>
+					<p class="editing resigter-margin"><i class="fa fa-star font-icon-1"></i>קבלה תישלח מיד עם קבלת התשלום.</p>
+					 <div class="squaredthree">
+					<fieldset><i class="fa fa-star font-icon-1"></i>
+										  <legend class="hidden-section">checkbox </legend>
+							  <input value="None" id="squaredthree4" name="check1" type="checkbox">
+							  <label for="squaredthree4" class="hidden-section">checkbox</label>
+							</fieldset>
+							</div> 
+				<p class="editing resigter-margin htpad45 sentform">אין לי עבר פלילי ולמיטב ידיעתי אין כל כוונה להעמידני לדין פלילי, (יאומת בתצהיר). </p>
+					 <div class="squaredthree">
+					 <fieldset><i class="fa fa-star font-icon-1"></i>
+										  <legend class="hidden-section">checkbox </legend>
+							  <input value="None" id="squaredthree5" name="check2" type="checkbox">
+							  <label for="squaredthree5" class="hidden-section">checkbox</label>
+							</fieldset>
+							</div> 		 
+	<p class="editing resigter-margin htpad45 sentform">כל הפרטים שמסרתי בשאלון הרשמה זה, אמת (יאומת בתצהיר).</p>
+					 <div class="squaredthree">
+					 <fieldset><i class="fa fa-star font-icon-1"></i>
+										  <legend class="hidden-section">checkbox </legend>
+							  <input value="None" id="squaredthree6" name="check3" type="checkbox">
+							  <label for="squaredthree6" class="hidden-section">checkbox </label>
+							</fieldset>
+							</div>  
+							<p class="editing resigter-margin htpad45">הובא לידיעתי כי יהא עלי לאמת את כל האמור בשאלון זה בתצהיר חתום בפני עורך דין.</p>
+					 <div class="squaredthree">
+					 <fieldset><i class="fa fa-star font-icon-1"></i>
+										  <legend class="hidden-section">checkbox </legend>
+							  <input value="None" id="squaredthree60" name="check8" type="checkbox">
+							  <label for="squaredthree60" class="hidden-section">checkbox </label>
+							</fieldset>
+							</div>  
+							<p class="editing resigter-margin htpad45">הובא לידיעתי כי פרק הזמן לביצוע הקורס כולל השלמות חיסורים הינו עד 120 יום.</p>				
+				
+				 <div class="squaredthree">
+				 <fieldset>
+										  <legend class="hidden-section">checkbox </legend>
+							  <input value="None" id="squaredthree8" name="check5" type="checkbox">
+							  <label for="squaredthree8" class="hidden-section">checkbox </label>
+							</fieldset>
+							</div> 
+							<p class="editing resigter-margin htpad45 sentform">במידה ואדרש, אמציא לכם כל תעודה ומסמך הקשורים להשכלתי, מקצועי ועיסוקי.</p>
+				 <div class="squaredthree">
+				 <fieldset>
+										  <legend class="hidden-section">checkbox </legend>
+							  <input value="None" id="squaredthree9" name="check6" type="checkbox">
+							  <label for="squaredthree9" class="hidden-section">checkbox </label>
+							</fieldset>
+							</div> 
+							<p class="editing resigter-margin htpad45 sentform">קראתי את <a href="index2.php?id=5157&amp;lang=HEB" target="_new">כללי האתיקה</a> של המומחה ואת <a href="index2.php?id=5158&amp;lang=HEB" target="_new">תקנון האתר</a> ואני מתחייב לפעול על פיהם במידה ואצורף.</p>
+					 <div class="squaredthree">
+					 <fieldset>
+										  <legend class="hidden-section">checkbox </legend>
+							  <input value="None" id="squaredthree7" name="check4" type="checkbox">
+							  <label for="squaredthree7" class="hidden-section">checkbox </label>
+							</fieldset>
+							</div> 
+	<p class="editing resigter-margin htpad45 sentform">ברמת העיקרון אני מוכן להשתתף בהשתלמויות העשרה משפטיות שעורך המכון.</p>
+				 <div class="squaredthree">
+				 <fieldset>
+										  <legend class="hidden-section">checkbox </legend>
+							  <input value="None" id="squaredthree10" name="check7" type="checkbox">
+							  <label for="squaredthree10" class="hidden-section">checkbox </label>
+							</fieldset>
+							</div> 
+							<p class="editing resigter-margin htpad45 sentform">קראתי את ההערות והתנאים ואני מסכים להם.</p>
+					<div class="row">	
+					<input value="שליחה" class="fromsent " type="submit">
+					</div>	
+					</div>
+					</div>
+					</div>
+						</form>

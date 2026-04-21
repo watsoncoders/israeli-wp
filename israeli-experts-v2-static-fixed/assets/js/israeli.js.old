@@ -1,0 +1,223 @@
+
+//var xmlRequest = new xmlObj(false);
+
+jQuery.fn.exists = function() {return this.length>0;}
+
+/* -------------------------------------------------------------------------------------------------------------------- */
+/* overwrite alert function																								*/
+/* -------------------------------------------------------------------------------------------------------------------- */
+window.alert = function(str) 
+{
+	alertify.set({labels: { ok : ""}, buttonFocus: "none"});
+
+	alertify.alert (alertHtml(str));
+
+	$("#alertify-cover").click (function () {
+		$("#alertify-cover").remove ();
+		$("#alertify").remove ();
+		$("#alertify-logs").remove ();
+	});
+}
+
+function showMsg (str)
+{
+	alertify.set({labels: { ok : ""}, buttonFocus: "none"});
+
+	var html = "<div class='msgBox'>" +
+				  "<div class='msgBoxTop'></div>" +
+				  "<div class='msgBoxMsg'>" + str + "</div>" +
+		       "</div>";
+
+	alertify.alert (html);
+
+	$("#alertify-cover").click (function () {
+		$("#alertify-cover").remove ();
+		$("#alertify").remove ();
+		$("#alertify-logs").remove ();
+	});
+}
+
+/* -------------------------------------------------------------------------------------------------------------------- */
+/* alertAndFocus																										*/
+/* -------------------------------------------------------------------------------------------------------------------- */
+function alertAndFocus (str, field)
+{
+	alertify.set({labels: { ok : ""}, buttonFocus: "none"});
+
+	alertify.alert (alertHtml(str), function (e) { if (e) { if ($(field).exists()) $(field).focus (); } });	
+
+	$("#alertify-cover").click (function () {
+		$("#alertify-cover").remove ();
+		$("#alertify").remove ();
+		$("#alertify-logs").remove ();
+		if ($(field).exists()) $(field).focus ();
+	});
+}
+
+/* -------------------------------------------------------------------------------------------------------------------- */
+/* alertHtml																											*/
+/* -------------------------------------------------------------------------------------------------------------------- */
+function alertHtml (str)
+{
+	return "<div class='alertBox'>" +
+				"<div class='alertBoxTop'></div>" +
+				"<div class='alertBoxMsg'>" + str + "</div>" +
+		   "</div>";
+}
+				
+
+/* -------------------------------------------------------------------------------------------------------------------- */
+/* israeli_submitRegisterForm																							*/
+/* -------------------------------------------------------------------------------------------------------------------- */
+function israeli_submitRegisterForm ()
+{
+	var oForm = document.getElementById("registerCourseForm");
+
+	if (oForm.email.value == "")
+	{
+		alertAndFocus (tailJS["blog_enterEmail"], "form#registerCourseForm input#email");
+		return false;
+	}
+
+	// check birth date
+	if (oForm.birthYear.value == "")
+	{
+		alertAndFocus (tailJS["israeli_birthYear"], "form#registerCourseForm select#birthYear");
+		return false;
+	}
+
+	if (oForm.birthMonth.value == "")
+	{
+		alertAndFocus (tailJS["israeli_birthMonth"], "form#registerCourseForm select#birthMonth");
+		return false;
+	}
+
+	if (oForm.birthDay.value == "")
+	{
+		alertAndFocus (tailJS["israeli_birthDay"], "form#registerCourseForm select#birthDay");
+		return false;
+	}
+
+	var birthDate = israeli_getBirthDate (oForm.birthYear.value, oForm.birthMonth.value, oForm.birthDay.value);
+
+	if (birthDate == "")
+	{
+		alertAndFocus (tailJS["israeli_legalBirthday"], "form#registerCourseForm select#birthYear");
+		return false;
+	}
+
+	oForm.birthDate.value = birthDate;
+
+	if (oForm.updating.value == "1")
+	{
+		if (!oForm.check1.checked || !oForm.check2.checked || !oForm.check3.checked || !oForm.check6.checked)
+		{
+			alertAndFocus (tailJS["israeli_confirm4"], "form#registerCourseForm input#check1");
+			return false;
+		}
+	}
+	else
+	{
+		if (!oForm.check1.checked || !oForm.check2.checked || !oForm.check3.checked)
+		{
+			alertAndFocus (tailJS["israeli_confirm3"], "form#registerCourseForm input#check1");
+			return false;
+		}
+	}
+
+    // handle Google reCaptcha v3
+    grecaptcha.ready(function() {
+                grecaptcha.execute('6LcLgo8UAAAAAByozjMx1guuOU15JdqAqfCQrxbT', {action: 'submit_register'})
+                .then(function(token) {
+                    $('#registerCourseForm').prepend('<input type="hidden" name="g-recaptcha-response" value="' + token + '">');
+                    $('#registerCourseForm').prepend('<input type="hidden" name="action" value="submit_register">');
+                    // submit form now
+                    $('#registerCourseForm').removeAttr('onsubmit').submit();
+                });
+    });           
+
+	return false;
+}
+
+/* -------------------------------------------------------------------------------------------------------------------- */
+/* israeli_getBirthDate																								*/
+/* -------------------------------------------------------------------------------------------------------------------- */
+function israeli_getBirthDate (year, month, day)
+{
+	var birthDate = "";
+
+	if (year != "" || month != "" || day != "")
+	{
+		var dayobj = new Date(year, month-1, day)
+		if ((dayobj.getMonth()+1 != month) || (dayobj.getDate() != day) || (dayobj.getFullYear() != year))
+		{
+			return false;
+		}
+
+		birthDate = year + "-" + month + "-" + day;
+	}
+		
+	return birthDate;
+}
+
+/* -------------------------------------------------------------------------------------------------------------------- */
+/* israeli_submitContactForm																							*/
+/* -------------------------------------------------------------------------------------------------------------------- */
+function israeli_submitContactForm ()
+{
+	$("#phone").val($("#phonePrefix").val()+$("#phonePostfix").val());
+	$("#cellphone").val($("#cellphonePrefix").val()+$("#cellphonePostfix").val());
+	$("#fax").val($("#faxPrefix").val()+$("#faxPostfix").val());
+	$("#fullname").val($("#firstname").val()+" "+$("#middlename").val()+" "+$("#lastname").val());
+	
+    // handle Google reCaptcha v3
+    grecaptcha.ready(function() {
+                grecaptcha.execute('6LcLgo8UAAAAAByozjMx1guuOU15JdqAqfCQrxbT', {action: 'submit_contact'})
+                .then(function(token) {
+                    $('#contactForm').prepend('<input type="hidden" name="g-recaptcha-response" value="' + token + '">');
+                    $('#contactForm').prepend('<input type="hidden" name="action" value="submit_contact">');
+                    // submit form now
+                    $('#contactForm').removeAttr('onsubmit').submit();
+                });
+    });           
+
+	return false;
+}
+
+/* -------------------------------------------------------------------------------------------------------------------- */
+/* israeli_submitForwardForm																							*/
+/* -------------------------------------------------------------------------------------------------------------------- */
+function israeli_submitForwardForm ()
+{
+    // handle Google reCaptcha v3
+    grecaptcha.ready(function() {
+                grecaptcha.execute('6LcLgo8UAAAAAByozjMx1guuOU15JdqAqfCQrxbT', {action: 'submit_contact'})
+                .then(function(token) {
+                    $('#forwardForm').prepend('<input type="hidden" name="g-recaptcha-response" value="' + token + '">');
+                    $('#forwardForm').prepend('<input type="hidden" name="action" value="submit_contact">');
+                    // submit form now
+                    $('#forwardForm').removeAttr('onsubmit').submit();
+                });
+    });           
+
+	return false;
+}
+
+/* -------------------------------------------------------------------------------------------------------------------- */
+/* israeli_submitENGContactForm																							*/
+/* -------------------------------------------------------------------------------------------------------------------- */
+function israeli_submitENGContactForm ()
+{
+    // handle Google reCaptcha v3
+    grecaptcha.ready(function() {
+                grecaptcha.execute('6LcLgo8UAAAAAByozjMx1guuOU15JdqAqfCQrxbT', {action: 'submit_contact'})
+                .then(function(token) {
+                    $('#contactForm').prepend('<input type="hidden" name="g-recaptcha-response" value="' + token + '">');
+                    $('#contactForm').prepend('<input type="hidden" name="action" value="submit_contact">');
+                    // submit form now
+                    $('#contactForm').removeAttr('onsubmit').submit();
+                });
+    });           
+
+	return false;
+}

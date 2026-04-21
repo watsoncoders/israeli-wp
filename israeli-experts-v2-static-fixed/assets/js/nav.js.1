@@ -1,0 +1,19 @@
+(function($){
+  $(function(){
+    // כפתור פתיחת תפריט במובייל
+    $('.js-nav-toggle').on('click', function(e){
+      e.preventDefault();
+      $('.nav-primary').toggleClass('open');
+    });
+    // פתיחת תתי-תפריטים במובייל
+    $('.nav-primary li > a').on('click', function(e){
+      if (window.matchMedia('(max-width: 992px)').matches) {
+        var $li = $(this).parent('li');
+        if ($li.find('>.sub-menu').length){
+          e.preventDefault();
+          $li.toggleClass('open');
+        }
+      }
+    });
+  });
+})(jQuery);

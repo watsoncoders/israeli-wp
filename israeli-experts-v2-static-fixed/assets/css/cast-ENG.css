@@ -1,0 +1,1360 @@
+.ltr
+{
+	direction: rtl;
+}
+
+.paddingL
+{
+	padding-right:0px;
+}
+
+.paddingR
+{
+	padding-left:0px;
+}
+
+.dropdowncon:before 
+{
+	/*border-left-width: medium;*/
+	right: 0px;
+	left: 105px;
+}
+
+.ptyr
+{
+	padding-left: 12px !important;
+	padding-right: 0px;
+}
+
+.dropdown-content 
+{
+	text-align: left;
+    float: right;
+}
+
+.m-l-15 
+{
+    margin-right: 15px;
+    margin-left: 0px;
+}
+
+.navbar-right 
+{
+    padding-left: 35px;
+	padding-right: 0px;
+	padding-top: 8px;
+}
+.resigter-icon
+{
+	float:left;
+}
+.navbar-right li
+{
+	padding-right:15px;
+	padding-left: 0px;
+}
+.navbar-default .navbar-nav > li > a {
+	margin-left: 0;
+	margin-right: 15px;
+}
+.navbar-header 
+{
+    float: right;
+    /*padding-right: 15px;*/
+	/*padding-left: 0px;*/
+}
+
+.nav-tabs>li {
+	float: left;
+	margin-right: 2%;
+	margin-left: 0;
+	
+}
+.nav-tabs>li:last-child {
+  margin-right: 0;
+}
+.img-rea
+{
+	padding-left: 5px;
+	padding-right: 0px;
+}
+
+.head-logo {
+	float:left;
+}
+.logo-image {
+	float: left;
+	width: 84px;
+}
+.home-icon {
+	margin-right: 20px;
+	margin-left: 0;
+}
+
+.silder-arrow-left
+{
+    right: -15px;
+    left: auto;
+}
+.silder-arrow-right
+{
+	left: -23px;
+	right: auto;
+}
+#searchform  .input 
+{
+    right: 0px;
+}
+
+#searchform .button 
+{
+    /*float: right;*/
+    /*right: 316px;*/
+    left: auto;
+    right: 0;
+}
+
+#searchform 
+{
+    /*float: right;*/
+}
+
+.boxrlt span
+{
+	right: auto;
+	left: 0px;
+}
+
+.boxrlt
+{
+	/*padding-right: 110px;*/
+	padding-left: 0px;
+	text-align: left;
+}
+
+.boxrlt input[type="checkbox"] 
+{
+    float: left;
+    left: 280px;
+}
+
+.hm-sent-top-1
+{
+	padding-left:0px !important;
+}
+
+.setarea
+{
+	margin-left: 8px;
+    margin-right: 0px;
+}
+
+.mangentsec
+{
+	text-align: left;
+}
+.mangentsec:first-child
+{
+	margin-right: 8px;
+    margin-left: 0px;
+}
+
+.padsetiion
+{
+	padding-right: 8px;
+	padding-left: 0px;
+}
+
+.managementline li
+{
+	padding-right: 15px;
+	padding-left: 0px;
+}
+
+.newsec
+{
+	left: -15px;
+}
+
+.newimg
+{
+	float: right;
+	right: -11px;
+}
+
+.rtlbortah11 
+{
+    padding-left: 12px;
+	padding-right: 0px;
+    float: left !important;
+}
+
+.rtlbortah11 i 
+{
+    float: right;
+    padding-right: 12px;
+	padding-left: 0px;
+    right: 0px;
+}
+
+.manageicon
+{
+	margin-right:2px;
+	margin-left: 0px;
+}
+
+.mangentsec11
+{
+	margin-right: 8px;
+	margin-left: 0px;
+}
+.padleftsec{
+	padding-right:0px;
+}
+.padrightsec{
+	padding-left:0px
+}
+
+.img-part-details{
+    float: right;
+	right: 29px;
+}
+.detils-relate
+{
+	/*float: right;*/
+	/*margin-right: 87px;*/
+	/*margin-left: 0px;*/
+}
+ #home ul
+ {
+	float: left;
+	padding-left: 15px !important;
+	padding-right: 0px;
+	margin-left: 0px !important;
+	margin-right: 0px;
+}
+ #home-1 ul
+ {
+	float: left;
+	padding-left: 15px;
+	padding-right: 0px;
+}
+.link-li{
+	padding-left:0px;
+}
+.jolhsection{
+float: left;
+}
+.sectionclass-1 
+{
+    /*margin-left: 82px;*/
+	/*margin-right: 0px;*/
+}
+.paraplusimg
+{
+	margin-right: 5px;
+	margin-left: 0px;
+}
+.sectionclass
+{
+	/*margin-left: 54px;*/
+	margin-right: 0px;
+}
+.newrltpara
+{
+	float: left;
+	/*padding-left: 15px;*/
+	/*padding-right: 0px;*/
+}
+.newrltpara-1{
+	float: left;
+}
+.ptfooter
+{
+	text-align: right;
+	float: right;
+}
+.gtfooter{
+	float: right;
+
+}
+.parapfootr
+{
+	float: right;
+	padding-right: 13px;
+	padding-left: 0px;
+}
+.test{
+	text-align: right;
+}
+.footer-img{
+	float:right;
+}
+.footer-img-1{
+	float:left;
+}
+@media (min-width: 768px) and (max-width: 992px){
+	footer .row > div:nth-child(3n+1){
+        clear: left;
+    }
+}
+
+#searchform-1 .input,
+#searchform-2 .input,
+#searchform-2-5 .input
+{
+    right: 0px;
+}
+
+#searchform-1 {
+    float: right;
+}
+#searchform-1 .button {
+    float: right;
+    right: 0px;
+}
+
+#searchform-1 .input,
+#searchform-2 .input,
+#searchform-2-5 .input,
+#searchform-3 .input,
+#searchform-4 .input,
+#searchform-1 .input::placeholder,
+#searchform-2 .input::placeholder,
+#searchform-2-5 .input::placeholder,
+#searchform-3 .input::placeholder,
+#searchform-4 .input::placeholder
+{
+	font-size: 22px;
+}
+
+.rtlwidthes-3{
+	float:left;
+    padding-left: 0;
+    padding-right: 20px;
+}
+.rtlwidthes-2{
+	float:left;
+    padding-left: 0;
+    padding-right: 20px;
+}
+.rtlwidthes-1-5{
+	float:left;
+    padding-left: 0;
+    padding-right: 20px;
+}
+.rtlwidthes-1{
+	float:left;
+    padding-left: 0;
+    padding-right: 20px;
+}
+.rtlwidthes{
+	float:left;
+    padding-left: 0;
+    padding-right: 20px;
+}
+#searchform-4 {
+	/*padding-left: 0;*/
+	/*padding-right: 66px;*/
+}
+#searchform-3 .input,
+#searchform-4 .input
+{
+    right: 0px;
+}
+
+#searchExp {
+	padding-left: 0;
+	padding-right: 66px;
+}
+
+#searchExp .button 
+{
+    float: right;
+    right: 0;
+    left: auto;
+}
+
+.searchform_search {
+	
+    left: auto;
+    right: 0;
+  
+}
+.imgempoyee
+{
+	float:right;	
+	padding-right: 70px;
+	padding-left: 0px;
+}
+
+.rtlbortah
+{
+	padding-left: 12px;
+	padding-right: 0px;
+	float: left !important;
+}
+.rtlincoimg
+{
+	float:right;
+	padding-right: 12px;
+	padding-left: 0px;
+}
+.mr-10
+{
+	margin-left: -10px;
+	margin-right: 0px;
+}
+
+.required-icon{
+	left: 17px;
+}
+
+.from-sumit{
+	
+    float: right;
+}
+.englishcontact{
+	float: right;
+	padding-right: 0px !important;
+	margin-right: 0px;
+	margin-left: 0px;
+}
+.details{
+	float:right;
+}
+.details ul
+{
+	padding-left: 8px;
+	padding-right: 0px;
+}
+.paraplusimg-1 
+{
+    margin-right: 15px;
+	margin-left: 0px;
+}
+.icon-detil
+{
+	padding-left: 10px;
+	padding-right: 0px;
+}
+.details1 .para7
+{
+	float: right;
+}
+.detailspecial
+{
+	padding-right: 0px;
+}
+.details1 .para11
+{
+	float: right;
+	padding-right: 75px;
+	padding-left: 0px;
+}
+
+.imgj
+{
+	float:right;
+	padding-right: 0px;
+}
+
+.imgj-1
+{
+	float:right;
+	padding-right: 57px;
+	padding-left: 0px;
+}
+
+.detailspan
+{
+	margin-right: 10px;
+	margin-left: 0px;
+}
+
+.details1 button
+{
+	padding-right: 0px;
+}
+.rtlbortah i
+{
+	float: right;
+	padding-right: 12px;
+	padding-left: 0px;
+	left: auto;
+	transform: rotate(180deg);
+	right: 0px;
+}
+
+.imgspecial
+{
+	float:left;
+	margin-right: 12px;
+	margin-left: 0px;
+}
+
+.pagespecial .para1
+{
+	/*margin-left: 15px;*/
+	/*margin-right: 0px;*/
+}
+.pagespecial .para1 a::after {
+	left: auto;
+	right: 0;
+}
+
+.nbtn
+{
+	float: right;
+	margin-right: 15px;
+	margin-left: 0px;
+}
+
+.fltimg
+{
+	float:left;
+}
+
+.newrtltab
+{
+	float: right;
+}
+
+.newspan
+{
+	padding-left:27px;
+	padding-right: 0px;
+}
+.jtspan
+{
+	float: right;
+	padding-right: 2px;
+	padding-left: 0px;
+
+}
+.sectionfont
+{
+	padding-left: 25px;
+	padding-right: 0px;
+}
+.sectionfont ul
+{
+	padding-left:0px;
+}
+
+.sectionfont ol
+{
+	padding-left:15px;
+	padding-right: 0px;
+}
+
+.rtlpnav
+{
+	padding-left:0px
+}
+
+.imgytrtl
+{
+	padding-left: 130px;
+	padding-right: 0px;
+}
+
+.sylabusDay
+{
+	padding-left: 25px;
+	padding-right: 0px;
+}
+.csection1 img
+{
+	float:left;
+}
+
+.csection1 span
+{
+	padding-left: 5px;
+	padding-right: 15px;
+}
+
+.rtlnewimg
+{
+	float:left;
+}
+
+.urtlproject
+{
+	padding-left: 60px;
+	padding-right: 0px;
+}
+
+.urtlproject ul
+{
+	padding-left: 0px;
+}
+
+.rtl5img
+{
+	padding-left: 2em;
+	padding-right: 3em;
+	float: left;
+}
+
+.aboutinfo ul
+{
+	padding-left: 0px;
+}
+.aboutinfo ol
+{
+	padding-left: 13px;
+	padding-right: 0px;
+}
+.contactfrm
+{
+	padding-left: 5em;
+	padding-right: 0px;
+}
+
+.contwidth
+{
+	/*margin-left: -17px;*/
+	/*margin-right: 0px;*/
+}
+.contwidth img {
+  float: right;
+}
+.contpara
+{
+	padding-left: 48px;
+	padding-right: 0px;
+}
+.option-contact 
+{
+    
+    right: 0px !important;
+    padding-left: 32px !important;
+	padding-right: 0px;
+}
+
+.contmil
+{
+	left: 0;
+}
+.aboutinfo ul li::before 
+{
+  left: -3px;
+}
+.syllabusLesson img
+{
+	float: right;
+}
+.urtlproject ul li:before 
+{
+    left: -5px;
+}
+
+.contactfrm-1
+{
+float: right;
+}
+
+.row-left
+{
+	float:right;
+}
+.row-left input
+{
+	text-align:right;
+}
+.contwidth-5
+{
+	margin-left: 0px !important;
+	margin-right: 0px;
+}
+.message-box-detail
+{
+	text-align: right;
+}
+.width20
+{
+	float: right;
+}
+.contry
+{
+	float: right;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+.area
+{
+	float: right;
+	padding-right: 0px !important;
+	padding-left: 0px;
+	margin-right: 35px;
+	margin-left: 0px;
+}
+
+
+.phone
+{
+	padding-right: 0px !important;
+	margin-right: 0px;
+}
+
+.star-icon-contat
+{
+	margin-right: -13px;
+	margin-left: 0px;
+	float: right;
+}
+
+
+.rtl5img-1 
+{
+    float: left;
+}
+.rtlnewimg-1 
+{
+    float: right;
+    padding-right: 12px;
+	padding-left: 0px;
+}
+
+.courseimg  
+{
+  padding-right: 25px;
+  padding-left: 0px;
+}
+.catagery-1
+{
+	margin-left: 50px;
+	margin-right: 0px;
+}
+.categry-1para::before 
+{
+  	float: left;
+  	margin-right: 7px;
+	margin-left: 0px;
+}
+.fromline
+{
+	margin-left: 20px;
+	margin-right: 0px;
+}
+.fromline:before
+{
+    left: 0px;
+}
+
+td, th
+{
+	text-align:left;
+}
+
+.addreswidth
+{
+	padding-left: 25px !important;
+	padding-right: 0px;
+	width: 360px;
+}
+.sono
+{
+	padding-right: 45px !important;
+	padding-left: 0px;
+}
+.mobile-icon
+{
+	/*padding-left: 10px;*/
+	padding-right: 0px;
+}
+.pagespecialpara
+{
+	/*margin-left:123px;*/
+	/*margin-right: 0px;*/
+}
+.formpara
+{
+	/*padding-left: 25px;*/
+	/*padding-right: 0px;*/
+}
+.option-form 
+{
+    right: 0px !important;
+    padding-left: 30px !important;
+	padding-right: 0px;
+}
+.font-icon
+{
+	/*margin-left: -12px;*/
+	margin-right: 0px;
+	left: auto;
+	right: 25px;
+}
+
+.nbtn-1 
+{
+	float: right;
+	margin-right: 83px;
+	margin-left: 0px;
+}
+
+.imgytrt3 
+{
+    /*padding-left: 24px;*/
+	/*padding-right: 0px;*/
+}
+
+.halfclas
+{
+	padding-left: 27px;
+	padding-right: 0px;
+}
+
+.editing
+{
+	text-align: left;
+	/*padding-left: 140px;*/
+	padding-right: 0px;
+}
+
+
+.editing.htpad45 {
+  padding-right: 0px;
+  padding-left: 40px;
+}
+
+.font-icon-1 {
+    margin-left: -12px;
+	margin-right: 0px;
+    padding-right: 7px;
+	padding-left: 0px;
+}
+
+.editing.center .font-icon-1 {
+		right: auto;
+		left: 6px;
+}
+.halfclas-1
+{
+	padding-left: 179px;
+	padding-right: 0px;
+}
+.rowpadding
+{
+	/*padding-right: 7px !important;*/
+	/*padding-left: 0px;*/
+}
+.rowpaading-1
+{
+	/*padding-left: 7px !important;*/
+	/*padding-right: 0px;*/
+}
+.pdL0 {
+		padding-right: 0;
+		padding-left: 15px;
+}
+
+.star-icon-contat89 {
+		right: 25px;
+		left: auto;
+}
+.editing 
+{
+    text-align: left;
+	padding-left: 15px;
+	padding-right: 0px;
+}
+
+.spanparalast
+{
+	margin-left: 110px;
+	margin-right: 0px;
+	font-size: 20px;
+}
+
+.spanparalast1
+{
+	font-size: 20px;
+}
+
+.pralstfrom
+{
+	/*margin-left: 157px;*/
+	/*margin-right: 0px;*/
+}
+
+.contmil90
+{
+    margin-left: 0px !important;
+	/*height: 80px !important;*/
+}
+.contmil909 
+{
+    margin-left: 0px !important;
+}
+.registr-radio
+{
+	margin-right: 16px !important;
+	margin-left: 12px !important;;	
+}
+
+.option-section90 
+{
+    right: 0px !important;
+}
+
+.formpara-1 
+{
+    padding-left: 0px;
+}
+
+.elementfrm 
+{
+    float: right;
+}
+.elementfrm-1 
+{
+    float: left;
+}
+.elementfrm-2 
+{
+    float: left;
+}
+.option-element 
+{
+    right: 0px !important;
+}
+
+.registr-para-234
+{
+    /*margin-left: 15px;*/
+	/*margin-right: 0px;*/
+}
+.registr-para-2
+{
+    /*margin-left: 15px;*/
+	/*margin-right: 0px;*/
+}
+.font-check
+{
+	margin-left: -14px !important;
+	margin-right: 6px !important;
+}
+
+.fromsent 
+{
+    /*margin-left: 10em;*/
+	/*margin-right: 0px;*/
+}
+
+.font-icon2 
+{
+    padding-right: 7px;
+	padding-left: 0px;
+}
+
+.frm-pargrph
+{
+	/*margin-left: 12px;*/
+	margin-right: 0px;
+}
+.rltdiv
+{
+	float: right;
+}
+
+.rltdiv span:before
+{
+    left: 0px;
+}
+
+.rltdiv-1
+{
+	margin-left: 12px;
+	margin-right: 0px;
+}
+
+.rtlmargin
+{
+	border-right: none;
+}
+.frm
+{
+	margin-right: 6px !important;
+	margin-left: 0px;
+}
+.registr-radio09 
+{
+    margin-right: 7px !important;
+    margin-left: 9px !important;
+}
+.frm-retail
+{
+	margin-left: 30px;
+	margin-right: 0px;
+}
+
+.message-box > div,
+.message-box-1 > div {
+	padding-left: 0;
+	padding-right: 10px;
+}
+.fonticonstar 
+{
+    margin-left: -12px;
+	margin-right: 0px;
+    padding-right: 7px;
+    padding-left: 0px;
+}
+.pargrph
+{
+	margin-left: 12px;
+	margin-right: 0px;
+}
+
+.pargrph span:before 
+{
+    left: 0px;
+}
+
+.iconrtl
+{
+	margin-right: 8px;
+	margin-left: 0px;
+}
+
+.rformimg
+{
+	margin-left: -24px;
+	margin-right: 0px;
+	transform: rotate(180deg);
+}
+
+.widthrldiv
+{
+	margin-left: -20px;
+	margin-right: 0px;
+}
+
+.sono-para
+{
+	padding-left: 30px !important;
+	padding-right: 0px;
+}
+.DefineTree {
+	padding-left: 20px;
+	padding-right: 0;
+}
+.DefineTree li 
+{
+	padding: 5px 0px 5px 20px;
+}
+
+.DefineTree li ul li a.insExtra:before
+{
+	left:0px;
+}
+
+.DefineTree li a.insExtra:before
+{
+	left:0px;
+}
+
+.DefineTree li ul li:before
+{
+	left:-15px;
+}
+.DefineTree li ul li:after
+{
+	left:-15px;
+}
+.line-tree
+{
+	right: 40px;
+}
+
+.treemargin
+{
+	margin-left: 46px;
+	margin-right: 0px;
+}
+
+.star-icon-contat89 
+{
+    /*margin-left: -10px;*/
+	margin-right: 0px;
+    /*float: left;*/
+    right: 25px;
+    left: auto;
+}
+
+button.accordion 
+{
+    text-align: left;
+}
+.sectionfont ul li::before 
+{
+    left: -3px;
+}
+.imgytrt5 
+{
+    padding-left: 137px;
+	padding-right: 0px;
+}
+.nbtn-1 
+{
+    margin-right: 76px;
+	margin-left: 0px;
+}
+.squaredTwo 
+{
+  float: left;
+  margin-left: 0;
+  margin-right: 5px;
+}
+
+.squaredTwo label:after 
+{
+  right: -2px;
+}
+.squaredthree
+{
+	float: left;
+	margin-left: 14px;
+	margin-right: 0px;
+}
+.squaredthree label::after 
+{
+    right: -5px;
+    border-left: none;
+}
+
+.sqrue
+{
+	left: 218px;
+}
+
+.squre2 
+{
+    left: 218px;
+}
+.contact-detail-34
+{
+	padding-right: 0px;
+}
+
+.psdingright
+{
+	padding-left: 0px;
+}
+
+.contpara span
+{
+	float:right;
+}
+
+.DefineTree12 li ul li ul
+{ 
+	padding-left:40px; 
+	padding-right: 0px;
+}
+
+.IconPlus i
+{
+	float: left;
+	margin-right: 10px;
+	margin-left: 0px;
+}
+
+.icoNPlsS
+{
+	padding: 7px 9px 7px 8px;
+	right: 13px;
+}
+
+
+.icoNPlsSec
+{
+	padding: 8px 9px 6px 8px;
+	right: 13px;
+}
+
+.IconPlusEfr i
+{
+	float: left;
+	margin-right: 10px;
+	margin-left: 0px;
+}
+
+.lablSec
+{
+	padding-left: 24px;
+	padding-right: 0px;
+}
+
+.lablSec ~ textarea
+{
+	right: 0;
+	left: auto;
+}
+
+.icoNPlsSec111
+{
+	padding: 8px 9px 5px 8px;
+	right: 13px;
+}
+
+td.questionnaireQuestionAnswer_text
+{
+	padding-left: 10px;
+	padding-right: 0px;
+}
+
+div.questionnaireSubmitBtn div,
+div.questionnaireSubmitBtn
+{
+		background-image: url('../designFiles/sendQENG.png');
+		float: left;
+}
+
+div#questionnaireQuestion_text2
+{
+	margin-right: 20px;
+	margin-left: 0px;
+}
+
+div.questionnaireNext
+{
+		background-image: url('../designFiles/QnextENG.png');
+		float: right;
+}
+
+div.questionnairePrev
+{
+		background-image: url('../designFiles/QprevENG.png');
+		float: left;
+}
+
+.oldQualifications
+{
+	margin-right: 7px;
+	margin-left: 0px;
+}
+
+ul.expertMoreDetals .fa-stack
+{
+	margin-right: 12px;
+	margin-left: 0px;
+}
+
+ul.expertMoreDetals .fa-stack i.fa
+{
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+ul.expertMoreDetals .fa-stack .icon-text
+{
+	right: none;
+}
+
+.contact-right select,
+div.search-btn select
+{
+	background-position: 98% !important;
+}
+.contact-right select,
+.contact-right select[type="text"] {
+  padding-left: 8px !important;
+  padding-right: 0 !important;
+}
+li.pad-taw
+{
+	margin-top: 17px;
+}
+
+.footerlink ul
+{
+	text-align: left;
+}
+
+.shopProduct
+{
+	border: 2px solid #ddd;
+	border-bottom: 3px solid #FFA801;
+	background-color: white;
+	text-align: left;
+	margin-bottom: 30px;
+	padding: 10px;
+}
+
+.shopProduct input
+{
+	width: 25px;
+	text-align: center;
+}
+
+.shopBtn
+{
+	border: 1px solid #ddd;
+	padding: 3px;
+	cursor: pointer;
+}
+
+#fancybox-wrap {
+  position: absolute;
+  top: 100px !important;
+}
+
+.fancy
+{
+	cursor: zoom-in;
+}
+.frm-sect {
+	top: 0;
+}
+#picFileName {
+	text-align: left;
+}
+.langSelection
+{
+	color: white;
+	background-color: #000046;
+	margin-right: 12px;
+	padding-right: 6px;
+}
+.carousel-control.left {
+	left: auto;
+	/*right: 0;*/
+}
+
+.icon-input-block .ii-icon {
+	right: 15px;
+	left: auto;
+}
+.para-num {
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  right: auto;
+}
+
+.cvvlabel {
+		right: auto;
+		left: 5px;
+		padding-left: 0;
+		padding-right: 22px;
+}
+.fix-pad {
+		padding-right: 15px;
+		padding-left: 0;
+}
+.paddingZ {
+    padding: 0px;
+}
+.wid60 {
+  float: left;
+  
+}
+.wid40 {
+  float: left;
+}

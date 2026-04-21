@@ -1,0 +1,124 @@
+
+/* -- box cart ------------------------------------------------------------------------------------------------------ */
+
+table#boxCartTbl
+{
+}
+
+table#boxCartHeader
+{
+	margin-top: 7px;
+}
+
+table#boxCartContent
+{
+}
+
+table#boxCartContent tr
+{
+	height: 21px;
+}
+
+table#boxCartContent td
+{
+	border-top: 1px solid #B8A680;
+}
+
+table#boxCartTotal
+{
+}
+
+table#boxCartEmpty
+{
+}
+
+td.boxCart_quantity, td.boxCart_product, td.boxCart_productTotal
+{
+	color: #683B11;
+	font-size: 11px;
+	width: 50px;
+}
+
+td.boxCart_quantity
+{
+	text-align: center;
+}
+
+td.boxCart_product
+{
+	width: 75px;
+}
+
+td.boxCart_productTotal
+{
+	width: 50px;
+	text-align: right;
+}
+
+td.boxCart_totalQuantity
+{
+	display: none;
+}
+
+td.boxCart_totalText
+{
+	font-weight: bold;
+	color: #FC8D1A;
+	font-size: 11px;
+	text-align: right;
+	padding-top: 6px;
+	width: 125px;
+}
+
+td.boxCart_totalSum
+{
+	color: #683B11;
+	font-size: 11px;
+	text-align: center;
+	width: 50px;
+	border-top: 1px solid #B8A680;
+	padding-top: 5px;
+}
+
+div#currency
+{
+	float: left;
+	margin-left: 3px;
+}
+
+div#cartTotal
+{
+	float: right;
+}
+
+div#emptyCartText
+{
+	color: #A65714;
+	font-size: 11px;
+	font-weight: bold;
+	margin-right: 25px;
+	margin-left: 45px;
+}
+
+/* -- cart buttons ----------------------------------------------------------------------------------------------------------------	*/
+
+div#boxCartButtons
+{
+	margin-top: 15px;
+	margin-left: 10px;
+}
+
+div#boxCart_showCart
+{
+	float: left;
+	margin-right: 15px;
+}
+
+div#boxCart_emptyCart
+{
+}
+
+/* -- cart page -------------------------------------------------------------------------------------------------------------------	*/
+
+
+

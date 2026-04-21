@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expert Specialization Tree</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            text-align: right;
+            padding: 20px;
+        }
+        /* Fix Bootstrap 3 RTL alignment issues */
+        .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+            float: right;
+        }
+        
+        /* Tree Styling */
+        ul.DefineTree {
+            list-style-type: none;
+            padding-right: 20px;
+        }
+        ul.DefineTree ul {
+            list-style-type: none;
+            padding-right: 20px;
+        }
+        .insExtra {
+            margin-left: 5px;
+            cursor: pointer;
+        }
+        /* Custom Button Style */
+        .toggle-btn-container {
+            margin: 20px 0;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        .btn-custom {
+            background-color: #337ab7;
+            color: white;
+            font-size: 16px;
+        }
+        .ywidt {
+            min-height: 50px; /* Ensure columns have height */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 tree-top tree-star pding0p">
+            
+            <div class="col-md-4 col-sm-4 col-xs-12 ywidt">
+                <ul class="DefineTree treeplant">
+                    <li>
+                        <a data-toggle="collapse" href="#collapseVisible1" class="fromtree insExtra collapsed"></a><span>עדים מומחים</span>
+                        <ul id="collapseVisible1" class="panel-collapse line-tree collapse">
+                            <li><a href="index2.php?id=5125&catId=254&lang=HEB" class="paraplus">אזרחי</a></li>
+                            <li><a href="index2.php?id=5125&catId=255&lang=HEB" class="paraplus">אישות</a></li>
+                            <li><a href="index2.php?id=5125&catId=13&lang=HEB" class="paraplus">אורטופדיה</a></li>
+                            <li><a href="index2.php?id=5125&catId=205&lang=HEB" class="paraplus">בניין</a></li>
+                            </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-4 col-sm-4 col-xs-12 ywidt">
+                <ul class="DefineTree treeplant">
+                    <li>
+                        <a data-toggle="collapse" href="#collapseVisible2" class="fromtree insExtra collapsed"></a><span>בוררים</span>
+                        <ul id="collapseVisible2" class="panel-collapse line-tree collapse">
+                            <li><a href="index2.php?id=5125&catId=811&lang=HEB" class="paraplus">שופטים בדימוס/עורכי דין</a></li>
+                            <li><a href="index2.php?id=5125&catId=812&lang=HEB" class="paraplus">משפטנים/טוענים משפטיים</a></li>
+                            <li><a href="index2.php?id=5125&catId=813&lang=HEB" class="paraplus">נבחרי ציבור</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-4 col-sm-4 col-xs-12 ywidt">
+                <ul class="DefineTree treeplant">
+                    <li>
+                        <a data-toggle="collapse" href="#collapseVisible3" class="fromtree insExtra collapsed"></a>
+                        <a href="index2.php?id=5125&catId=5&lang=HEB">מגשרים</a>
+                        <ul id="collapseVisible3" class="panel-collapse line-tree collapse">
+                            <li><a href="index2.php?id=5125&catId=819&lang=HEB" class="paraplus">מגשרים</a></li>
+                            <li><a href="index2.php?id=5125&catId=820&lang=HEB" class="paraplus">מגשרים-בוררים</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <a href="http://www.expertsearch.co.uk/" target="_new"><img src="designFiles/expert.png" class="img-responsive try-top" alt="UK experts" style="margin-top:10px;"></a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 toggle-btn-container">
+            <button type="button" class="btn btn-custom" data-toggle="collapse" data-target="#detailedSpecialization">
+                 ▼ לפי התמחות (לחץ להצגה/הסתרה)
+            </button>
+        </div>
+    </div>
+
+    <div id="detailedSpecialization" class="collapse">
+        <div class="row">
+            
+            <div class="col-md-4 col-sm-4 col-xs-12 ywidt">
+                <ul class="DefineTree treeplant">
+                    <li>
+                        <a data-toggle="collapse" href="#collapse1" class="fromtree insExtra"></a><span>עדים מומחים</span>
+                        <ul id="collapse1" class="panel-collapse line-tree collapse in">
+                            <li>
+                                <a class="insExtra collapsed" data-toggle="collapse" href="#collapse2"></a><a href="javascript:void(0)" class="paraplus">משפטי/עורכי דין</a>
+                                <ul id="collapse2" class="panel-collapse line-tree collapse">
+                                    <li><a href="javascript:mygetvaluetodicv('אזרחי',254)" class="paraplus">אזרחי</a></li>
+                                    <li><a href="javascript:mygetvaluetodicv('אישות',255)" class="paraplus">אישות</a></li>
+                                    <li><a href="javascript:mygetvaluetodicv('מקרקעין',270)" class="paraplus">מקרקעין</a></li>
+                                    <li><a href="javascript:mygetvaluetodicv('פלילי',281)" class="paraplus">פלילי</a></li>
+                                    </ul>
+                            </li>
+                            
+                            <li>
+                                <a class="insExtra collapsed" data-toggle="collapse" href="#collapse37"></a><a href="javascript:void(0)" class="paraplus">רפואי</a>
+                                <ul id="collapse37" class="panel-collapse line-tree collapse">
+                                    <li><a href="javascript:mygetvaluetodicv('אורטופדיה',13)" class="paraplus">אורטופדיה</a></li>
+                                    <li><a href="javascript:mygetvaluetodicv('פסיכיאטריה',105)" class="paraplus">פסיכיאטריה</a></li>
+                                    <li><a href="javascript:mygetvaluetodicv('רפואת שיניים',172)" class="paraplus">רפואת שיניים</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a class="insExtra collapsed" data-toggle="collapse" href="#collapse223"></a><a href="javascript:void(0)" class="paraplus">הנדסי</a>
+                                <ul id="collapse223" class="panel-collapse line-tree collapse">
+                                    <li><a href="javascript:mygetvaluetodicv('בניין',205)" class="paraplus">בניין</a></li>
+                                    <li><a href="javascript:mygetvaluetodicv('חשמל',216)" class="paraplus">חשמל</a></li>
+                                    <li><a href="javascript:mygetvaluetodicv('שמאות',759)" class="paraplus">שמאות</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-4 col-sm-4 col-xs-12 ywidt">
+                <ul class="DefineTree treeplant">
+                    <li>
+                        <a data-toggle="collapse" href="#collapse823" class="fromtree insExtra"></a><span>בוררים</span>
+                        <ul id="collapse823" class="panel-collapse line-tree collapse in">
+                            <li>
+                                <a class="insExtra collapsed" data-toggle="collapse" href="#collapse824"></a><a href="javascript:mygetvaluetodicv('שופטים בדימוס/עורכי דין',811)" class="paraplus">שופטים בדימוס/עורכי דין</a>
+                                <ul id="collapse824" class="panel-collapse line-tree collapse">
+                                    <li><a href="javascript:mygetvaluetodicv('שופטים בדימוס',830)" class="paraplus">שופטים בדימוס</a></li>
+                                    <li><a href="javascript:mygetvaluetodicv('עורכי דין',831)" class="paraplus">עורכי דין</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="insExtra collapsed" data-toggle="collapse" href="#collapse827"></a><a href="javascript:mygetvaluetodicv('משפטנים/טוענים משפטיים',812)" class="paraplus">משפטנים/טוענים משפטיים</a>
+                                <ul id="collapse827" class="panel-collapse line-tree collapse">
+                                    <li><a href="javascript:mygetvaluetodicv('משפטנים',832)" class="paraplus">משפטנים</a></li>
+                                    <li><a href="javascript:mygetvaluetodicv('טוענים משפטיים',833)" class="paraplus">טוענים משפטיים</a></li>
+                                </ul>
+                            </li>
+                             <li>
+                                <a class="insExtra collapsed" data-toggle="collapse" href="#collapse839"></a><a href="javascript:void(0)" class="paraplus">א-סקטוריאלי</a>
+                                <ul id="collapse839" class="panel-collapse line-tree collapse">
+                                    <li><a href="javascript:mygetvaluetodicv('אדריכל',825)" class="paraplus">אדריכל</a></li>
+                                    <li><a href="javascript:mygetvaluetodicv('שמאי',826)" class="paraplus">שמאי</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-4 col-sm-4 col-xs-12 ywidt">
+                <ul class="DefineTree treeplant">
+                    <li>
+                        <a data-toggle="collapse" href="#collapse846" class="fromtree insExtra"></a><a href="index2.php?id=5125&catId=5&lang=HEB">מגשרים</a>
+                        <ul id="collapse846" class="panel-collapse line-tree collapse in">
+                            <li><a href="javascript:mygetvaluetodicv('מגשרים',819)" class="paraplus">מגשרים</a></li>
+                            <li><a href="javascript:mygetvaluetodicv('מגשרים-בוררים',820)" class="paraplus">מגשרים-בוררים</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+        </div> </div> </div> <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<script>
+    // Placeholder function to prevent errors when clicking links in this demo
+    function mygetvaluetodicv(name, id) {
+        console.log("Selected: " + name + " ID: " + id);
+        alert("You clicked: " + name);
+    }
+</script>
+
+</body>
+</html>

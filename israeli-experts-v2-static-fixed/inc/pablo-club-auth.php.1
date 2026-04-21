@@ -1,0 +1,374 @@
+<?php
+/**
+ * התחברות מודאלית למערכת הישנה + שכחתי סיסמה
+ * תאימות לטבלת clubMembers
+ * author: pablo rotem
+ */
+
+declare(strict_types=1);
+
+if (!defined('ABSPATH')) {
+	exit;
+}
+
+final class Pablo_Club_Auth
+{
+	public static function init(): void
+	{
+		self::start_session();
+
+		add_action('admin_post_nopriv_pablo_club_login', [self::class, 'handle_login']);
+		add_action('admin_post_pablo_club_login', [self::class, 'handle_login']);
+
+		add_action('admin_post_nopriv_pablo_club_reset', [self::class, 'handle_reset_password']);
+		add_action('admin_post_pablo_club_reset', [self::class, 'handle_reset_password']);
+
+		add_action('admin_post_pablo_club_logout', [self::class, 'handle_logout']);
+		add_action('admin_post_nopriv_pablo_club_logout', [self::class, 'handle_logout']);
+
+		add_action('wp_footer', [self::class, 'render_modals'], 99);
+		add_action('template_redirect', [self::class, 'protect_course_registration'], 1);
+	}
+
+	private static function start_session(): void
+	{
+		if (session_status() !== PHP_SESSION_ACTIVE) {
+			session_start();
+		}
+	}
+
+	public static function is_logged_in(): bool
+	{
+		return !empty($_SESSION['club_logged_in']) && !empty($_SESSION['club_user_id']);
+	}
+
+	public static function current_user_id(): int
+	{
+		return isset($_SESSION['club_user_id']) ? (int) $_SESSION['club_user_id'] : 0;
+	}
+
+	public static function current_user_name(): string
+	{
+		return isset($_SESSION['club_user_name']) ? (string) $_SESSION['club_user_name'] : '';
+	}
+
+	private static function resolve_table_name(string $base): string
+	{
+		global $wpdb;
+
+		$with_prefix = $wpdb->prefix . $base;
+
+		$found = $wpdb->get_var($wpdb->prepare('SHOW TABLES LIKE %s', $with_prefix));
+		if (!empty($found)) {
+			return $with_prefix;
+		}
+
+		$found2 = $wpdb->get_var($wpdb->prepare('SHOW TABLES LIKE %s', $base));
+		if (!empty($found2)) {
+			return $base;
+		}
+
+		return $with_prefix;
+	}
+
+	public static function handle_login(): void
+	{
+		self::start_session();
+
+		$nonce = isset($_POST['pablo_club_login_nonce']) ? sanitize_text_field(wp_unslash($_POST['pablo_club_login_nonce'])) : '';
+		if (!$nonce || !wp_verify_nonce($nonce, 'pablo_club_login')) {
+			wp_die('שגיאת אבטחה.');
+		}
+
+		$username_or_email = isset($_POST['username']) ? trim((string) wp_unslash($_POST['username'])) : '';
+		$password          = isset($_POST['password']) ? (string) wp_unslash($_POST['password']) : '';
+		$return_to         = isset($_POST['returnTo']) && !empty($_POST['returnTo'])
+			? esc_url_raw((string) wp_unslash($_POST['returnTo']))
+			: home_url('/course-registration/');
+
+		if ($username_or_email === '' || $password === '') {
+			wp_safe_redirect(add_query_arg('login_error', 'empty', $return_to));
+			exit;
+		}
+
+		global $wpdb;
+		$table_name = self::resolve_table_name('clubMembers');
+
+		$user = $wpdb->get_row(
+			$wpdb->prepare(
+				"SELECT * FROM {$table_name} WHERE username = %s OR email = %s LIMIT 1",
+				$username_or_email,
+				$username_or_email
+			)
+		);
+
+		if ($user) {
+			$db_pass = isset($user->password) ? (string) $user->password : '';
+			$password_ok = false;
+
+			if ($db_pass !== '') {
+				if (md5($password) === $db_pass) {
+					$password_ok = true;
+				} elseif ($password === $db_pass) {
+					$password_ok = true;
+				}
+			}
+
+			if ($password_ok) {
+				$_SESSION['club_user_id']   = (int) $user->id;
+				$_SESSION['club_user_name'] = isset($user->username) ? (string) $user->username : '';
+				$_SESSION['club_logged_in'] = true;
+
+				wp_safe_redirect(home_url('/course-registration/'));
+				exit;
+			}
+		}
+
+		wp_safe_redirect(add_query_arg('login_error', 'invalid', $return_to));
+		exit;
+	}
+
+	public static function handle_reset_password(): void
+	{
+		self::start_session();
+
+		$nonce = isset($_POST['pablo_club_reset_nonce']) ? sanitize_text_field(wp_unslash($_POST['pablo_club_reset_nonce'])) : '';
+		if (!$nonce || !wp_verify_nonce($nonce, 'pablo_club_reset')) {
+			wp_die('שגיאת אבטחה.');
+		}
+
+		$username   = isset($_POST['username']) ? sanitize_text_field(wp_unslash($_POST['username'])) : '';
+		$new_pass   = isset($_POST['new_password']) ? (string) wp_unslash($_POST['new_password']) : '';
+		$redirect   = wp_get_referer() ?: home_url('/');
+
+		if ($username === '' || $new_pass === '') {
+			wp_safe_redirect(add_query_arg('reset_msg', 'empty', $redirect));
+			exit;
+		}
+
+		global $wpdb;
+		$table_name = self::resolve_table_name('clubMembers');
+
+		$user_exists = $wpdb->get_var(
+			$wpdb->prepare("SELECT id FROM {$table_name} WHERE username = %s", $username)
+		);
+
+		if (!$user_exists) {
+			wp_safe_redirect(add_query_arg('reset_msg', 'notfound', $redirect));
+			exit;
+		}
+
+		$updated = $wpdb->update(
+			$table_name,
+			['password' => md5($new_pass)],
+			['username' => $username],
+			['%s'],
+			['%s']
+		);
+
+		if ($updated === false) {
+			wp_safe_redirect(add_query_arg('reset_msg', 'error', $redirect));
+			exit;
+		}
+
+		wp_safe_redirect(add_query_arg('reset_msg', 'success', $redirect));
+		exit;
+	}
+
+	public static function handle_logout(): void
+	{
+		self::start_session();
+
+		unset($_SESSION['club_user_id'], $_SESSION['club_user_name'], $_SESSION['club_logged_in']);
+
+		$redirect = wp_get_referer() ?: home_url('/');
+		wp_safe_redirect($redirect);
+		exit;
+	}
+
+	public static function protect_course_registration(): void
+	{
+		if (!is_page('course-registration')) {
+			return;
+		}
+
+		if (self::is_logged_in()) {
+			return;
+		}
+
+		$target = add_query_arg(
+			[
+				'open_login' => '1',
+				'returnTo'   => rawurlencode(home_url('/course-registration/')),
+			],
+			home_url('/')
+		);
+
+		wp_safe_redirect($target);
+		exit;
+	}
+
+	private static function get_login_message_html(): string
+	{
+		$error = isset($_GET['login_error']) ? sanitize_key(wp_unslash($_GET['login_error'])) : '';
+
+		if ($error === 'empty') {
+			return '<div class="alert alert-danger" style="margin-bottom:15px;">יש למלא שם משתמש/אימייל וסיסמה.</div>';
+		}
+
+		if ($error === 'invalid') {
+			return '<div class="alert alert-danger" style="margin-bottom:15px;">שם המשתמש או הסיסמה שגויים.</div>';
+		}
+
+		return '';
+	}
+
+	private static function get_reset_message_html(): string
+	{
+		$msg = isset($_GET['reset_msg']) ? sanitize_key(wp_unslash($_GET['reset_msg'])) : '';
+
+		if ($msg === 'success') {
+			return '<div class="alert alert-success" style="margin-bottom:15px;">הסיסמה עודכנה בהצלחה. אפשר להתחבר כעת.</div>';
+		}
+
+		if ($msg === 'notfound') {
+			return '<div class="alert alert-danger" style="margin-bottom:15px;">שם המשתמש לא נמצא במערכת.</div>';
+		}
+
+		if ($msg === 'empty') {
+			return '<div class="alert alert-danger" style="margin-bottom:15px;">יש למלא שם משתמש וסיסמה חדשה.</div>';
+		}
+
+		if ($msg === 'error') {
+			return '<div class="alert alert-danger" style="margin-bottom:15px;">אירעה שגיאה בעדכון הסיסמה.</div>';
+		}
+
+		return '';
+	}
+
+	public static function render_modals(): void
+	{
+		$return_to = home_url('/course-registration/');
+		$open_login = isset($_GET['open_login']) || isset($_GET['login_error']);
+		$open_reset = isset($_GET['reset_msg']);
+
+		?>
+		<div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span class="glyphicon glyphicon-remove-sign"></span>
+						</button>
+						<h4 class="modal-title">כניסת משתמשים רשומים</h4>
+					</div>
+
+					<div class="modal-body">
+						<div class="modal-in login-form">
+							<?php echo self::get_login_message_html(); ?>
+
+							<form id="loginForm" method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>">
+								<input type="hidden" name="action" value="pablo_club_login">
+								<input type="hidden" id="returnTo" name="returnTo" value="<?php echo esc_attr($return_to); ?>">
+								<?php wp_nonce_field('pablo_club_login', 'pablo_club_login_nonce'); ?>
+
+								<div class="form-group">
+									<div class="row">
+										<div class="col-sm-3"></div>
+										<div class="col-sm-6">
+											<label for="username">שם משתמש</label>
+											<input type="text" id="username" name="username" class="form-control" placeholder="שם משתמש או אימייל">
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<div class="row">
+										<div class="col-sm-3"></div>
+										<div class="col-sm-6">
+											<label for="password">סיסמה</label>
+											<input type="password" id="password" name="password" class="form-control" placeholder="סיסמה">
+											<br>
+											<a href="javascript:void(0)" data-toggle="modal" data-target="#modal-reset-password" data-dismiss="modal">שכחתי את הסיסמה</a>
+										</div>
+									</div>
+								</div>
+
+								<div class="fbuttons">
+									<button class="btn btn-orange" type="submit">כניסה</button>
+								</div>
+							</form>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="modal-reset-password" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span class="glyphicon glyphicon-remove-sign"></span>
+						</button>
+						<h4 class="modal-title">שכחתי סיסמה</h4>
+					</div>
+
+					<div class="modal-body">
+						<div class="modal-in login-form">
+							<?php echo self::get_reset_message_html(); ?>
+
+							<form id="resetPasswordForm" method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>">
+								<input type="hidden" name="action" value="pablo_club_reset">
+								<?php wp_nonce_field('pablo_club_reset', 'pablo_club_reset_nonce'); ?>
+
+								<div class="form-group">
+									<div class="row">
+										<div class="col-sm-3"></div>
+										<div class="col-sm-6">
+											<label for="reset_username">שם משתמש</label>
+											<input type="text" id="reset_username" name="username" class="form-control" placeholder="שם משתמש">
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<div class="row">
+										<div class="col-sm-3"></div>
+										<div class="col-sm-6">
+											<label for="new_password">סיסמה חדשה</label>
+											<input type="password" id="new_password" name="new_password" class="form-control" placeholder="סיסמה חדשה">
+										</div>
+									</div>
+								</div>
+
+								<div class="fbuttons">
+									<button class="btn btn-orange" type="submit">עדכן סיסמה</button>
+								</div>
+							</form>
+
+							<div style="margin-top:12px;">
+								<a href="javascript:void(0)" data-toggle="modal" data-target="#modal-login" data-dismiss="modal">חזרה להתחברות</a>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<script>
+		jQuery(function($){
+			<?php if ($open_login) : ?>
+			$('#modal-login').modal('show');
+			<?php endif; ?>
+
+			<?php if ($open_reset) : ?>
+			$('#modal-reset-password').modal('show');
+			<?php endif; ?>
+		});
+		</script>
+		<?php
+	}
+}
